@@ -1,3 +1,4 @@
+use std::borrow::Cow;
 use std::collections::BTreeMap;
 use std::io::{self, BufRead, BufReader, Read};
 
@@ -123,24 +124,39 @@ enum ParsingState {
 #[derive(Fail, Debug)]
 pub enum ParseError {
     #[fail(display = "io error during parsing")]
-    IoError(#[cause] io::Error),
+    Io(#[cause] io::Error),
     #[fail(display = "invalid incident identifer")]
     InvalidIncidentIdentifier(#[cause] uuid::parser::ParseError),
     #[fail(display = "invalid timestamp")]
     InvalidTimestamp(#[cause] chrono::ParseError),
 }
 
+impl std::str::FromStr for AppleCrashReport {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<AppleCrashReport, ParseError> {
+        AppleCrashReport::from_line_iter(s.lines().map(|x| Ok(Cow::Borrowed(x))))
+    }
+}
+
 impl AppleCrashReport {
+    /// Consumes a reader and parses it.
     pub fn from_reader<R: Read>(r: R) -> Result<AppleCrashReport, ParseError> {
         let reader = BufReader::new(r);
+        AppleCrashReport::from_line_iter(reader.lines().map(|x| x.map(Cow::Owned)))
+    }
+
+    fn from_line_iter<'a, I: Iterator<Item = Result<Cow<'a, str>, io::Error>>>(
+        iter: I,
+    ) -> Result<AppleCrashReport, ParseError> {
         let mut state = ParsingState::Header;
         let mut thread = None;
         let mut registers = BTreeMap::new();
 
         let mut rv = AppleCrashReport::default();
 
-        for line in reader.lines() {
-            let line = line.map_err(ParseError::IoError)?;
+        for line in iter {
+            let line = line.map_err(ParseError::Io)?;
             let line = line.trim();
 
             state = match state {
@@ -174,7 +190,11 @@ impl AppleCrashReport {
                                 rv.code_type = Some(caps[2].to_string());
                             }
                             "Date/Time" => {
-                                let timestamp = DateTime::<FixedOffset>::parse_from_str(&caps[2], "%Y-%m-%d %H:%M:%S %z").map_err(ParseError::InvalidTimestamp)?;
+                                let timestamp = DateTime::<FixedOffset>::parse_from_str(
+                                    &caps[2],
+                                    "%Y-%m-%d %H:%M:%S %z",
+                                )
+                                .map_err(ParseError::InvalidTimestamp)?;
                                 rv.timestamp = Some(timestamp.with_timezone(&Utc));
                             }
                             _ => {
@@ -191,7 +211,10 @@ impl AppleCrashReport {
                         ParsingState::Header
                     } else {
                         for caps in REGISTER_RE.captures_iter(&line) {
-                            registers.insert(caps[1].to_string(), Addr(u64::from_str_radix(&caps[2][2..], 16).unwrap()));
+                            registers.insert(
+                                caps[1].to_string(),
+                                Addr(u64::from_str_radix(&caps[2][2..], 16).unwrap()),
+                            );
                         }
                         ParsingState::ThreadState
                     }
@@ -213,8 +236,9 @@ impl AppleCrashReport {
                         rv.binary_images.push(BinaryImage {
                             addr: Addr(addr),
                             size: u64::from_str_radix(&caps[2][2..], 16).unwrap() - addr,
-                            image_uuid: caps[6].parse()
-                                    .map_err(ParseError::InvalidIncidentIdentifier)?,
+                            image_uuid: caps[6]
+                                .parse()
+                                .map_err(ParseError::InvalidIncidentIdentifier)?,
                             arch: caps[4].to_string(),
                             version: caps.get(5).map(|x| x.as_str().to_string()),
                             name: caps[3].to_string(),
@@ -243,15 +267,11 @@ impl AppleCrashReport {
 
         Ok(rv)
     }
-
-    pub fn from_str(s: &str) -> Result<AppleCrashReport, ParseError> {
-        AppleCrashReport::from_reader(s.as_bytes())
-    }
 }
 
 #[test]
 fn test_basic_parsing() {
-    let report = AppleCrashReport::from_str(r#"
+    let report: AppleCrashReport = r#"
 Incident Identifier: 5C32DF84-31A0-43E7-87D0-239F7F594940
 CrashReporter Key:   TODO
 Hardware Model:      MacBookPro14,3
@@ -304,7 +324,7 @@ Binary Images:
        0x112fc0000 -        0x112ff5fff  libPhysX3CookingPROFILE.dylib x86_64 (0.0.0 - 0.0.0) <5e012a646cc536f19b4da0564049169b> /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib
        0x113013000 -        0x11317afff  libPhysX3CommonPROFILE.dylib x86_64 (0.0.0 - 0.0.0) <9c19854471943de6b67e4cc27eed2eab> /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib
        0x1131fa000 -        0x113200fff  libPxFoundationPROFILE.dylib x86_64 (400.9.0 - 1.0.0) <890f0997f90435449af7cf011f09a06e> /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib
-    "#).unwrap();
+    "#.parse().unwrap();
 
     let json = serde_json::to_string_pretty(&report).unwrap();
     assert_eq!(json, "{\n  \"incident_identifier\": \"5c32df84-31a0-43e7-87d0-239f7f594940\",\n  \"code_type\": \"X86-64\",\n  \"timestamp\": \"2019-01-09T17:42:22Z\",\n  \"metadata\": {\n    \"CrashReporter Key\": \"TODO\",\n    \"Crashed Thread\": \"5\",\n    \"Exception Codes\": \"SEGV_MAPERR at 0x88\",\n    \"Exception Type\": \"SIGSEGV\",\n    \"Hardware Model\": \"MacBookPro14,3\",\n    \"Identifier\": \"com.YourCompany.YetAnotherMac\",\n    \"OS Version\": \"Mac OS X 10.14.0 (18A391)\",\n    \"Parent Process\": \"launchd [1]\",\n    \"Path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac\",\n    \"Process\": \"YetAnotherMac [49028]\",\n    \"Report Version\": \"104\",\n    \"Version\": \"4.21.1\"\n  },\n  \"threads\": [\n    {\n      \"id\": 0,\n      \"name\": null,\n      \"frames\": [\n        {\n          \"package\": \"libsystem_kernel.dylib\",\n          \"instruction_addr\": \"0x7fff61bc6c2a\"\n        },\n        {\n          \"package\": \"CoreFoundation\",\n          \"instruction_addr\": \"0x7fff349f505e\"\n        },\n        {\n          \"package\": \"CoreFoundation\",\n          \"instruction_addr\": \"0x7fff349f45ad\"\n        },\n        {\n          \"package\": \"CoreFoundation\",\n          \"instruction_addr\": \"0x7fff349f3ce4\"\n        },\n        {\n          \"package\": \"HIToolbox\",\n          \"instruction_addr\": \"0x7fff33c8d895\"\n        },\n        {\n          \"package\": \"HIToolbox\",\n          \"instruction_addr\": \"0x7fff33c8d5cb\"\n        },\n        {\n          \"package\": \"HIToolbox\",\n          \"instruction_addr\": \"0x7fff33c8d348\"\n        },\n        {\n          \"package\": \"AppKit\",\n          \"instruction_addr\": \"0x7fff31f4a95b\"\n        },\n        {\n          \"package\": \"AppKit\",\n          \"instruction_addr\": \"0x7fff31f496fa\"\n        },\n        {\n          \"package\": \"AppKit\",\n          \"instruction_addr\": \"0x7fff31f4375d\"\n        },\n        {\n          \"package\": \"YetAnotherMac\",\n          \"instruction_addr\": \"0x108b7092b\"\n        },\n        {\n          \"package\": \"YetAnotherMac\",\n          \"instruction_addr\": \"0x108b702a6\"\n        },\n        {\n          \"package\": \"libdyld.dylib\",\n          \"instruction_addr\": \"0x7fff61a8e085\"\n        }\n      ],\n      \"crashed\": false,\n      \"registers\": {}\n    },\n    {\n      \"id\": 1,\n      \"name\": \"Test Thread Name\",\n      \"frames\": [\n        {\n          \"package\": \"libsystem_kernel.dylib\",\n          \"instruction_addr\": \"0x7fff61bc85be\"\n        },\n        {\n          \"package\": \"libsystem_pthread.dylib\",\n          \"instruction_addr\": \"0x7fff61c7f415\"\n        },\n        {\n          \"package\": \"???\",\n          \"instruction_addr\": \"0x54485244\"\n        }\n      ],\n      \"crashed\": true,\n      \"registers\": {\n        \"cs\": \"0x2b\",\n        \"fs\": \"0x0\",\n        \"gs\": \"0x0\",\n        \"r10\": \"0x0\",\n        \"r11\": \"0xffffffff\",\n        \"r12\": \"0x8\",\n        \"r13\": \"0x11e800b00\",\n        \"r14\": \"0x1\",\n        \"r15\": \"0x0\",\n        \"r8\": \"0x3\",\n        \"r9\": \"0x10\",\n        \"rax\": \"0x20261bb4775b008f\",\n        \"rbp\": \"0x700015a616d0\",\n        \"rbx\": \"0x0\",\n        \"rcx\": \"0x1288266c0\",\n        \"rdi\": \"0x0\",\n        \"rdx\": \"0x1\",\n        \"rflags\": \"0x10206\",\n        \"rip\": \"0x1090a0132\",\n        \"rsi\": \"0x0\",\n        \"rsp\": \"0x700015a613f0\"\n      }\n    }\n  ],\n  \"binary_images\": [\n    {\n      \"addr\": \"0x10864e000\",\n      \"size\": 108797951,\n      \"image_uuid\": \"2d903291-397d-3d14-bfca-52c7fb8c5e00\",\n      \"arch\": \"x86_64\",\n      \"version\": \"400.9.4 - 1.0.0\",\n      \"name\": \"YetAnotherMac\",\n      \"path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac\"\n    },\n    {\n      \"addr\": \"0x112bb2000\",\n      \"size\": 2170879,\n      \"image_uuid\": \"6deccee4-a052-3ea4-bb67-957b06f53ad1\",\n      \"arch\": \"x86_64\",\n      \"version\": \"0.0.0 - 0.0.0\",\n      \"name\": \"libPhysX3PROFILE.dylib\",\n      \"path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3PROFILE.dylib\"\n    },\n    {\n      \"addr\": \"0x112fc0000\",\n      \"size\": 221183,\n      \"image_uuid\": \"5e012a64-6cc5-36f1-9b4d-a0564049169b\",\n      \"arch\": \"x86_64\",\n      \"version\": \"0.0.0 - 0.0.0\",\n      \"name\": \"libPhysX3CookingPROFILE.dylib\",\n      \"path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib\"\n    },\n    {\n      \"addr\": \"0x113013000\",\n      \"size\": 1474559,\n      \"image_uuid\": \"9c198544-7194-3de6-b67e-4cc27eed2eab\",\n      \"arch\": \"x86_64\",\n      \"version\": \"0.0.0 - 0.0.0\",\n      \"name\": \"libPhysX3CommonPROFILE.dylib\",\n      \"path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib\"\n    },\n    {\n      \"addr\": \"0x1131fa000\",\n      \"size\": 28671,\n      \"image_uuid\": \"890f0997-f904-3544-9af7-cf011f09a06e\",\n      \"arch\": \"x86_64\",\n      \"version\": \"400.9.0 - 1.0.0\",\n      \"name\": \"libPxFoundationPROFILE.dylib\",\n      \"path\": \"/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib\"\n    }\n  ]\n}");
