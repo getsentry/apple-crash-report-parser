@@ -106,7 +106,8 @@ pub struct BinaryImage {
 
 #[derive(Debug, Serialize)]
 pub struct Frame {
-    pub package: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub package: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub symbol: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -248,7 +249,11 @@ impl AppleCrashReport {
                 ParsingState::Thread => {
                     if let Some(caps) = FRAME_RE.captures(&line) {
                         thread.as_mut().unwrap().frames.push(Frame {
-                            package: caps[1].to_string(),
+                            package: if &caps[1] == "???" {
+                                None
+                            } else {
+                                Some(caps[1].to_string())
+                            },
                             symbol: caps.get(3).and_then(|x| {
                                 if x.as_str().starts_with("0x")
                                     && u64::from_str_radix(&x.as_str()[2..], 16).is_ok()
@@ -481,7 +486,6 @@ Binary Images:
           "instruction_addr": "0x7fff61c7f415"
         },
         {
-          "package": "???",
           "instruction_addr": "0x54485244"
         }
       ],
