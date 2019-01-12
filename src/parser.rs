@@ -97,7 +97,7 @@ pub struct AppleCrashReport {
 pub struct BinaryImage {
     pub addr: Addr,
     pub size: u64,
-    pub image_uuid: Uuid,
+    pub uuid: Uuid,
     pub arch: String,
     pub version: Option<String>,
     pub name: String,
@@ -278,7 +278,7 @@ impl AppleCrashReport {
                         rv.binary_images.push(BinaryImage {
                             addr: Addr(addr),
                             size: u64::from_str_radix(&caps[2][2..], 16).unwrap() - addr,
-                            image_uuid: caps[6]
+                            uuid: caps[6]
                                 .parse()
                                 .map_err(ParseError::InvalidIncidentIdentifier)?,
                             arch: caps[4].to_string(),
@@ -519,7 +519,7 @@ Binary Images:
     {
       "addr": "0x10864e000",
       "size": 108797951,
-      "image_uuid": "2d903291-397d-3d14-bfca-52c7fb8c5e00",
+      "uuid": "2d903291-397d-3d14-bfca-52c7fb8c5e00",
       "arch": "x86_64",
       "version": "400.9.4 - 1.0.0",
       "name": "YetAnotherMac",
@@ -528,7 +528,7 @@ Binary Images:
     {
       "addr": "0x112bb2000",
       "size": 2170879,
-      "image_uuid": "6deccee4-a052-3ea4-bb67-957b06f53ad1",
+      "uuid": "6deccee4-a052-3ea4-bb67-957b06f53ad1",
       "arch": "x86_64",
       "version": "0.0.0 - 0.0.0",
       "name": "libPhysX3PROFILE.dylib",
@@ -537,7 +537,7 @@ Binary Images:
     {
       "addr": "0x112fc0000",
       "size": 221183,
-      "image_uuid": "5e012a64-6cc5-36f1-9b4d-a0564049169b",
+      "uuid": "5e012a64-6cc5-36f1-9b4d-a0564049169b",
       "arch": "x86_64",
       "version": "0.0.0 - 0.0.0",
       "name": "libPhysX3CookingPROFILE.dylib",
@@ -546,7 +546,7 @@ Binary Images:
     {
       "addr": "0x113013000",
       "size": 1474559,
-      "image_uuid": "9c198544-7194-3de6-b67e-4cc27eed2eab",
+      "uuid": "9c198544-7194-3de6-b67e-4cc27eed2eab",
       "arch": "x86_64",
       "version": "0.0.0 - 0.0.0",
       "name": "libPhysX3CommonPROFILE.dylib",
@@ -555,7 +555,7 @@ Binary Images:
     {
       "addr": "0x1131fa000",
       "size": 28671,
-      "image_uuid": "890f0997-f904-3544-9af7-cf011f09a06e",
+      "uuid": "890f0997-f904-3544-9af7-cf011f09a06e",
       "arch": "x86_64",
       "version": "400.9.0 - 1.0.0",
       "name": "libPxFoundationPROFILE.dylib",
