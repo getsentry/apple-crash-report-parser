@@ -1,6 +1,6 @@
 # Apple Crash Report Parser
 
-[![Build Status](https://travis-ci.org/getsentry/apple-crash-report-parser.svg?branch=master)](https://travis-ci.org/getsentry/apple-crash-report-parser)
+[![Build Status](https://travis-ci.com/getsentry/apple-crash-report-parser.svg?branch=master)](https://travis-ci.org/getsentry/apple-crash-report-parser)
 [![Crates.io](https://img.shields.io/crates/v/apple-crash-report-parser.svg?style=flat)](https://crates.io/crates/apple-crash-report-parser)
 
 This is a Rust library that can parse apple crash report text files.  These files
