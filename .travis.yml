@@ -17,8 +17,6 @@ matrix:
   include:
     - env: SUITE=format-check
     - env: SUITE=lint
-    - env: SUITE=check
-      rust: "1.31.0"
     - env: SUITE=test
       rust: "1.31.0"
 
