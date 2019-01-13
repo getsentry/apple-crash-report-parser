@@ -8,7 +8,7 @@ readme = "README.md"
 edition = "2018"
 repository = "https://github.com/getsentry/apple-crash-report-parser"
 homepage = "https://github.com/getsentry/apple-crash-report-parser"
-documentation = "https://getsentry.github.io/apple-crash-report-parser"
+documentation = "https://docs.rs/apple-crash-report-parser"
 description = """
 Parses apple crash report text files.
 """
