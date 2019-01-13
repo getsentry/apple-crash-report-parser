@@ -25,3 +25,13 @@ matrix:
   allow_failures:
     - env: SUITE=format-check
     - env: SUITE=lint
+
+notifications:
+  webhooks:
+    urls:
+      - https://zeus.ci/hooks/374194e0-16ca-11e9-94ef-0a580a280304/public/provider/travis/webhook
+    on_success: always
+    on_failure: always
+    on_start: always
+    on_cancel: always
+    on_error: always
