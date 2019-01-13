@@ -6,6 +6,7 @@ use chrono::{DateTime, FixedOffset, Utc};
 use failure::Fail;
 use lazy_static::lazy_static;
 use regex::Regex;
+#[cfg(feature = "with_serde")]
 use serde::{Serialize, Serializer};
 use uuid::Uuid;
 
@@ -68,9 +69,11 @@ lazy_static! {
     .unwrap();
 }
 
+/// A newtype for addresses.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Addr(u64);
 
+#[cfg(feature = "with_serde")]
 impl Serialize for Addr {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
@@ -80,52 +83,86 @@ impl Serialize for Addr {
     }
 }
 
-#[derive(Debug, Serialize, Default)]
+/// Holds a parsed apple crash report.
+#[derive(Debug, Default)]
+#[cfg_attr(feature = "with_serde", derive(Serialize))]
 pub struct AppleCrashReport {
+    /// The unique crash ID.
     pub incident_identifier: Uuid,
+    /// The timestamp of the crash.
     pub timestamp: Option<DateTime<Utc>>,
+    /// The architecture of the crash (might require further parsing)
     pub code_type: Option<String>,
+    /// The path to the application.
     pub path: Option<String>,
+    /// Optional application specific crash information as string.
     pub application_specific_information: Option<String>,
+    /// The internal report version.
     pub report_version: u32,
+    /// Extra metdata.
     pub metadata: BTreeMap<String, String>,
+    /// A list of threads.
     pub threads: Vec<Thread>,
+    /// A list of referenced binary images.
     pub binary_images: Vec<BinaryImage>,
 }
 
-#[derive(Debug, Serialize)]
+/// A single binary image in the crash.
+#[derive(Debug)]
+#[cfg_attr(feature = "with_serde", derive(Serialize))]
 pub struct BinaryImage {
+    /// The address of the image,
     pub addr: Addr,
+    /// The size of the image,
     pub size: u64,
+    /// The unique ID of the image,
     pub uuid: Uuid,
+    /// The architecture of the image,
     pub arch: String,
+    /// The version of the image if available. This might require further parsing.
     pub version: Option<String>,
+    /// The short name of the image.
     pub name: String,
+    /// The full path of the image.
     pub path: String,
 }
 
-#[derive(Debug, Serialize)]
+/// Represents a single frame.
+#[derive(Debug)]
+#[cfg_attr(feature = "with_serde", derive(Serialize))]
 pub struct Frame {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub package: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    /// The module of the frame.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
+    pub module: Option<String>,
+    /// The symbol of the frame if available.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub symbol: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    /// The filename of the frame if available.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub filename: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    /// The line number of the frame if available.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub lineno: Option<u32>,
-    instruction_addr: Addr,
+    //// The instruction address of the frame.
+    pub instruction_addr: Addr,
 }
 
-#[derive(Debug, Serialize)]
+/// A single thread in the crash.
+#[derive(Debug)]
+#[cfg_attr(feature = "with_serde", derive(Serialize))]
 pub struct Thread {
+    /// The ID (index) of the thread.
     pub id: u64,
-    #[serde(skip_serializing_if = "Option::is_none")]
+    /// The name of the thread if available.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub name: Option<String>,
-    pub frames: Vec<Frame>,
+    /// `true` if this thread crashed.
     pub crashed: bool,
-    #[serde(skip_serializing_if = "BTreeMap::is_empty")]
-    pub registers: BTreeMap<String, Addr>,
+    /// The list of frames
+    pub frames: Vec<Frame>,
+    /// A dump of all the registers of the thread if available.
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_some"))]
+    pub registers: Option<BTreeMap<String, Addr>>,
 }
 
 enum ParsingState {
@@ -195,7 +232,7 @@ impl AppleCrashReport {
                             name: caps.get(3).map(|m| m.as_str().to_string()),
                             frames: vec![],
                             crashed: caps.get(2).is_some(),
-                            registers: BTreeMap::new(),
+                            registers: None,
                         });
                         ParsingState::Thread
                     } else if let Some(caps) = KEY_VALUE_RE.captures(&line) {
@@ -249,7 +286,7 @@ impl AppleCrashReport {
                 ParsingState::Thread => {
                     if let Some(caps) = FRAME_RE.captures(&line) {
                         thread.as_mut().unwrap().frames.push(Frame {
-                            package: if &caps[1] == "???" {
+                            module: if &caps[1] == "???" {
                                 None
                             } else {
                                 Some(caps[1].to_string())
@@ -314,7 +351,7 @@ impl AppleCrashReport {
         if !registers.is_empty() {
             for thread in rv.threads.iter_mut() {
                 if thread.crashed {
-                    thread.registers = registers;
+                    thread.registers = Some(registers);
                     break;
                 }
             }
@@ -386,8 +423,500 @@ Binary Images:
        0x1131fa000 -        0x113200fff  libPxFoundationPROFILE.dylib x86_64 (400.9.0 - 1.0.0) <890f0997f90435449af7cf011f09a06e> /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib
     "#.parse().unwrap();
 
-    let json = serde_json::to_string_pretty(&report).unwrap();
-    assert_eq!(json, r#"{
+    assert_eq!(format!("{:#?}", &report), r#"AppleCrashReport {
+    incident_identifier: Uuid(
+        [
+            92,
+            50,
+            223,
+            132,
+            49,
+            160,
+            67,
+            231,
+            135,
+            208,
+            35,
+            159,
+            127,
+            89,
+            73,
+            64
+        ]
+    ),
+    timestamp: Some(
+        2019-01-09T17:42:22Z
+    ),
+    code_type: Some(
+        "X86-64"
+    ),
+    path: Some(
+        "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac"
+    ),
+    application_specific_information: Some(
+        "objc_msgSend() selector name: respondsToSelector:\n  more information here"
+    ),
+    report_version: 104,
+    metadata: {
+        "CrashReporter Key": "TODO",
+        "Exception Codes": "SEGV_MAPERR at 0x88",
+        "Exception Type": "SIGSEGV",
+        "Hardware Model": "MacBookPro14,3",
+        "Identifier": "com.YourCompany.YetAnotherMac",
+        "OS Version": "Mac OS X 10.14.0 (18A391)",
+        "Parent Process": "launchd [1]",
+        "Process": "YetAnotherMac [49028]",
+        "Version": "4.21.1"
+    },
+    threads: [
+        Thread {
+            id: 0,
+            name: None,
+            crashed: false,
+            frames: [
+                Frame {
+                    module: Some(
+                        "libsystem_kernel.dylib"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734833126442
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "CoreFoundation"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734076244062
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "CoreFoundation"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734076241325
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "CoreFoundation"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734076239076
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "HIToolbox"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734062188693
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "HIToolbox"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734062187979
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "HIToolbox"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734062187336
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "AppKit"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734031505755
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "AppKit"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734031501050
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "AppKit"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734031476573
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "YetAnotherMac"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        4441180459
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "YetAnotherMac"
+                    ),
+                    symbol: Some(
+                        "a_function_here"
+                    ),
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        4441178790
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "libdyld.dylib"
+                    ),
+                    symbol: Some(
+                        "start"
+                    ),
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734831845509
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "YetanotherMac"
+                    ),
+                    symbol: Some(
+                        "main"
+                    ),
+                    filename: Some(
+                        "main.m"
+                    ),
+                    lineno: Some(
+                        16
+                    ),
+                    instruction_addr: Addr(
+                        958468
+                    )
+                }
+            ],
+            registers: None
+        },
+        Thread {
+            id: 1,
+            name: Some(
+                "Test Thread Name"
+            ),
+            crashed: true,
+            frames: [
+                Frame {
+                    module: Some(
+                        "libsystem_kernel.dylib"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734833132990
+                    )
+                },
+                Frame {
+                    module: Some(
+                        "libsystem_pthread.dylib"
+                    ),
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        140734833882133
+                    )
+                },
+                Frame {
+                    module: None,
+                    symbol: None,
+                    filename: None,
+                    lineno: None,
+                    instruction_addr: Addr(
+                        1414025796
+                    )
+                }
+            ],
+            registers: Some(
+                {
+                    "cs": Addr(
+                        43
+                    ),
+                    "fs": Addr(
+                        0
+                    ),
+                    "gs": Addr(
+                        0
+                    ),
+                    "r10": Addr(
+                        0
+                    ),
+                    "r11": Addr(
+                        4294967295
+                    ),
+                    "r12": Addr(
+                        8
+                    ),
+                    "r13": Addr(
+                        4806675200
+                    ),
+                    "r14": Addr(
+                        1
+                    ),
+                    "r15": Addr(
+                        0
+                    ),
+                    "r8": Addr(
+                        3
+                    ),
+                    "r9": Addr(
+                        16
+                    ),
+                    "rax": Addr(
+                        2316569520239214735
+                    ),
+                    "rbp": Addr(
+                        123145665517264
+                    ),
+                    "rbx": Addr(
+                        0
+                    ),
+                    "rcx": Addr(
+                        4974601920
+                    ),
+                    "rdi": Addr(
+                        0
+                    ),
+                    "rdx": Addr(
+                        1
+                    ),
+                    "rflags": Addr(
+                        66054
+                    ),
+                    "rip": Addr(
+                        4446617906
+                    ),
+                    "rsi": Addr(
+                        0
+                    ),
+                    "rsp": Addr(
+                        123145665516528
+                    )
+                }
+            )
+        }
+    ],
+    binary_images: [
+        BinaryImage {
+            addr: Addr(
+                4435795968
+            ),
+            size: 108797951,
+            uuid: Uuid(
+                [
+                    45,
+                    144,
+                    50,
+                    145,
+                    57,
+                    125,
+                    61,
+                    20,
+                    191,
+                    202,
+                    82,
+                    199,
+                    251,
+                    140,
+                    94,
+                    0
+                ]
+            ),
+            arch: "x86_64",
+            version: Some(
+                "400.9.4 - 1.0.0"
+            ),
+            name: "YetAnotherMac",
+            path: "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac"
+        },
+        BinaryImage {
+            addr: Addr(
+                4609220608
+            ),
+            size: 2170879,
+            uuid: Uuid(
+                [
+                    109,
+                    236,
+                    206,
+                    228,
+                    160,
+                    82,
+                    62,
+                    164,
+                    187,
+                    103,
+                    149,
+                    123,
+                    6,
+                    245,
+                    58,
+                    209
+                ]
+            ),
+            arch: "x86_64",
+            version: Some(
+                "0.0.0 - 0.0.0"
+            ),
+            name: "libPhysX3PROFILE.dylib",
+            path: "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3PROFILE.dylib"
+        },
+        BinaryImage {
+            addr: Addr(
+                4613472256
+            ),
+            size: 221183,
+            uuid: Uuid(
+                [
+                    94,
+                    1,
+                    42,
+                    100,
+                    108,
+                    197,
+                    54,
+                    241,
+                    155,
+                    77,
+                    160,
+                    86,
+                    64,
+                    73,
+                    22,
+                    155
+                ]
+            ),
+            arch: "x86_64",
+            version: Some(
+                "0.0.0 - 0.0.0"
+            ),
+            name: "libPhysX3CookingPROFILE.dylib",
+            path: "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib"
+        },
+        BinaryImage {
+            addr: Addr(
+                4613812224
+            ),
+            size: 1474559,
+            uuid: Uuid(
+                [
+                    156,
+                    25,
+                    133,
+                    68,
+                    113,
+                    148,
+                    61,
+                    230,
+                    182,
+                    126,
+                    76,
+                    194,
+                    126,
+                    237,
+                    46,
+                    171
+                ]
+            ),
+            arch: "x86_64",
+            version: Some(
+                "0.0.0 - 0.0.0"
+            ),
+            name: "libPhysX3CommonPROFILE.dylib",
+            path: "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib"
+        },
+        BinaryImage {
+            addr: Addr(
+                4615806976
+            ),
+            size: 28671,
+            uuid: Uuid(
+                [
+                    137,
+                    15,
+                    9,
+                    151,
+                    249,
+                    4,
+                    53,
+                    68,
+                    154,
+                    247,
+                    207,
+                    1,
+                    31,
+                    9,
+                    160,
+                    110
+                ]
+            ),
+            arch: "x86_64",
+            version: Some(
+                "400.9.0 - 1.0.0"
+            ),
+            name: "libPxFoundationPROFILE.dylib",
+            path: "/Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib"
+        }
+    ]
+}"#);
+
+    #[cfg(feature = "with_serde")]
+    {
+        let json = serde_json::to_string_pretty(&report).unwrap();
+        assert_eq!(json, r#"{
   "incident_identifier": "5c32df84-31a0-43e7-87d0-239f7f594940",
   "timestamp": "2019-01-09T17:42:22Z",
   "code_type": "X86-64",
@@ -408,111 +937,89 @@ Binary Images:
   "threads": [
     {
       "id": 0,
+      "crashed": false,
       "frames": [
         {
-          "package": "libsystem_kernel.dylib",
+          "module": "libsystem_kernel.dylib",
           "instruction_addr": "0x7fff61bc6c2a"
         },
         {
-          "package": "CoreFoundation",
+          "module": "CoreFoundation",
           "instruction_addr": "0x7fff349f505e"
         },
         {
-          "package": "CoreFoundation",
+          "module": "CoreFoundation",
           "instruction_addr": "0x7fff349f45ad"
         },
         {
-          "package": "CoreFoundation",
+          "module": "CoreFoundation",
           "instruction_addr": "0x7fff349f3ce4"
         },
         {
-          "package": "HIToolbox",
+          "module": "HIToolbox",
           "instruction_addr": "0x7fff33c8d895"
         },
         {
-          "package": "HIToolbox",
+          "module": "HIToolbox",
           "instruction_addr": "0x7fff33c8d5cb"
         },
         {
-          "package": "HIToolbox",
+          "module": "HIToolbox",
           "instruction_addr": "0x7fff33c8d348"
         },
         {
-          "package": "AppKit",
+          "module": "AppKit",
           "instruction_addr": "0x7fff31f4a95b"
         },
         {
-          "package": "AppKit",
+          "module": "AppKit",
           "instruction_addr": "0x7fff31f496fa"
         },
         {
-          "package": "AppKit",
+          "module": "AppKit",
           "instruction_addr": "0x7fff31f4375d"
         },
         {
-          "package": "YetAnotherMac",
+          "module": "YetAnotherMac",
           "instruction_addr": "0x108b7092b"
         },
         {
-          "package": "YetAnotherMac",
+          "module": "YetAnotherMac",
           "symbol": "a_function_here",
           "instruction_addr": "0x108b702a6"
         },
         {
-          "package": "libdyld.dylib",
+          "module": "libdyld.dylib",
           "symbol": "start",
           "instruction_addr": "0x7fff61a8e085"
         },
         {
-          "package": "YetanotherMac",
+          "module": "YetanotherMac",
           "symbol": "main",
           "filename": "main.m",
           "lineno": 16,
           "instruction_addr": "0xea004"
         }
       ],
-      "crashed": false
+      "registers": null
     },
     {
       "id": 1,
       "name": "Test Thread Name",
+      "crashed": true,
       "frames": [
         {
-          "package": "libsystem_kernel.dylib",
+          "module": "libsystem_kernel.dylib",
           "instruction_addr": "0x7fff61bc85be"
         },
         {
-          "package": "libsystem_pthread.dylib",
+          "module": "libsystem_pthread.dylib",
           "instruction_addr": "0x7fff61c7f415"
         },
         {
           "instruction_addr": "0x54485244"
         }
-      ],
-      "crashed": true,
-      "registers": {
-        "cs": "0x2b",
-        "fs": "0x0",
-        "gs": "0x0",
-        "r10": "0x0",
-        "r11": "0xffffffff",
-        "r12": "0x8",
-        "r13": "0x11e800b00",
-        "r14": "0x1",
-        "r15": "0x0",
-        "r8": "0x3",
-        "r9": "0x10",
-        "rax": "0x20261bb4775b008f",
-        "rbp": "0x700015a616d0",
-        "rbx": "0x0",
-        "rcx": "0x1288266c0",
-        "rdi": "0x0",
-        "rdx": "0x1",
-        "rflags": "0x10206",
-        "rip": "0x1090a0132",
-        "rsi": "0x0",
-        "rsp": "0x700015a613f0"
-      }
+      ]
     }
   ],
   "binary_images": [
@@ -563,4 +1070,5 @@ Binary Images:
     }
   ]
 }"#);
+    }
 }
