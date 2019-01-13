@@ -48,4 +48,4 @@ Thread 0:
 ## Resources
 
 - [crates.io](https://crates.io/crates/apple-crash-report-parser)
-- [Documentation](https://getsentry.github.io/apple-crash-report-parser)
+- [Documentation](https://docs.rs/apple-crash-report-parser)
