@@ -173,6 +173,7 @@ enum ParsingState {
     ApplicationSpecificInformation,
 }
 
+/// Represents a parsing error.
 #[derive(Debug)]
 pub enum ParseError {
     Io(io::Error),
