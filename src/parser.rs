@@ -1,9 +1,9 @@
 use std::borrow::Cow;
 use std::collections::BTreeMap;
+use std::fmt;
 use std::io::{self, BufRead, BufReader, Read};
 
 use chrono::{DateTime, FixedOffset, Utc};
-use failure::Fail;
 use lazy_static::lazy_static;
 use regex::Regex;
 #[cfg(feature = "with_serde")]
@@ -173,16 +173,34 @@ enum ParsingState {
     ApplicationSpecificInformation,
 }
 
-#[derive(Fail, Debug)]
+#[derive(Debug)]
 pub enum ParseError {
-    #[fail(display = "io error during parsing")]
-    Io(#[cause] io::Error),
-    #[fail(display = "invalid incident identifer")]
-    InvalidIncidentIdentifier(#[cause] uuid::parser::ParseError),
-    #[fail(display = "invalid report version")]
-    InvalidReportVersion(#[cause] std::num::ParseIntError),
-    #[fail(display = "invalid timestamp")]
-    InvalidTimestamp(#[cause] chrono::ParseError),
+    Io(io::Error),
+    InvalidIncidentIdentifier(uuid::parser::ParseError),
+    InvalidReportVersion(std::num::ParseIntError),
+    InvalidTimestamp(chrono::ParseError),
+}
+
+impl std::error::Error for ParseError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match *self {
+            ParseError::Io(ref err) => Some(err),
+            ParseError::InvalidIncidentIdentifier(ref err) => Some(err),
+            ParseError::InvalidReportVersion(ref err) => Some(err),
+            ParseError::InvalidTimestamp(ref err) => Some(err),
+        }
+    }
+}
+
+impl fmt::Display for ParseError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match *self {
+            ParseError::Io(..) => write!(f, "io error during parsing"),
+            ParseError::InvalidIncidentIdentifier(..) => write!(f, "invalid incident identifier"),
+            ParseError::InvalidReportVersion(..) => write!(f, "invalid report version"),
+            ParseError::InvalidTimestamp(..) => write!(f, "invalid timestamp"),
+        }
+    }
 }
 
 impl std::str::FromStr for AppleCrashReport {
