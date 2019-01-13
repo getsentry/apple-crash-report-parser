@@ -1,4 +1,4 @@
-Created: 2019-01-13T23:07:30.450881+00:00
+Created: 2019-01-13T23:08:50.558366+00:00
 Creator: insta@0.1.1
 Source: tests/test_snapshots.rs
 
@@ -103,6 +103,26 @@ threads:
       - module: libdyld.dylib
         symbol: start
         instruction_addr: 0x7fff8f9e97e1
+    registers:
+      cs: 0x2b
+      fs: 0x0
+      gs: 0x0
+      r10: 0x7fff9a7be319
+      r11: 0x7fff99d89cb0
+      r12: 0x10d9e7008
+      r13: 0x103ac75a0
+      r14: 0x0
+      r15: 0x7fff7eacfe00
+      rax: 0x0
+      rbp: 0x7fff5e3fe9a0
+      rbx: 0x10d9e7000
+      rcx: 0xffff000000000002
+      rdi: 0x10d9e9900
+      rdx: 0x10d9e7028
+      rflags: 0x10246
+      rip: 0x7fff99d89d4b
+      rsi: 0x10d9e702c
+      rsp: 0x7fff5e3fe970
   - id: 1
     crashed: false
     frames:
@@ -112,7 +132,6 @@ threads:
       - module: libdispatch.dylib
         symbol: _dispatch_mgr_thread
         instruction_addr: 0x7fff8d7389ee
-    registers: ~
   - id: 2
     crashed: false
     frames:
@@ -125,7 +144,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: start_wqthread
         instruction_addr: 0x7fff986f4191
-    registers: ~
   - id: 3
     crashed: false
     frames:
@@ -153,7 +171,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 4
     crashed: false
     frames:
@@ -175,7 +192,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 5
     crashed: false
     frames:
@@ -188,7 +204,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 6
     crashed: false
     frames:
@@ -210,7 +225,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 7
     crashed: false
     frames:
@@ -232,7 +246,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 8
     crashed: false
     frames:
@@ -257,7 +270,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 9
     crashed: false
     frames:
@@ -276,7 +288,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 10
     crashed: false
     frames:
@@ -289,7 +300,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: start_wqthread
         instruction_addr: 0x7fff986f4191
-    registers: ~
   - id: 11
     crashed: false
     frames:
@@ -302,7 +312,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: start_wqthread
         instruction_addr: 0x7fff986f4191
-    registers: ~
   - id: 12
     crashed: false
     frames:
@@ -315,7 +324,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: start_wqthread
         instruction_addr: 0x7fff986f4191
-    registers: ~
   - id: 13
     crashed: false
     frames:
@@ -337,7 +345,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 14
     crashed: false
     frames:
@@ -370,7 +377,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 15
     crashed: false
     frames:
@@ -383,7 +389,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: start_wqthread
         instruction_addr: 0x7fff986f4191
-    registers: ~
   - id: 16
     crashed: false
     frames:
@@ -405,7 +410,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
   - id: 17
     crashed: false
     frames:
@@ -427,7 +431,6 @@ threads:
       - module: libsystem_c.dylib
         symbol: thread_start
         instruction_addr: 0x7fff986f41a1
-    registers: ~
 binary_images:
   - addr: 0x1017ff000
     size: 552959

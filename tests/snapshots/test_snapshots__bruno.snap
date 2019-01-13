@@ -1,4 +1,4 @@
-Created: 2019-01-13T23:07:30.518491+00:00
+Created: 2019-01-13T23:08:50.618191+00:00
 Creator: insta@0.1.1
 Source: tests/test_snapshots.rs
 
@@ -48,7 +48,6 @@ threads:
         instruction_addr: 0x108b702a6
       - module: libdyld.dylib
         instruction_addr: 0x7fff61a8e085
-    registers: ~
   - id: 1
     crashed: false
     frames:
@@ -57,7 +56,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 2
     crashed: false
     frames:
@@ -66,7 +64,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 3
     crashed: false
     frames:
@@ -74,7 +71,6 @@ threads:
         instruction_addr: 0x7fff61bc85be
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
-    registers: ~
   - id: 4
     crashed: false
     frames:
@@ -83,7 +79,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 5
     crashed: true
     frames:
@@ -125,6 +120,28 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
+    registers:
+      cs: 0x2b
+      fs: 0x0
+      gs: 0x0
+      r10: 0x0
+      r11: 0xffffffff
+      r12: 0x8
+      r13: 0x11e800b00
+      r14: 0x1
+      r15: 0x0
+      r8: 0x3
+      r9: 0x10
+      rax: 0x20261bb4775b008f
+      rbp: 0x700015a616d0
+      rbx: 0x0
+      rcx: 0x1288266c0
+      rdi: 0x0
+      rdx: 0x1
+      rflags: 0x10206
+      rip: 0x1090a0132
+      rsi: 0x0
+      rsp: 0x700015a613f0
   - id: 6
     crashed: false
     frames:
@@ -144,7 +161,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 7
     crashed: false
     frames:
@@ -168,7 +184,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 8
     crashed: false
     frames:
@@ -192,7 +207,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 9
     crashed: false
     frames:
@@ -216,7 +230,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 10
     crashed: false
     frames:
@@ -240,7 +253,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 11
     crashed: false
     frames:
@@ -264,7 +276,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 12
     crashed: false
     frames:
@@ -288,7 +299,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 13
     crashed: false
     frames:
@@ -312,7 +322,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 14
     crashed: false
     frames:
@@ -336,7 +345,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 15
     crashed: false
     frames:
@@ -360,7 +368,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 16
     crashed: false
     frames:
@@ -386,7 +393,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 17
     crashed: false
     frames:
@@ -406,7 +412,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 18
     crashed: false
     frames:
@@ -426,7 +431,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 19
     crashed: false
     frames:
@@ -446,7 +450,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 20
     crashed: false
     frames:
@@ -466,7 +469,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 21
     crashed: false
     frames:
@@ -486,7 +488,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 22
     crashed: false
     frames:
@@ -495,7 +496,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 23
     crashed: false
     frames:
@@ -504,7 +504,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 24
     crashed: false
     frames:
@@ -513,7 +512,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x70001989cba0
-    registers: ~
   - id: 25
     crashed: false
     frames:
@@ -522,7 +520,6 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
-    registers: ~
   - id: 26
     crashed: false
     frames:
@@ -542,7 +539,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 27
     crashed: false
     frames:
@@ -562,7 +558,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 28
     crashed: false
     frames:
@@ -582,7 +577,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 29
     crashed: false
     frames:
@@ -602,7 +596,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 30
     crashed: false
     frames:
@@ -622,7 +615,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 31
     crashed: false
     frames:
@@ -642,7 +634,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 32
     crashed: false
     frames:
@@ -662,7 +653,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 33
     crashed: false
     frames:
@@ -688,7 +678,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 34
     crashed: false
     frames:
@@ -728,7 +717,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 35
     crashed: false
     frames:
@@ -750,7 +738,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 36
     crashed: false
     frames:
@@ -770,7 +757,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 37
     crashed: false
     frames:
@@ -790,7 +776,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 38
     crashed: false
     frames:
@@ -810,7 +795,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 39
     crashed: false
     frames:
@@ -830,7 +814,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 40
     crashed: false
     frames:
@@ -850,7 +833,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 41
     crashed: false
     frames:
@@ -870,7 +852,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 42
     crashed: false
     frames:
@@ -890,7 +871,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 43
     crashed: false
     frames:
@@ -910,7 +890,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 44
     crashed: false
     frames:
@@ -930,7 +909,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 45
     crashed: false
     frames:
@@ -950,7 +928,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 46
     crashed: false
     frames:
@@ -970,7 +947,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 47
     crashed: false
     frames:
@@ -990,7 +966,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 48
     crashed: false
     frames:
@@ -1010,7 +985,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 49
     crashed: false
     frames:
@@ -1030,7 +1004,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 50
     crashed: false
     frames:
@@ -1050,7 +1023,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 51
     crashed: false
     frames:
@@ -1070,7 +1042,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 52
     crashed: false
     frames:
@@ -1086,7 +1057,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 53
     crashed: false
     frames:
@@ -1108,7 +1078,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
   - id: 54
     crashed: false
     frames:
@@ -1134,7 +1103,6 @@ threads:
         instruction_addr: 0x7fff61c832a7
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f425
-    registers: ~
 binary_images:
   - addr: 0x10864e000
     size: 108797951

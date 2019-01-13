@@ -1,4 +1,4 @@
-Created: 2019-01-13T23:07:30.318987+00:00
+Created: 2019-01-13T23:08:50.417587+00:00
 Creator: insta@0.1.1
 Source: tests/test_snapshots.rs
 
@@ -56,7 +56,6 @@ threads:
         filename: main.m
         lineno: 16
         instruction_addr: 0xea004
-    registers: ~
   - id: 1
     name: Test Thread Name
     crashed: true
@@ -66,6 +65,28 @@ threads:
       - module: libsystem_pthread.dylib
         instruction_addr: 0x7fff61c7f415
       - instruction_addr: 0x54485244
+    registers:
+      cs: 0x2b
+      fs: 0x0
+      gs: 0x0
+      r10: 0x0
+      r11: 0xffffffff
+      r12: 0x8
+      r13: 0x11e800b00
+      r14: 0x1
+      r15: 0x0
+      r8: 0x3
+      r9: 0x10
+      rax: 0x20261bb4775b008f
+      rbp: 0x700015a616d0
+      rbx: 0x0
+      rcx: 0x1288266c0
+      rdi: 0x0
+      rdx: 0x1
+      rflags: 0x10206
+      rip: 0x1090a0132
+      rsi: 0x0
+      rsp: 0x700015a613f0
 binary_images:
   - addr: 0x10864e000
     size: 108797951

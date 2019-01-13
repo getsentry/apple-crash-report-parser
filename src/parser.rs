@@ -179,7 +179,7 @@ pub struct Thread {
     /// The list of frames
     pub frames: Vec<Frame>,
     /// A dump of all the registers of the thread if available.
-    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_some"))]
+    #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub registers: Option<BTreeMap<String, Addr>>,
 }
 
