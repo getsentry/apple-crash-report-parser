@@ -1,0 +1,104 @@
+Created: 2019-01-13T23:07:30.318987+00:00
+Creator: insta@0.1.1
+Source: tests/test_snapshots.rs
+
+---
+incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
+timestamp: "2019-01-09T17:42:22Z"
+code_type: X86-64
+path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
+application_specific_information: "objc_msgSend() selector name: respondsToSelector:\n  more information here"
+report_version: 104
+metadata:
+  CrashReporter Key: TODO
+  Exception Codes: SEGV_MAPERR at 0x88
+  Exception Type: SIGSEGV
+  Hardware Model: "MacBookPro14,3"
+  Identifier: com.YourCompany.YetAnotherMac
+  OS Version: Mac OS X 10.14.0 (18A391)
+  Parent Process: "launchd [1]"
+  Process: "YetAnotherMac [49028]"
+  Version: 4.21.1
+threads:
+  - id: 0
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc6c2a
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f505e
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f45ad
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f3ce4
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d895
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d5cb
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d348
+      - module: AppKit
+        instruction_addr: 0x7fff31f4a95b
+      - module: AppKit
+        instruction_addr: 0x7fff31f496fa
+      - module: AppKit
+        instruction_addr: 0x7fff31f4375d
+      - module: YetAnotherMac
+        instruction_addr: 0x108b7092b
+      - module: YetAnotherMac
+        symbol: a_function_here
+        instruction_addr: 0x108b702a6
+      - module: libdyld.dylib
+        symbol: start
+        instruction_addr: 0x7fff61a8e085
+      - module: YetanotherMac
+        symbol: main
+        filename: main.m
+        lineno: 16
+        instruction_addr: 0xea004
+    registers: ~
+  - id: 1
+    name: Test Thread Name
+    crashed: true
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+binary_images:
+  - addr: 0x10864e000
+    size: 108797951
+    uuid: 2d903291-397d-3d14-bfca-52c7fb8c5e00
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: YetAnotherMac
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
+  - addr: 0x112bb2000
+    size: 2170879
+    uuid: 6deccee4-a052-3ea4-bb67-957b06f53ad1
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3PROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3PROFILE.dylib
+  - addr: 0x112fc0000
+    size: 221183
+    uuid: 5e012a64-6cc5-36f1-9b4d-a0564049169b
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3CookingPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib
+  - addr: 0x113013000
+    size: 1474559
+    uuid: 9c198544-7194-3de6-b67e-4cc27eed2eab
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3CommonPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib
+  - addr: 0x1131fa000
+    size: 28671
+    uuid: 890f0997-f904-3544-9af7-cf011f09a06e
+    arch: x86_64
+    version: 400.9.0 - 1.0.0
+    name: libPxFoundationPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib

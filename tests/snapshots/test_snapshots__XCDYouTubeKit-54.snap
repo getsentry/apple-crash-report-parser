@@ -1,0 +1,1895 @@
+Created: 2019-01-13T23:07:30.450881+00:00
+Creator: insta@0.1.1
+Source: tests/test_snapshots.rs
+
+---
+incident_identifier: 00000000-0000-0000-0000-000000000000
+timestamp: "2014-07-16T00:25:09Z"
+code_type: X86-64
+path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/MacOS/iTubeDownloader
+report_version: 106
+metadata:
+  Exception Codes: SEGV_MAPERR at 0x8
+  Exception Type: SIGSEGV
+  Framework Version: "1.0"
+  Hardware Model: "MacBookPro5,3"
+  Identifier: com.AlphaSoft.iTubeDownloader
+  OS Version: Mac OS X 10.8.5 (12F45)
+  Parent Process: "launchd [129]"
+  Process: "iTubeDownloader [590]"
+  Version: "512"
+threads:
+  - id: 0
+    crashed: true
+    frames:
+      - module: com.apple.JavaScriptCore
+        symbol: JSValueIsString
+        instruction_addr: 0x7fff99d89d4b
+      - module: ch.pitaya.xcdyoutubekit
+        symbol: "-[XCDYouTubePlayerScript unscrambleSignature:]"
+        instruction_addr: 0x1018b8cad
+      - module: ch.pitaya.xcdyoutubekit
+        symbol: "-[XCDYouTubeVideo initWithIdentifier:info:playerScript:response:error:]"
+        instruction_addr: 0x1018ba765
+      - module: ch.pitaya.xcdyoutubekit
+        symbol: "-[XCDYouTubeVideoOperation handleVideoInfoResponseWithInfo:playerScript:]"
+        instruction_addr: 0x1018bc476
+      - module: ch.pitaya.xcdyoutubekit
+        symbol: "-[XCDYouTubeVideoOperation handleJavaScriptPlayerResponse]"
+        instruction_addr: 0x1018bd905
+      - module: ch.pitaya.xcdyoutubekit
+        symbol: "-[XCDYouTubeVideoOperation connectionDidFinishLoading:]"
+        instruction_addr: 0x1018be287
+      - module: com.apple.Foundation
+        symbol: "__65-[NSURLConnectionInternal _withConnectionAndDelegate:onlyActive:]_block_invoke_0"
+        instruction_addr: 0x7fff97604d68
+      - module: com.apple.Foundation
+        symbol: "-[NSURLConnectionInternal _withConnectionAndDelegate:onlyActive:]"
+        instruction_addr: 0x7fff97604cac
+      - module: com.apple.Foundation
+        symbol: "-[NSURLConnectionInternal _withActiveConnectionAndDelegate:]"
+        instruction_addr: 0x7fff97604ba8
+      - module: com.apple.CFNetwork
+        symbol: ___delegate_didFinishLoading_block_invoke_0
+        instruction_addr: 0x7fff96f8ee61
+      - module: com.apple.CFNetwork
+        symbol: ___withDelegateAsync_block_invoke_0
+        instruction_addr: 0x7fff96f8129a
+      - module: com.apple.CFNetwork
+        symbol: __block_global_1
+        instruction_addr: 0x7fff97011eba
+      - module: com.apple.CoreFoundation
+        symbol: CFArrayApplyFunction
+        instruction_addr: 0x7fff8dcfb154
+      - module: com.apple.CFNetwork
+        symbol: _ZN19RunloopBlockContext7performEv
+        instruction_addr: 0x7fff96f72014
+      - module: com.apple.CFNetwork
+        symbol: _ZN17MultiplexerSource7performEv
+        instruction_addr: 0x7fff96f71eeb
+      - module: com.apple.CoreFoundation
+        symbol: __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__
+        instruction_addr: 0x7fff8dcdcb31
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopDoSources0
+        instruction_addr: 0x7fff8dcdc455
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopRun
+        instruction_addr: 0x7fff8dcff7f5
+      - module: com.apple.CoreFoundation
+        symbol: CFRunLoopRunSpecific
+        instruction_addr: 0x7fff8dcff0e2
+      - module: com.apple.HIToolbox
+        symbol: RunCurrentEventLoopInMode
+        instruction_addr: 0x7fff8d907eb4
+      - module: com.apple.HIToolbox
+        symbol: ReceiveNextEventCommon
+        instruction_addr: 0x7fff8d907c52
+      - module: com.apple.HIToolbox
+        symbol: BlockUntilNextEventMatchingListInMode
+        instruction_addr: 0x7fff8d907ae3
+      - module: com.apple.AppKit
+        symbol: _DPSNextEvent
+        instruction_addr: 0x7fff910e7533
+      - module: com.apple.AppKit
+        symbol: "-[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:]"
+        instruction_addr: 0x7fff910e6df2
+      - module: com.apple.AppKit
+        symbol: "-[NSApplication run]"
+        instruction_addr: 0x7fff910de1a3
+      - module: com.apple.AppKit
+        symbol: NSApplicationMain
+        instruction_addr: 0x7fff91082bd6
+      - module: libdyld.dylib
+        symbol: start
+        instruction_addr: 0x7fff8f9e97e1
+  - id: 1
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: kevent
+        instruction_addr: 0x7fff8d89ed16
+      - module: libdispatch.dylib
+        symbol: _dispatch_mgr_thread
+        instruction_addr: 0x7fff8d7389ee
+    registers: ~
+  - id: 2
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __workq_kernreturn
+        instruction_addr: 0x7fff8d89e6d6
+      - module: libsystem_c.dylib
+        symbol: _pthread_wqthread
+        instruction_addr: 0x7fff98709ce3
+      - module: libsystem_c.dylib
+        symbol: start_wqthread
+        instruction_addr: 0x7fff986f4191
+    registers: ~
+  - id: 3
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: mach_msg_trap
+        instruction_addr: 0x7fff8d89c686
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopServiceMachPort
+        instruction_addr: 0x7fff8dcfa233
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopRun
+        instruction_addr: 0x7fff8dcff916
+      - module: com.apple.CoreFoundation
+        symbol: CFRunLoopRunSpecific
+        instruction_addr: 0x7fff8dcff0e2
+      - module: com.apple.Foundation
+        symbol: "+[NSURLConnection _resourceLoadLoop:]"
+        instruction_addr: 0x7fff9761f526
+      - module: com.apple.Foundation
+        symbol: __NSThread__main__
+        instruction_addr: 0x7fff9767d532
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 4
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.CoreVideo
+        symbol: _ZN13CVDisplayLink9waitUntilEy
+        instruction_addr: 0x7fff99366ea3
+      - module: com.apple.CoreVideo
+        symbol: _ZN13CVDisplayLink11runIOThreadEv
+        instruction_addr: 0x7fff99366201
+      - module: com.apple.CoreVideo
+        symbol: _ZL13startIOThreadPv
+        instruction_addr: 0x7fff99365fd7
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 5
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __select
+        instruction_addr: 0x7fff8d89e322
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 6
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTF15ThreadCondition9timedWaitERNS_5MutexEd
+        instruction_addr: 0x7fff99d7eb66
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC14BlockAllocator22blockFreeingThreadMainEv
+        instruction_addr: 0x7fff99fa1bfa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTFL19wtfThreadEntryPointEPv
+        instruction_addr: 0x7fff99fb725f
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 7
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC11SlotVisitor15drainFromSharedENS0_15SharedDrainModeE
+        instruction_addr: 0x7fff99f049d4
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC25MarkStackThreadSharedData17markingThreadMainEv
+        instruction_addr: 0x7fff99f048b6
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTFL19wtfThreadEntryPointEPv
+        instruction_addr: 0x7fff99fb725f
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 8
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTF15ThreadCondition9timedWaitERNS_5MutexEd
+        instruction_addr: 0x7fff99d7eb2d
+      - module: com.apple.WebCore
+        symbol: _ZN3WTF12MessageQueueIN7WebCore11StorageTaskEE33waitForMessageFilteredWithTimeoutIFbPS2_EEENS_10PassOwnPtrIS2_EERNS_22MessageQueueWaitResultERT_d
+        instruction_addr: 0x7fff906ced01
+      - module: com.apple.WebCore
+        symbol: _ZN7WebCore13StorageThread16threadEntryPointEv
+        instruction_addr: 0x7fff8fc1f12a
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTFL19wtfThreadEntryPointEPv
+        instruction_addr: 0x7fff99fb725f
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 9
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: mach_msg_trap
+        instruction_addr: 0x7fff8d89c686
+      - module: com.apple.QuartzCore
+        symbol: _ZN2CA6Render6Server13server_threadEPv
+        instruction_addr: 0x7fff9827017b
+      - module: com.apple.QuartzCore
+        symbol: thread_fun
+        instruction_addr: 0x7fff982f4dc6
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 10
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __workq_kernreturn
+        instruction_addr: 0x7fff8d89e6d6
+      - module: libsystem_c.dylib
+        symbol: _pthread_wqthread
+        instruction_addr: 0x7fff98709ce3
+      - module: libsystem_c.dylib
+        symbol: start_wqthread
+        instruction_addr: 0x7fff986f4191
+    registers: ~
+  - id: 11
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __workq_kernreturn
+        instruction_addr: 0x7fff8d89e6d6
+      - module: libsystem_c.dylib
+        symbol: _pthread_wqthread
+        instruction_addr: 0x7fff98709ce3
+      - module: libsystem_c.dylib
+        symbol: start_wqthread
+        instruction_addr: 0x7fff986f4191
+    registers: ~
+  - id: 12
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __workq_kernreturn
+        instruction_addr: 0x7fff8d89e6d6
+      - module: libsystem_c.dylib
+        symbol: _pthread_wqthread
+        instruction_addr: 0x7fff98709ce3
+      - module: libsystem_c.dylib
+        symbol: start_wqthread
+        instruction_addr: 0x7fff986f4191
+    registers: ~
+  - id: 13
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __semwait_signal
+        instruction_addr: 0x7fff8d89e386
+      - module: libsystem_c.dylib
+        symbol: usleep
+        instruction_addr: 0x7fff987916df
+      - module: com.apple.AppKit
+        symbol: "-[NSUIHeartBeat _heartBeatThread:]"
+        instruction_addr: 0x7fff912cc838
+      - module: com.apple.Foundation
+        symbol: __NSThread__main__
+        instruction_addr: 0x7fff9767d532
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 14
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: mach_msg_trap
+        instruction_addr: 0x7fff8d89c686
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopServiceMachPort
+        instruction_addr: 0x7fff8dcfa233
+      - module: com.apple.CoreFoundation
+        symbol: __CFRunLoopRun
+        instruction_addr: 0x7fff8dcff916
+      - module: com.apple.CoreFoundation
+        symbol: CFRunLoopRunSpecific
+        instruction_addr: 0x7fff8dcff0e2
+      - module: com.apple.Foundation
+        symbol: "-[NSRunLoop(NSRunLoop) runMode:beforeDate:]"
+        instruction_addr: 0x7fff976827be
+      - module: com.apple.Foundation
+        symbol: "-[NSRunLoop(NSRunLoop) run]"
+        instruction_addr: 0x7fff9761b18a
+      - module: com.AlphaSoft.iTubeDownloader
+        instruction_addr: 0x10181bc10
+      - module: com.apple.Foundation
+        symbol: __NSThread__main__
+        instruction_addr: 0x7fff9767d532
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 15
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __workq_kernreturn
+        instruction_addr: 0x7fff8d89e6d6
+      - module: libsystem_c.dylib
+        symbol: _pthread_wqthread
+        instruction_addr: 0x7fff98709ce3
+      - module: libsystem_c.dylib
+        symbol: start_wqthread
+        instruction_addr: 0x7fff986f4191
+    registers: ~
+  - id: 16
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTF15ThreadCondition9timedWaitERNS_5MutexEd
+        instruction_addr: 0x7fff99d7eb66
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC14BlockAllocator22blockFreeingThreadMainEv
+        instruction_addr: 0x7fff99fa1bfa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTFL19wtfThreadEntryPointEPv
+        instruction_addr: 0x7fff99fb725f
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+  - id: 17
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        symbol: __psynch_cvwait
+        instruction_addr: 0x7fff8d89e0fa
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC11SlotVisitor15drainFromSharedENS0_15SharedDrainModeE
+        instruction_addr: 0x7fff99f049d4
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3JSC25MarkStackThreadSharedData17markingThreadMainEv
+        instruction_addr: 0x7fff99f048b6
+      - module: com.apple.JavaScriptCore
+        symbol: _ZN3WTFL19wtfThreadEntryPointEPv
+        instruction_addr: 0x7fff99fb725f
+      - module: libsystem_c.dylib
+        symbol: _pthread_start
+        instruction_addr: 0x7fff98707772
+      - module: libsystem_c.dylib
+        symbol: thread_start
+        instruction_addr: 0x7fff986f41a1
+    registers: ~
+binary_images:
+  - addr: 0x1017ff000
+    size: 552959
+    uuid: 7b639009-221f-3815-a7a3-657098146f8a
+    arch: (x86_64)
+    name: com.AlphaSoft.iTubeDownloader
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/MacOS/iTubeDownloader
+  - addr: 0x1018b6000
+    size: 53247
+    uuid: 31136917-6868-3472-b768-eb12d00e37e9
+    arch: (x86_64)
+    name: ch.pitaya.xcdyoutubekit
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/XCDYouTubeKit.framework/Versions/A/XCDYouTubeKit
+  - addr: 0x1018d7000
+    size: 45055
+    uuid: 1549ac14-e653-3611-8c6d-b9d80e4578e8
+    arch: (x86_64)
+    name: com.devmate.DevMateTracking
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/DevMateTracking.framework/Versions/A/DevMateTracking
+  - addr: 0x1018fa000
+    size: 176127
+    uuid: 09c0ea70-4fde-3be3-bd3d-eacd2d887ba4
+    arch: (x86_64)
+    name: com.devmate.DevMateActivations
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/DevMateActivations.framework/Versions/A/DevMateActivations
+  - addr: 0x101959000
+    size: 192511
+    uuid: 9fe897b2-531c-3e52-950b-d8cd4bfc3001
+    arch: (x86_64)
+    name: com.devmate.DevMateIssues
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/DevMateIssues.framework/Versions/A/DevMateIssues
+  - addr: 0x1019cf000
+    size: 159743
+    uuid: d0a650a9-b650-3521-867e-22f1f412ce59
+    arch: (x86_64)
+    name: com.devmate.DevMateFeedback
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/DevMateFeedback.framework/Versions/A/DevMateFeedback
+  - addr: 0x101a36000
+    size: 176127
+    uuid: cd2cd085-fe76-3120-bfbd-2261157e3c56
+    arch: (x86_64)
+    name: org.andymatuschak.Sparkle
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/Sparkle.framework/Versions/A/Sparkle
+  - addr: 0x101a7e000
+    size: 10031103
+    uuid: e3316ba5-1a34-39b1-8fa7-97727488869b
+    arch: (x86_64)
+    name: com.apple.CoreGraphics
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+  - addr: 0x10251b000
+    size: 106495
+    uuid: 1b1e5450-2055-3fdd-801e-ffe8811494ce
+    arch: (x86_64)
+    name: coop.plausible.CrashReporter
+    path: /Users/rogercoody/Desktop/iTubeDownloader.app/Contents/Frameworks/DevMateIssues.framework/Versions/A/Frameworks/CrashReporter.framework/Versions/A/CrashReporter
+  - addr: 0x103a89000
+    size: 53247
+    uuid: 1ee4c872-5236-3577-a458-691da2b43370
+    arch: (x86_64)
+    name: libCSync.A.dylib
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+  - addr: 0x103aa0000
+    size: 24575
+    uuid: 9f172961-db6f-3a82-9f90-28f9a233f755
+    arch: (x86_64)
+    name: libFontRegistryUI.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Resources/libFontRegistryUI.dylib
+  - addr: 0x103c14000
+    size: 20479
+    uuid: 3010d3f9-c3a9-3d2e-acdd-9020fb17482e
+    arch: (x86_64)
+    name: libCGXType.A.dylib
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGXType.A.dylib
+  - addr: 0x104e44000
+    size: 184319
+    uuid: 606e69ad-20ad-3517-b304-ad03f68cf47d
+    arch: (x86_64)
+    name: libRIP.A.dylib
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+  - addr: 0x1059b7000
+    size: 1830911
+    uuid: 1bd4d913-ce6c-3389-b4e1-fc7352e4c23f
+    arch: (x86_64)
+    name: com.apple.opengl
+    path: /System/Library/Frameworks/OpenGL.framework/Resources/GLEngine.bundle/GLEngine
+  - addr: 0x105bac000
+    size: 1511423
+    uuid: 3e488cef-5751-3073-b8ee-0b4ca39cb6ab
+    arch: (x86_64)
+    name: libGLProgrammability.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+  - addr: 0x105d54000
+    size: 57343
+    uuid: 7860f083-3f7b-3811-a56c-e8557a90c7db
+    arch: (x86_64)
+    name: libGPUSupport.dylib
+    path: /System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib
+  - addr: 0x105d68000
+    size: 180223
+    uuid: 055ec8e7-2d7e-370c-96ad-dbeedb106927
+    arch: (x86_64)
+    name: com.apple.opengl
+    path: /System/Library/Frameworks/OpenGL.framework/Resources//GLRendererFloat.bundle/GLRendererFloat
+  - addr: 0x105d9c000
+    size: 40959
+    uuid: b6e3b14b-1eac-3fdd-8aed-87231a033bed
+    arch: (x86_64)
+    name: libcldcpuengine.dylib
+    path: /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib
+  - addr: 0x105dcd000
+    size: 4095
+    uuid: 0f997364-3d32-46f0-868e-a51a6476c487
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x106320000
+    size: 8191
+    uuid: 275060ed-dd93-4d21-86d6-82f937742016
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x106328000
+    size: 8191
+    uuid: f6881972-9bb6-4141-bd97-857405af7c39
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x1064ac000
+    size: 4095
+    uuid: 4c243299-e72e-4663-aea2-0b345aa6b9ca
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x1065fc000
+    size: 634879
+    uuid: 5d62bed8-df5d-3c51-94b4-57368ff10ddb
+    arch: (x86_64)
+    name: com.apple.opencl
+    path: /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/unorm8_bgra.dylib
+  - addr: 0x10799c000
+    size: 94207
+    uuid: 1c3967c0-93b5-3d98-ac74-393eeaea5505
+    arch: (x86_64)
+    name: WebContentAnalysis
+    path: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
+  - addr: 0x107b8e000
+    size: 151551
+    uuid: 5202d850-7782-340f-94b3-45916db9bc94
+    arch: (x86_64)
+    name: com.apple.security.csparser
+    path: /System/Library/Frameworks/Security.framework/PlugIns/csparser.bundle/Contents/MacOS/csparser
+  - addr: 0x107e8b000
+    size: 8191
+    uuid: 0b805cf5-8c05-44d6-900e-94e944711c8c
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x10a9f0000
+    size: 569343
+    uuid: 04e0e165-be1d-3dd7-899f-10afd053b30c
+    arch: (x86_64)
+    name: XQuery
+    path: /System/Library/PrivateFrameworks/XQuery.framework/XQuery
+  - addr: 0x10c319000
+    size: 4095
+    uuid: 2b8b3cf9-fd10-480e-955e-3370488e41f9
+    arch: (x86_64)
+    name: cl_kernels
+    path: cl_kernels
+  - addr: 0x10ce75000
+    size: 28671
+    uuid: 971d9275-c3c8-3b4f-aa38-f17e8d58b6b3
+    arch: (x86_64)
+    name: libCGXCoreImage.A.dylib
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGXCoreImage.A.dylib
+  - addr: 0x10d5e4000
+    size: 8191
+    uuid: 8727fe94-7ced-3691-89e8-02ba300b4313
+    arch: (x86_64)
+    name: ATSHI.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib
+  - addr: 0x1139e6000
+    size: 630783
+    uuid: ac4a19d0-44a5-34cb-9248-20996aca6b06
+    arch: (x86_64)
+    name: com.apple.opencl
+    path: /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/unorm8_argb.dylib
+  - addr: 0x200000000
+    size: 9629695
+    uuid: 8cd2d18d-f88b-3953-84ec-715320efcd8f
+    arch: (x86_64)
+    name: com.apple.GeForceGLDriver
+    path: /System/Library/Extensions/GeForceGLDriver.bundle/Contents/MacOS/GeForceGLDriver
+  - addr: 0x7fff8d48a000
+    size: 167935
+    uuid: 4e159c31-1b41-3eff-89ec-3f7bc9053f2c
+    arch: (x86_64)
+    name: libJPEG.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+  - addr: 0x7fff8d4d4000
+    size: 225279
+    uuid: 14e788b1-4eb2-3fd7-934b-849534dfc198
+    arch: (x86_64)
+    name: com.apple.DebugSymbols
+    path: /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+  - addr: 0x7fff8d50b000
+    size: 86015
+    uuid: 94edf2ab-809c-3d15-bed5-7ad45b2a7c16
+    arch: (x86_64)
+    name: com.apple.speech.synthesis.framework
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+  - addr: 0x7fff8d54a000
+    size: 114687
+    uuid: 8a3cdc5b-9fa5-32eb-a066-f19874193b92
+    arch: (x86_64)
+    name: com.apple.frameworks.preferencepanes
+    path: /System/Library/Frameworks/PreferencePanes.framework/Versions/A/PreferencePanes
+  - addr: 0x7fff8d5b6000
+    size: 45055
+    uuid: 08092c5b-2171-3c1d-a98f-cf499a315ddc
+    arch: (x86_64)
+    name: libcsfde.dylib
+    path: /usr/lib/libcsfde.dylib
+  - addr: 0x7fff8d5c1000
+    size: 90111
+    uuid: 17a45ce6-7da3-36a5-b7ef-72bc136981ae
+    arch: (x86_64)
+    name: com.apple.ImageCapture
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+  - addr: 0x7fff8d63f000
+    size: 57343
+    uuid: ce9785e8-b535-3504-b392-82f0064d9af2
+    arch: (x86_64)
+    name: libbz2.1.0.dylib
+    path: /usr/lib/libbz2.1.0.dylib
+  - addr: 0x7fff8d6d0000
+    size: 409599
+    uuid: feab83ab-1de5-3813-ba48-7a7f2374ccf0
+    arch: (x86_64)
+    name: com.apple.audio.CoreAudio
+    path: /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+  - addr: 0x7fff8d734000
+    size: 90111
+    uuid: d26996bf-fc57-39eb-8829-f63585561e09
+    arch: (x86_64)
+    name: libdispatch.dylib
+    path: /usr/lib/system/libdispatch.dylib
+  - addr: 0x7fff8d7f2000
+    size: 12287
+    uuid: a91f8981-ecb6-3b65-a7ba-8dcbd9cce3d5
+    arch: (x86_64)
+    name: com.apple.securityhi
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+  - addr: 0x7fff8d7f5000
+    size: 184319
+    uuid: b8de45d7-1827-3379-a478-1a574a1d11d9
+    arch: (x86_64)
+    name: com.apple.quartzfilters
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters
+  - addr: 0x7fff8d864000
+    size: 163839
+    uuid: 96a89cd5-16e9-37ca-8740-22b5db5a4679
+    arch: (x86_64)
+    name: com.apple.PerformanceAnalysis
+    path: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+  - addr: 0x7fff8d88c000
+    size: 114687
+    uuid: 4b7993c3-f62d-3ac1-af92-414a0d6eed5e
+    arch: (x86_64)
+    name: libsystem_kernel.dylib
+    path: /usr/lib/system/libsystem_kernel.dylib
+  - addr: 0x7fff8d8a8000
+    size: 3346431
+    uuid: 656d08c2-9068-3532-abdd-32ec5057ccb2
+    arch: (x86_64)
+    name: com.apple.HIToolbox
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+  - addr: 0x7fff8dbd9000
+    size: 77823
+    uuid: 2a1551e8-a272-3de5-b692-955974fe1416
+    arch: (x86_64)
+    name: libz.1.dylib
+    path: /usr/lib/libz.1.dylib
+  - addr: 0x7fff8dc47000
+    size: 536575
+    uuid: acf0c667-5acc-382a-a998-61e85386c814
+    arch: (x86_64)
+    name: com.apple.Heimdal
+    path: /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+  - addr: 0x7fff8dcca000
+    size: 2011135
+    uuid: 0f7403ca-2cb8-3d0a-992b-679701df27ca
+    arch: (x86_64)
+    name: com.apple.CoreFoundation
+    path: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  - addr: 0x7fff8defd000
+    size: 12287
+    uuid: 6c1e7ed7-8fc7-308e-ad17-4c766e936519
+    arch: (x86_64)
+    name: com.apple.EFILogin
+    path: /System/Library/PrivateFrameworks/EFILogin.framework/Versions/A/EFILogin
+  - addr: 0x7fff8e450000
+    size: 1622015
+    uuid: 56b86fa1-ed74-3001-8942-1ca2281540ec
+    arch: (x86_64)
+    name: com.apple.WebKit
+    path: /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
+  - addr: 0x7fff8e5e1000
+    size: 352255
+    uuid: 0ca1662f-eb05-34de-b9ba-0a03ec59b846
+    arch: (x86_64)
+    name: libTIFF.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+  - addr: 0x7fff8e637000
+    size: 192511
+    uuid: ee77c328-bcc7-3ebd-b3bc-e0e48537d4ff
+    arch: (x86_64)
+    name: com.apple.CoreServicesInternal
+    path: /System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+  - addr: 0x7fff8e666000
+    size: 1044479
+    uuid: ee02b332-20f3-3226-a022-d71b808e1cc4
+    arch: (x86_64)
+    name: com.apple.QuickLookUIFramework
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI
+  - addr: 0x7fff8e765000
+    size: 4095
+    uuid: 1f77945c-f37a-3171-b22e-f7ab0fcbb4d4
+    arch: (x86_64)
+    name: com.apple.Cocoa
+    path: /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+  - addr: 0x7fff8e766000
+    size: 610303
+    uuid: f17d7d37-4190-38e2-9f43-dd4f87792390
+    arch: (x86_64)
+    name: com.apple.CorePDF
+    path: /System/Library/PrivateFrameworks/CorePDF.framework/Versions/A/CorePDF
+  - addr: 0x7fff8e7fb000
+    size: 593919
+    uuid: 2ffb6bca-3033-3ac1-bce4-ed102dcbecd5
+    arch: (x86_64)
+    name: libCoreStorage.dylib
+    path: /usr/lib/libCoreStorage.dylib
+  - addr: 0x7fff8e88c000
+    size: 3719167
+    uuid: 7956ab84-ab7a-3b00-a543-76e5cd708881
+    arch: (x86_64)
+    name: com.apple.FinderKit
+    path: /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit
+  - addr: 0x7fff8ec18000
+    size: 360447
+    uuid: f1d43dfb-1796-361b-ad4b-39f1eed3be19
+    arch: (x86_64)
+    name: com.apple.ScalableUserInterface
+    path: /System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/ScalableUserInterface.framework/Versions/A/ScalableUserInterface
+  - addr: 0x7fff8ec74000
+    size: 237567
+    uuid: 46df85dc-18fb-3108-91f6-52ae3ebf2347
+    arch: (x86_64)
+    name: libssl.0.9.8.dylib
+    path: /usr/lib/libssl.0.9.8.dylib
+  - addr: 0x7fff8ecaf000
+    size: 28671
+    uuid: 21703d36-2dab-3d8b-8442-eaab23c060d3
+    arch: (x86_64)
+    name: libunwind.dylib
+    path: /usr/lib/system/libunwind.dylib
+  - addr: 0x7fff8ecb6000
+    size: 991231
+    uuid: 5c56181f-1e9f-336a-b7bb-620565a8bd6e
+    arch: (x86_64)
+    name: com.apple.DiskImagesFramework
+    path: /System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
+  - addr: 0x7fff8eda8000
+    size: 20479
+    uuid: f2f3b753-fc73-3543-8bbe-859fdbb4d6a6
+    arch: (x86_64)
+    name: com.apple.TCC
+    path: /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+  - addr: 0x7fff8edad000
+    size: 368639
+    uuid: 84f003c2-5758-3d0a-8644-f3a0ba4f22fc
+    arch: (x86_64)
+    name: com.apple.ImageCaptureCore
+    path: /System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore
+  - addr: 0x7fff8ee07000
+    size: 57343
+    uuid: ee68bdcc-af2e-34d3-8e4f-87379e3a4d8e
+    arch: (x86_64)
+    name: com.apple.HelpData
+    path: /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
+  - addr: 0x7fff8ee15000
+    size: 524287
+    uuid: 9291ce2a-37d9-39df-956e-7b2650a9f3b0
+    arch: (x86_64)
+    name: com.apple.securityfoundation
+    path: /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+  - addr: 0x7fff8ee95000
+    size: 155647
+    uuid: d86169f3-9f31-377a-9af3-db17142052e4
+    arch: (x86_64)
+    name: libc++abi.dylib
+    path: /usr/lib/libc++abi.dylib
+  - addr: 0x7fff8eebd000
+    size: 5705727
+    uuid: a77bc97a-b695-3f7e-8696-5b2357c2726b
+    arch: (x86_64)
+    name: com.apple.CoreAUC
+    path: /System/Library/PrivateFrameworks/CoreAUC.framework/Versions/A/CoreAUC
+  - addr: 0x7fff8f52d000
+    size: 98303
+    uuid: fd4a84b3-13a8-3c60-a59e-25a361447a17
+    arch: (x86_64)
+    name: com.apple.GenerationalStorage
+    path: /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
+  - addr: 0x7fff8f54a000
+    size: 110591
+    uuid: 5637f52d-3ab9-38fd-b851-265b9f5a2fe8
+    arch: (x86_64)
+    name: com.apple.CoreMediaAuthoring
+    path: /System/Library/PrivateFrameworks/CoreMediaAuthoring.framework/Versions/A/CoreMediaAuthoring
+  - addr: 0x7fff8f565000
+    size: 65535
+    uuid: 370ed355-e516-311e-bafd-d80633a84be1
+    arch: (x86_64)
+    name: libxar.1.dylib
+    path: /usr/lib/libxar.1.dylib
+  - addr: 0x7fff8f575000
+    size: 3244031
+    uuid: 1e567a52-677f-3168-979f-5fbb0818d52b
+    arch: (x86_64)
+    name: com.apple.CoreServices.CarbonCore
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+  - addr: 0x7fff8f9e7000
+    size: 16383
+    uuid: f59367c9-c110-382b-a695-9035a6dd387e
+    arch: (x86_64)
+    name: libdyld.dylib
+    path: /usr/lib/system/libdyld.dylib
+  - addr: 0x7fff8f9eb000
+    size: 53247
+    uuid: de6afe16-d97e-399d-82ed-3522c773c36e
+    arch: (x86_64)
+    name: com.apple.CrashReporterSupport
+    path: /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+  - addr: 0x7fff8f9f8000
+    size: 1150975
+    uuid: 90d31928-f48d-3e37-874f-220a51fd9e37
+    arch: (x86_64)
+    name: libobjc.A.dylib
+    path: /usr/lib/libobjc.A.dylib
+  - addr: 0x7fff8fb50000
+    size: 20479
+    uuid: 26f01cd4-b76b-37a3-989d-66e8140542b3
+    arch: (x86_64)
+    name: com.apple.IOSurface
+    path: /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+  - addr: 0x7fff8fb55000
+    size: 372735
+    uuid: 3c7dfb2c-b3f9-3447-a1fc-eaaa42181a6e
+    arch: (x86_64)
+    name: com.apple.opencl
+    path: /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+  - addr: 0x7fff8fbb0000
+    size: 327679
+    uuid: 2e03d7da-9b8f-31bb-8fb5-3d3b6272127f
+    arch: (x86_64)
+    name: libFontRegistry.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+  - addr: 0x7fff8fc00000
+    size: 16515071
+    uuid: 3ff4783b-ef75-34f5-995c-316557148a18
+    arch: (x86_64)
+    name: com.apple.WebCore
+    path: /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
+  - addr: 0x7fff90bc0000
+    size: 684031
+    uuid: e91b0882-e75c-30e9-8dcd-7a0eee4405cc
+    arch: (x86_64)
+    name: com.apple.CoreServices.OSServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+  - addr: 0x7fff90c67000
+    size: 49151
+    uuid: c49275cc-835a-3207-afba-8c01374927b6
+    arch: (x86_64)
+    name: libsystem_notify.dylib
+    path: /usr/lib/system/libsystem_notify.dylib
+  - addr: 0x7fff90c73000
+    size: 462847
+    uuid: 23ed7650-2705-355a-9f11-409a9981ac53
+    arch: (x86_64)
+    name: com.apple.ISSupport
+    path: /System/Library/PrivateFrameworks/ISSupport.framework/Versions/A/ISSupport
+  - addr: 0x7fff90d0d000
+    size: 1040383
+    uuid: ade9cb98-d77d-300c-a32a-556b7440769f
+    arch: (x86_64)
+    name: libsqlite3.dylib
+    path: /usr/lib/libsqlite3.dylib
+  - addr: 0x7fff90e0b000
+    size: 1601535
+    uuid: c102c0f6-8cb6-3b49-ba6b-2eb61f0b2784
+    arch: (x86_64)
+    name: com.apple.Accelerate.vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+  - addr: 0x7fff90f92000
+    size: 12771327
+    uuid: f12cf463-6f88-32ed-9eba-0fa2ad3cf576
+    arch: (x86_64)
+    name: com.apple.AppKit
+    path: /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+  - addr: 0x7fff91bc0000
+    size: 36863
+    uuid: 2f71caf8-6524-329e-ac56-c506658b4c0c
+    arch: (x86_64)
+    name: liblaunch.dylib
+    path: /usr/lib/system/liblaunch.dylib
+  - addr: 0x7fff91bc9000
+    size: 28671
+    uuid: c713a35a-360e-36ce-ac0a-25c86a3f50ca
+    arch: (x86_64)
+    name: com.apple.DiskArbitration
+    path: /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+  - addr: 0x7fff91bd3000
+    size: 204799
+    uuid: fb0540ff-5034-3591-a28d-6887fbc220f7
+    arch: (x86_64)
+    name: com.apple.DictionaryServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+  - addr: 0x7fff91c05000
+    size: 299007
+    uuid: f52e1881-a425-3ae9-8386-a434f10ae0a2
+    arch: (x86_64)
+    name: libcurl.4.dylib
+    path: /usr/lib/libcurl.4.dylib
+  - addr: 0x7fff91c4e000
+    size: 192511
+    uuid: c573db65-37fb-3ddc-ab19-525094346d9b
+    arch: (x86_64)
+    name: com.apple.shortcut
+    path: /System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut
+  - addr: 0x7fff91cc7000
+    size: 4161535
+    uuid: d632ec8b-2ba0-3853-800a-20da00a1091c
+    arch: (x86_64)
+    name: com.apple.Accelerate.vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+  - addr: 0x7fff920e2000
+    size: 98303
+    uuid: f8baba3c-7810-3a65-83fc-61945aa50e90
+    arch: (x86_64)
+    name: libGL.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+  - addr: 0x7fff920fa000
+    size: 12287
+    uuid: 143b726e-df47-37a8-90aa-f059cfd1a2e4
+    arch: (x86_64)
+    name: libquarantine.dylib
+    path: /usr/lib/system/libquarantine.dylib
+  - addr: 0x7fff922f6000
+    size: 57343
+    uuid: 5508344a-2a7e-3122-9562-6f363910a80e
+    arch: (x86_64)
+    name: com.apple.AppleFSCompression
+    path: /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+  - addr: 0x7fff92304000
+    size: 393215
+    uuid: 44f403c1-660a-3543-ab9c-3902e02f936f
+    arch: (x86_64)
+    name: com.apple.AE
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+  - addr: 0x7fff92364000
+    size: 2318335
+    uuid: a676e1a4-2144-376b-92b8-b450dd1d78e5
+    arch: (x86_64)
+    name: com.apple.CoreData
+    path: /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+  - addr: 0x7fff925a7000
+    size: 180223
+    uuid: 565afa08-b5ca-3f64-9cd4-f2d9dcfa276e
+    arch: (x86_64)
+    name: com.apple.datadetectors
+    path: /System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors
+  - addr: 0x7fff92630000
+    size: 241663
+    uuid: 423bdfcc-9187-3f3e-abb0-d280003eb15e
+    arch: (x86_64)
+    name: com.apple.GSS
+    path: /System/Library/Frameworks/GSS.framework/Versions/A/GSS
+  - addr: 0x7fff9266b000
+    size: 360447
+    uuid: 541a7dbe-f8e4-3023-a3c0-8d5a2a550cfb
+    arch: (x86_64)
+    name: com.apple.AppleVAFramework
+    path: /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+  - addr: 0x7fff926c3000
+    size: 380927
+    uuid: 8b9eac35-98f3-3bf0-8b15-3a5fe39f150a
+    arch: (x86_64)
+    name: com.apple.QuickLookFramework
+    path: /System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook
+  - addr: 0x7fff92720000
+    size: 4095
+    uuid: 878a6e7e-cb34-380f-8212-47fbf12c7c96
+    arch: (x86_64)
+    name: com.apple.Accelerate
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+  - addr: 0x7fff92721000
+    size: 20479
+    uuid: 326c48f1-c892-3af9-94bc-32768eff6731
+    arch: (x86_64)
+    name: libGIF.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+  - addr: 0x7fff92726000
+    size: 4095
+    uuid: 6403c982-0d45-37ee-a0f0-0ef8bcfef440
+    arch: (x86_64)
+    name: com.apple.quartzframework
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Quartz
+  - addr: 0x7fff9277e000
+    size: 61439
+    uuid: baafe0c9-bb86-3ca7-88c0-e3cba98da06f
+    arch: (x86_64)
+    name: libcommonCrypto.dylib
+    path: /usr/lib/system/libcommonCrypto.dylib
+  - addr: 0x7fff9278d000
+    size: 319487
+    uuid: 8fd1c1a9-25c5-3b9e-a76d-be813253b358
+    arch: (x86_64)
+    name: com.apple.CoreMediaIO
+    path: /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
+  - addr: 0x7fff927db000
+    size: 430079
+    uuid: 20e31b90-19b9-3c2a-a9eb-474e08f9fe05
+    arch: (x86_64)
+    name: libc++.1.dylib
+    path: /usr/lib/libc++.1.dylib
+  - addr: 0x7fff92844000
+    size: 57343
+    uuid: f5bc7d7d-af28-3c83-a674-dada48ff7810
+    arch: (x86_64)
+    name: com.apple.NetAuth
+    path: /System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+  - addr: 0x7fff92852000
+    size: 8282111
+    uuid: f20d317f-3d4f-3e5e-a5dd-79631e51abc6
+    arch: (x86_64)
+    name: com.apple.GeForceGLDriver
+    path: /System/Library/Extensions/GeForceGLDriver.bundle/Contents/MacOS/libclh.dylib
+  - addr: 0x7fff93462000
+    size: 139263
+    uuid: c9a7ee77-b637-3676-b667-c0843bbb0409
+    arch: (x86_64)
+    name: com.apple.Ubiquity
+    path: /System/Library/PrivateFrameworks/Ubiquity.framework/Versions/A/Ubiquity
+  - addr: 0x7fff93484000
+    size: 192511
+    uuid: b434be5c-25ab-3ebd-baa7-5304b34e3441
+    arch: (x86_64)
+    name: libsystem_m.dylib
+    path: /usr/lib/system/libsystem_m.dylib
+  - addr: 0x7fff935de000
+    size: 28671
+    uuid: bf332ad9-e89f-387e-92a4-6e1ab74bd4d9
+    arch: (x86_64)
+    name: libmacho.dylib
+    path: /usr/lib/system/libmacho.dylib
+  - addr: 0x7fff935e5000
+    size: 8191
+    uuid: 015dd2a0-d59a-3547-909d-7c028a65c312
+    arch: (x86_64)
+    name: libodfde.dylib
+    path: /usr/lib/libodfde.dylib
+  - addr: 0x7fff935ee000
+    size: 4317183
+    uuid: ddaffd7a-d312-3407-a010-5aef3e17831b
+    arch: (x86_64)
+    name: com.apple.vision.FaceCoreLight
+    path: /System/Library/PrivateFrameworks/FaceCoreLight.framework/Versions/A/FaceCoreLight
+  - addr: 0x7fff93a0c000
+    size: 2818047
+    uuid: 5f0504da-7ce9-3d97-b2b5-3c5839aebf1f
+    arch: (x86_64)
+    name: com.apple.imageKit
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit
+  - addr: 0x7fff93cbc000
+    size: 20479
+    uuid: db009cd4-bb0e-3331-bbb4-a118781d193f
+    arch: (x86_64)
+    name: libCoreVMClient.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+  - addr: 0x7fff93cc1000
+    size: 4095
+    uuid: a3abf20b-ed3a-32b5-830e-b37831a45a80
+    arch: (x86_64)
+    name: com.apple.ApplicationServices
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+  - addr: 0x7fff93cc2000
+    size: 225279
+    uuid: 4ffca242-7f04-365f-87a6-d4efb89503c1
+    arch: (x86_64)
+    name: libsystem_info.dylib
+    path: /usr/lib/system/libsystem_info.dylib
+  - addr: 0x7fff93cf9000
+    size: 897023
+    uuid: 6b65c44c-7777-3331-ad9d-438d10aac777
+    arch: (x86_64)
+    name: com.apple.backup.framework
+    path: /System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
+  - addr: 0x7fff93dd4000
+    size: 81919
+    uuid: 2f2694e9-a7bc-33c7-b4cf-8ec907df0feb
+    arch: (x86_64)
+    name: com.apple.LangAnalysis
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+  - addr: 0x7fff947b6000
+    size: 1183743
+    uuid: ed3da8c0-160f-3cdc-b537-bf2e766ab7c1
+    arch: (x86_64)
+    name: com.apple.desktopservices
+    path: /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+  - addr: 0x7fff948d7000
+    size: 4095
+    uuid: 585b1483-490e-32dd-97dc-b9279e9d3490
+    arch: (x86_64)
+    name: com.apple.AOSMigrate
+    path: /System/Library/PrivateFrameworks/AOSMigrate.framework/Versions/A/AOSMigrate
+  - addr: 0x7fff948d8000
+    size: 2473983
+    uuid: d1dd68d1-05d5-3037-abb6-bf6eb183c155
+    arch: (x86_64)
+    name: com.apple.QuartzComposer
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer
+  - addr: 0x7fff94b34000
+    size: 335871
+    uuid: 581bf463-c15a-363b-999a-e830222fa925
+    arch: (x86_64)
+    name: com.apple.SystemConfiguration
+    path: /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+  - addr: 0x7fff94b86000
+    size: 253951
+    uuid: 91e31b9b-4141-36d5-abdc-20f1d6d1d0cf
+    arch: (x86_64)
+    name: libGLImage.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+  - addr: 0x7fff94bc4000
+    size: 634879
+    uuid: a7f12764-a94c-36eb-88e0-f826f5af55b4
+    arch: (x86_64)
+    name: com.apple.Accelerate.vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+  - addr: 0x7fff94c5f000
+    size: 1060863
+    uuid: 01e502e9-7fd3-3a5d-8ea4-2dc8c56e0497
+    arch: (x86_64)
+    name: libJP2.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+  - addr: 0x7fff94d6f000
+    size: 245759
+    uuid: 7e4f2c08-0010-34ae-bc46-149b7ee8a0f5
+    arch: (x86_64)
+    name: com.apple.LDAPFramework
+    path: /System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+  - addr: 0x7fff94dab000
+    size: 315391
+    uuid: 3735fb49-30c0-3b11-be25-2acdd96041b5
+    arch: (x86_64)
+    name: com.apple.framework.CoreWLAN
+    path: /System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
+  - addr: 0x7fff94df8000
+    size: 217087
+    uuid: 614c9b8e-2056-3a41-9a01-daf74c97cc43
+    arch: (x86_64)
+    name: com.apple.securityinterface
+    path: /System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
+  - addr: 0x7fff94e9d000
+    size: 307199
+    uuid: 6699dea6-9eeb-3b84-a57f-b25ae44ec584
+    arch: (x86_64)
+    name: libGLU.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+  - addr: 0x7fff94ee8000
+    size: 372735
+    uuid: 5ba0cbed-4d80-386a-9646-f835c9805b71
+    arch: (x86_64)
+    name: com.apple.print.framework.PrintCore
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+  - addr: 0x7fff94f43000
+    size: 12287
+    uuid: a97d348b-32bf-3e52-8df2-59bfad21e1a3
+    arch: (x86_64)
+    name: com.apple.TrustEvaluationAgent
+    path: /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+  - addr: 0x7fff94f46000
+    size: 733183
+    uuid: a86f44e5-f285-3029-a5d1-00cd3c231a08
+    arch: (x86_64)
+    name: com.apple.LaunchServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+  - addr: 0x7fff9517f000
+    size: 638975
+    uuid: 7d43ed93-bd81-338c-8076-6a932a1d19e8
+    arch: (x86_64)
+    name: com.apple.CoreSymbolication
+    path: /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+  - addr: 0x7fff95267000
+    size: 372735
+    uuid: 05d8d892-9a31-301a-bd24-d8a89b2ac905
+    arch: (x86_64)
+    name: com.apple.Suggestions
+    path: /System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions
+  - addr: 0x7fff952ef000
+    size: 4444159
+    uuid: b1185d9d-02ac-3d27-b894-21b1179f2aef
+    arch: (x86_64)
+    name: com.apple.VideoToolbox
+    path: /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+  - addr: 0x7fff9572c000
+    size: 16383
+    uuid: 139962cd-21e2-3d31-9f47-d5f2d6c2c2bc
+    arch: (x86_64)
+    name: libRadiance.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+  - addr: 0x7fff95730000
+    size: 266239
+    uuid: 8aaa8cc3-3acd-34a5-9e57-9b24ad8afd4d
+    arch: (x86_64)
+    name: com.apple.MediaKit
+    path: /System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
+  - addr: 0x7fff95771000
+    size: 32767
+    uuid: e6a01fef-9c6d-3c18-b378-63f4134756e6
+    arch: (x86_64)
+    name: com.apple.phonenumbers
+    path: /System/Library/PrivateFrameworks/PhoneNumbers.framework/Versions/A/PhoneNumbers
+  - addr: 0x7fff9610a000
+    size: 40959
+    uuid: 870c7810-0d27-3ac5-95a0-3224bb4890c0
+    arch: (x86_64)
+    name: com.apple.CommerceCore
+    path: /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
+  - addr: 0x7fff96114000
+    size: 61439
+    uuid: 5ac28666-7642-395f-a923-c6f8a274bbbd
+    arch: (x86_64)
+    name: com.apple.Librarian
+    path: /System/Library/PrivateFrameworks/Librarian.framework/Versions/A/Librarian
+  - addr: 0x7fff96123000
+    size: 528383
+    uuid: 0ef1bb57-71aa-304d-a455-55cbe0a4983a
+    arch: (x86_64)
+    name: com.apple.ApplicationServices.ATS
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+  - addr: 0x7fff961a4000
+    size: 737279
+    uuid: eaaed40e-7b2c-3312-826e-26a9dedbf0fc
+    arch: (x86_64)
+    name: com.apple.PDFKit
+    path: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/PDFKit.framework/Versions/A/PDFKit
+  - addr: 0x7fff96258000
+    size: 2957311
+    uuid: 87489f4c-750e-3183-b404-215097e71054
+    arch: (x86_64)
+    name: com.apple.security
+    path: /System/Library/Frameworks/Security.framework/Versions/A/Security
+  - addr: 0x7fff96538000
+    size: 32767
+    uuid: 82e24b9a-7742-3da3-9e99-ed267d98c05e
+    arch: (x86_64)
+    name: com.apple.NetFS
+    path: /System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+  - addr: 0x7fff96569000
+    size: 2850815
+    uuid: 57043584-98e7-375a-89ae-f46480aa5d97
+    arch: (x86_64)
+    name: com.apple.MediaToolbox
+    path: /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
+  - addr: 0x7fff96826000
+    size: 45055
+    uuid: d803919c-3102-3515-a178-61e9c86c46a1
+    arch: (x86_64)
+    name: com.apple.speech.recognition.framework
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+  - addr: 0x7fff96874000
+    size: 163839
+    uuid: cdb23c93-853b-3f18-985c-6d32d4704f26
+    arch: (x86_64)
+    name: com.apple.speech.LatentSemanticMappingFramework
+    path: /System/Library/Frameworks/LatentSemanticMapping.framework/Versions/A/LatentSemanticMapping
+  - addr: 0x7fff9689c000
+    size: 2547711
+    uuid: 1588cec6-012e-30e5-bf38-5bbdabb2f48f
+    arch: (x86_64)
+    name: com.apple.RawCamera.bundle
+    path: /System/Library/CoreServices/RawCamera.bundle/Contents/MacOS/RawCamera
+  - addr: 0x7fff96b0a000
+    size: 4095
+    uuid: cc9e3394-be16-397f-926b-e579b60ee429
+    arch: (x86_64)
+    name: libkeymgr.dylib
+    path: /usr/lib/system/libkeymgr.dylib
+  - addr: 0x7fff96b0b000
+    size: 315391
+    uuid: ad5a4ce7-cb53-313c-9fae-673303cc2d35
+    arch: (x86_64)
+    name: libauto.dylib
+    path: /usr/lib/libauto.dylib
+  - addr: 0x7fff96b58000
+    size: 2904063
+    uuid: a850809b-b087-3366-9fa0-1518c20831d3
+    arch: (x86_64)
+    name: com.apple.AddressBook.framework
+    path: /System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
+  - addr: 0x7fff96e1d000
+    size: 864255
+    uuid: ab493289-e188-3cca-8658-1e5039715f82
+    arch: (x86_64)
+    name: com.apple.CoreText
+    path: /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+  - addr: 0x7fff96ef5000
+    size: 1531903
+    uuid: 03663f71-3e01-3958-9bbc-d7015189a4ac
+    arch: (x86_64)
+    name: com.apple.CFNetwork
+    path: /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+  - addr: 0x7fff9706b000
+    size: 868351
+    uuid: 8cc25b07-d5c8-3be0-a3ad-700252c2717a
+    arch: (x86_64)
+    name: com.apple.DiscRecording
+    path: /System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording
+  - addr: 0x7fff9713f000
+    size: 311295
+    uuid: 64467905-48dc-37f9-9f32-186768cf2640
+    arch: (x86_64)
+    name: com.apple.CoreMedia
+    path: /System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+  - addr: 0x7fff9718b000
+    size: 49151
+    uuid: c12962d5-85fb-349e-aa56-64f4f487f219
+    arch: (x86_64)
+    name: com.apple.bsd.ServiceManagement
+    path: /System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
+  - addr: 0x7fff97197000
+    size: 16383
+    uuid: ef3340b2-9a53-3d5e-b9b4-bdb5eeecc178
+    arch: (x86_64)
+    name: libutil.dylib
+    path: /usr/lib/libutil.dylib
+  - addr: 0x7fff971e5000
+    size: 143359
+    uuid: c49b8820-34ed-39d7-a407-a3e854153556
+    arch: (x86_64)
+    name: com.apple.Kerberos
+    path: /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+  - addr: 0x7fff97208000
+    size: 81919
+    uuid: f497d3ce-40d9-3551-84b4-3d5e39600737
+    arch: (x86_64)
+    name: libbsm.0.dylib
+    path: /usr/lib/libbsm.0.dylib
+  - addr: 0x7fff9721c000
+    size: 278527
+    uuid: 5cfa361d-4853-3acc-9efc-a2ac1f43ba4b
+    arch: (x86_64)
+    name: com.apple.RemoteViewServices
+    path: /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+  - addr: 0x7fff97260000
+    size: 380927
+    uuid: 84d69a46-bb0a-3dbe-abc2-b767f61ec221
+    arch: (x86_64)
+    name: com.apple.Symbolication
+    path: /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+  - addr: 0x7fff972bd000
+    size: 1515519
+    uuid: fc3f5d20-16f4-3f7a-87c6-4171a25d8c5d
+    arch: (x86_64)
+    name: com.apple.QTKit
+    path: /System/Library/Frameworks/QTKit.framework/Versions/A/QTKit
+  - addr: 0x7fff9742f000
+    size: 208895
+    uuid: c61706ad-6952-3b8d-b926-330506f45339
+    arch: (x86_64)
+    name: com.apple.framework.Admin
+    path: /System/Library/PrivateFrameworks/Admin.framework/Versions/A/Admin
+  - addr: 0x7fff97462000
+    size: 131071
+    uuid: 0882dc2d-a892-31ff-ad8c-0bb518c48b23
+    arch: (x86_64)
+    name: libresolv.9.dylib
+    path: /usr/lib/libresolv.9.dylib
+  - addr: 0x7fff97482000
+    size: 12287
+    uuid: f0239392-e0cb-37d7-bfe2-d6f5d42f9196
+    arch: (x86_64)
+    name: libCVMSPluginSupport.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+  - addr: 0x7fff97486000
+    size: 1155071
+    uuid: 1d023bce-1fa2-3743-b449-7489bc0c5c43
+    arch: (x86_64)
+    name: com.apple.ImageIO.framework
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+  - addr: 0x7fff975a0000
+    size: 8191
+    uuid: 6763bc8e-18b8-3ad9-8ffa-b43713a7264f
+    arch: (x86_64)
+    name: libremovefile.dylib
+    path: /usr/lib/system/libremovefile.dylib
+  - addr: 0x7fff975e7000
+    size: 3538943
+    uuid: c98e55ba-553b-314b-b056-849ffb20c220
+    arch: (x86_64)
+    name: com.apple.Foundation
+    path: /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+  - addr: 0x7fff97947000
+    size: 4095
+    uuid: f8681222-0969-3b10-8bce-c55a4b9c520c
+    arch: (x86_64)
+    name: libOpenScriptingUtil.dylib
+    path: /usr/lib/libOpenScriptingUtil.dylib
+  - addr: 0x7fff97948000
+    size: 282623
+    uuid: 9f35b58a-f47e-348a-8e09-e235fa4b9270
+    arch: (x86_64)
+    name: libcups.2.dylib
+    path: /usr/lib/libcups.2.dylib
+  - addr: 0x7fff9798f000
+    size: 12287
+    uuid: 34666cc2-b86d-3313-b3b6-a9977ad593da
+    arch: (x86_64)
+    name: com.apple.print.framework.Print
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+  - addr: 0x7fff97992000
+    size: 8191
+    uuid: df030ddb-df22-3769-a8cd-9806ddb84008
+    arch: (x86_64)
+    name: libSystem.B.dylib
+    path: /usr/lib/libSystem.B.dylib
+  - addr: 0x7fff97994000
+    size: 2101247
+    uuid: 5783d305-04e8-3d17-94f7-1ceafa975240
+    arch: (x86_64)
+    name: libicucore.A.dylib
+    path: /usr/lib/libicucore.A.dylib
+  - addr: 0x7fff97bc7000
+    size: 1687551
+    uuid: fae13169-295a-33a5-8e6b-7c2cc1407fa7
+    arch: (x86_64)
+    name: com.apple.vImage
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+  - addr: 0x7fff97d63000
+    size: 122879
+    uuid: c008f56a-1e01-3d4c-a9af-97799d0fae69
+    arch: (x86_64)
+    name: com.apple.openscripting
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+  - addr: 0x7fff97e9b000
+    size: 16383
+    uuid: bc221376-361f-3f85-b284-dc251d3bb442
+    arch: (x86_64)
+    name: com.apple.AppleSystemInfo
+    path: /System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
+  - addr: 0x7fff97ed5000
+    size: 450559
+    uuid: 5775f0db-87d6-310d-8b03-e2ad729efb28
+    arch: (x86_64)
+    name: com.apple.datadetectorscore
+    path: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+  - addr: 0x7fff97f94000
+    size: 430079
+    uuid: 3ca154a3-1be5-3cf4-be48-f0a719a963bb
+    arch: (x86_64)
+    name: com.apple.Accelerate.vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+  - addr: 0x7fff9805b000
+    size: 651263
+    uuid: 3d8d16a2-7e01-3ea1-b637-83a36d353308
+    arch: (x86_64)
+    name: com.apple.ink.framework
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+  - addr: 0x7fff981b3000
+    size: 1765375
+    uuid: 84f0b40e-df91-36f2-9f2e-3922234206a3
+    arch: (x86_64)
+    name: com.apple.QuartzCore
+    path: /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+  - addr: 0x7fff98362000
+    size: 434175
+    uuid: eaa2b53e-eade-39cf-a0ef-fb9d4940672a
+    arch: (x86_64)
+    name: libstdc++.6.dylib
+    path: /usr/lib/libstdc++.6.dylib
+  - addr: 0x7fff983cc000
+    size: 49151
+    uuid: def85257-2d1c-3524-88f8-cf70980726ae
+    arch: (x86_64)
+    name: com.apple.aps.framework
+    path: /System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
+  - addr: 0x7fff983d8000
+    size: 16383
+    uuid: 343904fe-3022-3573-97d6-5fe17f8643ba
+    arch: (x86_64)
+    name: com.apple.help
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+  - addr: 0x7fff983dc000
+    size: 12287
+    uuid: 92805328-cd36-34ff-9436-571ab0485072
+    arch: (x86_64)
+    name: libunc.dylib
+    path: /usr/lib/system/libunc.dylib
+  - addr: 0x7fff984bf000
+    size: 1388543
+    uuid: dc5f3d1b-036a-37de-bc24-7636dc95ea1c
+    arch: (x86_64)
+    name: com.apple.audio.toolbox.AudioToolbox
+    path: /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+  - addr: 0x7fff98615000
+    size: 4095
+    uuid: f565b686-24e2-39f2-acc3-c5e4084476be
+    arch: (x86_64)
+    name: com.apple.Accelerate.vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+  - addr: 0x7fff98616000
+    size: 20479
+    uuid: aac003de-2d6e-38b7-b66b-1f3da91e7245
+    arch: (x86_64)
+    name: com.apple.CommonPanels
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+  - addr: 0x7fff9865f000
+    size: 532479
+    uuid: 69e3eef7-8b7b-3652-8320-b8e885370e56
+    arch: (x86_64)
+    name: com.apple.Metadata
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+  - addr: 0x7fff986e7000
+    size: 16383
+    uuid: 98a808a9-f27d-37a9-84d6-77b61c444f97
+    arch: (x86_64)
+    name: com.apple.LoginUICore
+    path: /System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore
+  - addr: 0x7fff986eb000
+    size: 32767
+    uuid: b4ab9480-2cdb-34f8-8d6f-f5a2cfc221b0
+    arch: (x86_64)
+    name: libGFXShared.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+  - addr: 0x7fff986f3000
+    size: 839679
+    uuid: 543b05ae-cfa5-3efe-8e58-77225411ba6b
+    arch: (x86_64)
+    name: libsystem_c.dylib
+    path: /usr/lib/system/libsystem_c.dylib
+  - addr: 0x7fff987d9000
+    size: 356351
+    uuid: bcd36950-013f-35c2-918e-05a93a47be8c
+    arch: (x86_64)
+    name: com.apple.HIServices
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+  - addr: 0x7fff98abf000
+    size: 454655
+    uuid: a90038ed-48f2-3cc9-a042-53a3d7985844
+    arch: (x86_64)
+    name: com.apple.framework.IOKit
+    path: /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+  - addr: 0x7fff98b2e000
+    size: 135167
+    uuid: ccbfa9a9-33c0-3189-afe0-a77e831eeba8
+    arch: (x86_64)
+    name: libPng.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+  - addr: 0x7fff98b4f000
+    size: 53247
+    uuid: b1475487-1db6-3ba6-b545-5ba751733298
+    arch: (x86_64)
+    name: com.apple.DirectoryService.Framework
+    path: /System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
+  - addr: 0x7fff98b68000
+    size: 8191
+    uuid: 864c409d-d56b-383e-9b44-a435a47f2346
+    arch: (x86_64)
+    name: liblangid.dylib
+    path: /usr/lib/liblangid.dylib
+  - addr: 0x7fff98b6a000
+    size: 65535
+    uuid: ad49cf56-b7c1-3598-8610-58532fc41345
+    arch: (x86_64)
+    name: com.apple.opengl
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+  - addr: 0x7fff98b7a000
+    size: 24575
+    uuid: 08f8731d-5961-39f1-ad00-4590321d24a9
+    arch: (x86_64)
+    name: libcompiler_rt.dylib
+    path: /usr/lib/system/libcompiler_rt.dylib
+  - addr: 0x7fff98b80000
+    size: 1060863
+    uuid: cf3bab7e-4972-39fd-af92-28acaff0873e
+    arch: (x86_64)
+    name: libcrypto.0.9.8.dylib
+    path: /usr/lib/libcrypto.0.9.8.dylib
+  - addr: 0x7fff98c83000
+    size: 327679
+    uuid: ce0c29a3-c420-339b-adaa-52f4683233cc
+    arch: (x86_64)
+    name: libcorecrypto.dylib
+    path: /usr/lib/system/libcorecrypto.dylib
+  - addr: 0x7fff98cd3000
+    size: 778239
+    uuid: 6ce333ae-eddb-3768-9598-9db38041dc55
+    arch: (x86_64)
+    name: com.apple.ColorSync
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+  - addr: 0x7fff98d91000
+    size: 581631
+    uuid: c7f43889-f8bf-3cb9-ad66-11aefcbcede7
+    arch: (x86_64)
+    name: com.apple.SearchKit
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+  - addr: 0x7fff98e2c000
+    size: 233471
+    uuid: 9009156b-84f5-3781-bfcb-b409b538cd18
+    arch: (x86_64)
+    name: libtidy.A.dylib
+    path: /usr/lib/libtidy.A.dylib
+  - addr: 0x7fff98e65000
+    size: 241663
+    uuid: 546769aa-c561-3c17-8e8e-4e65a700e2f1
+    arch: (x86_64)
+    name: com.apple.framework.internetaccounts
+    path: /System/Library/PrivateFrameworks/InternetAccounts.framework/Versions/A/InternetAccounts
+  - addr: 0x7fff98ea5000
+    size: 4095
+    uuid: 9dd44cb0-c644-35c3-8f57-0b41b3ec147d
+    arch: (x86_64)
+    name: com.apple.CoreServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+  - addr: 0x7fff98ea8000
+    size: 8191
+    uuid: 8548e0dc-0d2f-30b6-b045-fe8a038e76d8
+    arch: (x86_64)
+    name: libDiagnosticMessagesClient.dylib
+    path: /usr/lib/libDiagnosticMessagesClient.dylib
+  - addr: 0x7fff98ebf000
+    size: 24575
+    uuid: 65187c6e-3fbf-3eb8-a1aa-389445e2984d
+    arch: (x86_64)
+    name: libcache.dylib
+    path: /usr/lib/system/libcache.dylib
+  - addr: 0x7fff98ec5000
+    size: 8191
+    uuid: d92dcbc3-541c-37bd-aade-acc75a0c59c8
+    arch: (x86_64)
+    name: libsystem_blocks.dylib
+    path: /usr/lib/system/libsystem_blocks.dylib
+  - addr: 0x7fff98ec7000
+    size: 1101823
+    uuid: c3d1121b-b066-34c3-9d31-addf387c0b20
+    arch: (x86_64)
+    name: libFontParser.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
+  - addr: 0x7fff98fd4000
+    size: 49151
+    uuid: f02e8fc3-18dc-3f03-8763-e6ee3e2a6b5a
+    arch: (x86_64)
+    name: com.apple.DisplayServicesFW
+    path: /System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices
+  - addr: 0x7fff98fe3000
+    size: 131071
+    uuid: 8bec9afb-dcaa-37e8-a5ab-24422b234ecf
+    arch: (x86_64)
+    name: com.apple.ChunkingLibrary
+    path: /System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
+  - addr: 0x7fff9901f000
+    size: 143359
+    uuid: 70bc645b-6952-3264-930c-c835010ccef9
+    arch: (x86_64)
+    name: libxpc.dylib
+    path: /usr/lib/system/libxpc.dylib
+  - addr: 0x7fff99042000
+    size: 1437695
+    uuid: 853be89d-49b0-3922-9ed5-ddbde9a97356
+    arch: (x86_64)
+    name: com.apple.MediaControlSender
+    path: /System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender
+  - addr: 0x7fff991a1000
+    size: 61439
+    uuid: 0d99f24e-56fe-380f-b81b-4a4c630ee587
+    arch: (x86_64)
+    name: libsystem_network.dylib
+    path: /usr/lib/system/libsystem_network.dylib
+  - addr: 0x7fff991cb000
+    size: 1159167
+    uuid: 0cf2abe5-b088-3b5d-9c04-47ae708adae3
+    arch: (x86_64)
+    name: com.apple.coreavchd
+    path: /System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
+  - addr: 0x7fff992e6000
+    size: 24575
+    uuid: 51e52779-4f5a-36b5-9297-67138547dca9
+    arch: (x86_64)
+    name: com.apple.OpenDirectory
+    path: /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+  - addr: 0x7fff992ec000
+    size: 163839
+    uuid: 50f5a52c-8fb6-300a-977d-5cfde4d5796b
+    arch: (x86_64)
+    name: com.apple.framework.familycontrols
+    path: /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
+  - addr: 0x7fff99314000
+    size: 327679
+    uuid: ccf3d8e3-cd1c-36cd-929a-c9972f833f24
+    arch: (x86_64)
+    name: com.apple.framework.CoreWiFi
+    path: /System/Library/Frameworks/CoreWiFi.framework/Versions/A/CoreWiFi
+  - addr: 0x7fff99364000
+    size: 176127
+    uuid: e5082966-6d81-3973-a05a-38aa5b85f886
+    arch: (x86_64)
+    name: com.apple.CoreVideo
+    path: /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+  - addr: 0x7fff993a1000
+    size: 8191
+    uuid: b739da63-b675-387a-ad84-412a651143c0
+    arch: (x86_64)
+    name: libsystem_sandbox.dylib
+    path: /usr/lib/system/libsystem_sandbox.dylib
+  - addr: 0x7fff993a3000
+    size: 36863
+    uuid: bdcb8566-0189-34c0-9634-35abd3efe25b
+    arch: (x86_64)
+    name: libsystem_dnssd.dylib
+    path: /usr/lib/system/libsystem_dnssd.dylib
+  - addr: 0x7fff993ac000
+    size: 98303
+    uuid: d01120cc-16e0-372c-825b-b3ab510a8916
+    arch: (x86_64)
+    name: com.apple.CFOpenDirectory
+    path: /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+  - addr: 0x7fff993ce000
+    size: 278527
+    uuid: 0bf1f2d2-3648-36b7-be4b-551a0173209b
+    arch: (x86_64)
+    name: com.apple.bom
+    path: /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+  - addr: 0x7fff99429000
+    size: 811007
+    uuid: 83d2c92d-6842-3c9d-9289-39d5b4554c3a
+    arch: (x86_64)
+    name: com.apple.coreui
+    path: /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+  - addr: 0x7fff994ef000
+    size: 4095
+    uuid: 6cbbfdc4-415c-3910-9558-b67176447789
+    arch: (x86_64)
+    name: com.apple.vecLib
+    path: /System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+  - addr: 0x7fff994fe000
+    size: 4095
+    uuid: 6d314680-7409-3bc7-a807-36341411af9a
+    arch: (x86_64)
+    name: com.apple.audio.units.AudioUnit
+    path: /System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+  - addr: 0x7fff9950a000
+    size: 4095
+    uuid: cc5aa589-242e-3be1-b776-7d4ffd93d0c1
+    arch: (x86_64)
+    name: com.apple.Carbon
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+  - addr: 0x7fff9950b000
+    size: 94207
+    uuid: 0f7fee29-161b-3d8e-be91-308cbd354461
+    arch: (x86_64)
+    name: com.apple.MultitouchSupport.framework
+    path: /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+  - addr: 0x7fff99522000
+    size: 20479
+    uuid: c8f45864-5b58-3237-87e1-2c258a1d73b8
+    arch: (x86_64)
+    name: libpam.2.dylib
+    path: /usr/lib/libpam.2.dylib
+  - addr: 0x7fff99527000
+    size: 73727
+    uuid: 649cae0e-8ffe-3c60-a849-be6300e4b726
+    arch: (x86_64)
+    name: libsasl2.2.dylib
+    path: /usr/lib/libsasl2.2.dylib
+  - addr: 0x7fff99539000
+    size: 1007615
+    uuid: fee8b996-eb44-37fa-b96e-d379664defe1
+    arch: (x86_64)
+    name: libiconv.2.dylib
+    path: /usr/lib/libiconv.2.dylib
+  - addr: 0x7fff9962f000
+    size: 262143
+    uuid: 77a20c25-ebb5-341c-a05c-5d458b97ad5c
+    arch: (x86_64)
+    name: com.apple.QD
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+  - addr: 0x7fff9966f000
+    size: 184319
+    uuid: 73506ca1-cf76-3a98-a6f2-3ddac10cb67a
+    arch: (x86_64)
+    name: com.apple.framework.Apple80211
+    path: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211
+  - addr: 0x7fff9969c000
+    size: 61439
+    uuid: b8f7ed1f-cf84-3777-9183-0a1c513df81f
+    arch: (x86_64)
+    name: libkxld.dylib
+    path: /usr/lib/system/libkxld.dylib
+  - addr: 0x7fff996ab000
+    size: 2772991
+    uuid: cc6dd22b-ffc6-310b-be13-2397a02c79ef
+    arch: (x86_64)
+    name: com.apple.CoreImage
+    path: /System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/CoreImage.framework/Versions/A/CoreImage
+  - addr: 0x7fff99950000
+    size: 49151
+    uuid: 1ca95702-ddc7-3adb-891e-7f037abdda14
+    arch: (x86_64)
+    name: com.apple.CommonAuth
+    path: /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+  - addr: 0x7fff999bc000
+    size: 180223
+    uuid: 441776b8-9130-3893-956f-39c85ffa644f
+    arch: (x86_64)
+    name: libxslt.1.dylib
+    path: /usr/lib/libxslt.1.dylib
+  - addr: 0x7fff99a9b000
+    size: 2629631
+    uuid: 01c09924-2603-3c1e-97f7-9484cba35bc9
+    arch: (x86_64)
+    name: com.apple.AOSKit
+    path: /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit
+  - addr: 0x7fff99d78000
+    size: 2736127
+    uuid: fe3c5add-43d3-33c9-9150-8dcefda218e2
+    arch: (x86_64)
+    name: com.apple.JavaScriptCore
+    path: /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
+  - addr: 0x7fff9a069000
+    size: 139263
+    uuid: 736abe58-8ded-3289-a042-c25af7ae5b23
+    arch: (x86_64)
+    name: libCRFSuite.dylib
+    path: /usr/lib/libCRFSuite.dylib
+  - addr: 0x7fff9a08d000
+    size: 1040383
+    uuid: 47b09cb2-c636-3024-8b55-6040f7829b4c
+    arch: (x86_64)
+    name: libxml2.2.dylib
+    path: /usr/lib/libxml2.2.dylib
+  - addr: 0x7fff9a18b000
+    size: 32767
+    uuid: 30824a67-6743-3d99-8dc3-92578fa9d7cb
+    arch: (x86_64)
+    name: libcopyfile.dylib
+    path: /usr/lib/system/libcopyfile.dylib
+  - addr: 0x7fff9a193000
+    size: 8191
+    uuid: 14202ffb-c3ca-3fcc-94b0-14611bf8692d
+    arch: (x86_64)
+    name: libdnsinfo.dylib
+    path: /usr/lib/system/libdnsinfo.dylib

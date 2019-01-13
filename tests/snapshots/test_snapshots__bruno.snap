@@ -1,0 +1,3042 @@
+Created: 2019-01-13T23:07:30.518491+00:00
+Creator: insta@0.1.1
+Source: tests/test_snapshots.rs
+
+---
+incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
+timestamp: "2019-01-09T17:44:22Z"
+code_type: X86-64
+path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
+report_version: 104
+metadata:
+  CrashReporter Key: TODO
+  Exception Codes: SEGV_MAPERR at 0x88
+  Exception Type: SIGSEGV
+  Hardware Model: "MacBookPro14,3"
+  Identifier: com.YourCompany.YetAnotherMac
+  OS Version: Mac OS X 10.14.0 (18A391)
+  Parent Process: "launchd [1]"
+  Process: "YetAnotherMac [49028]"
+  Version: 4.21.1
+threads:
+  - id: 0
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc6c2a
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f505e
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f45ad
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f3ce4
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d895
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d5cb
+      - module: HIToolbox
+        instruction_addr: 0x7fff33c8d348
+      - module: AppKit
+        instruction_addr: 0x7fff31f4a95b
+      - module: AppKit
+        instruction_addr: 0x7fff31f496fa
+      - module: AppKit
+        instruction_addr: 0x7fff31f4375d
+      - module: YetAnotherMac
+        instruction_addr: 0x108b7092b
+      - module: YetAnotherMac
+        instruction_addr: 0x108b702a6
+      - module: libdyld.dylib
+        instruction_addr: 0x7fff61a8e085
+    registers: ~
+  - id: 1
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 2
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 3
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+    registers: ~
+  - id: 4
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 5
+    crashed: true
+    frames:
+      - module: YetAnotherMac
+        instruction_addr: 0x1090a0132
+      - module: YetAnotherMac
+        instruction_addr: 0x10bc3b85b
+      - module: YetAnotherMac
+        instruction_addr: 0x10bc5fc29
+      - module: YetAnotherMac
+        instruction_addr: 0x10bc5eb21
+      - module: YetAnotherMac
+        instruction_addr: 0x10cfe80be
+      - module: YetAnotherMac
+        instruction_addr: 0x10c2e4621
+      - module: YetAnotherMac
+        instruction_addr: 0x10cfadb9e
+      - module: YetAnotherMac
+        instruction_addr: 0x10ce4f8f5
+      - module: YetAnotherMac
+        instruction_addr: 0x10ce48e4a
+      - module: YetAnotherMac
+        instruction_addr: 0x10c2a6f41
+      - module: YetAnotherMac
+        instruction_addr: 0x10c28647e
+      - module: YetAnotherMac
+        instruction_addr: 0x108b55d76
+      - module: YetAnotherMac
+        instruction_addr: 0x108b65169
+      - module: YetAnotherMac
+        instruction_addr: 0x108b6fd8e
+      - module: YetAnotherMac
+        instruction_addr: 0x1095aab27
+      - module: Foundation
+        instruction_addr: 0x7fff36d4a234
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+  - id: 6
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc6c2a
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f505e
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f45ad
+      - module: CoreFoundation
+        instruction_addr: 0x7fff349f3ce4
+      - module: AppKit
+        instruction_addr: 0x7fff31f53581
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 7
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 8
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 9
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 10
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 11
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 12
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 13
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 14
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 15
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x109433182
+      - module: YetAnotherMac
+        instruction_addr: 0x1094312e8
+      - module: YetAnotherMac
+        instruction_addr: 0x109432156
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 16
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x1094358c3
+      - module: YetAnotherMac
+        instruction_addr: 0x109434103
+      - module: YetAnotherMac
+        instruction_addr: 0x109430351
+      - module: YetAnotherMac
+        instruction_addr: 0x1097a01a8
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 17
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 18
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 19
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 20
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 21
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 22
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 23
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 24
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x70001989cba0
+    registers: ~
+  - id: 25
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc85be
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f415
+      - instruction_addr: 0x54485244
+    registers: ~
+  - id: 26
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca876
+      - module: libsystem_c.dylib
+        instruction_addr: 0x7fff61b55724
+      - module: YetAnotherMac
+        instruction_addr: 0x1096b1e4d
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 27
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108e4c4c5
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 28
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 29
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 30
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 31
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 32
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10a44a1eb
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 33
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x1094358c3
+      - module: YetAnotherMac
+        instruction_addr: 0x109434103
+      - module: YetAnotherMac
+        instruction_addr: 0x109430351
+      - module: YetAnotherMac
+        instruction_addr: 0x10a874ab6
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 34
+    crashed: false
+    frames:
+      - module: libsystem_platform.dylib
+        instruction_addr: 0x7fff61c74969
+      - module: YetAnotherMac
+        instruction_addr: 0x109266ff1
+      - module: YetAnotherMac
+        instruction_addr: 0x1092abd6f
+      - module: YetAnotherMac
+        instruction_addr: 0x1093c3c67
+      - module: YetAnotherMac
+        instruction_addr: 0x1093c61d9
+      - module: YetAnotherMac
+        instruction_addr: 0x1093cd746
+      - module: YetAnotherMac
+        instruction_addr: 0x10c7f8302
+      - module: YetAnotherMac
+        instruction_addr: 0x10c7c83da
+      - module: YetAnotherMac
+        instruction_addr: 0x109435e23
+      - module: YetAnotherMac
+        instruction_addr: 0x109434103
+      - module: YetAnotherMac
+        instruction_addr: 0x109430351
+      - module: YetAnotherMac
+        instruction_addr: 0x10a86402c
+      - module: YetAnotherMac
+        instruction_addr: 0x10a875ba7
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 35
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca876
+      - module: libsystem_c.dylib
+        instruction_addr: 0x7fff61b55724
+      - module: YetAnotherMac
+        instruction_addr: 0x109481b6e
+      - module: YetAnotherMac
+        instruction_addr: 0x10a87c821
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 36
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 37
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 38
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 39
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 40
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 41
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 42
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 43
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x108ddca01
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 44
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10bbea8b8
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 45
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10dc214e1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 46
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 47
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 48
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 49
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 50
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 51
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482d68
+      - module: YetAnotherMac
+        instruction_addr: 0x10951d7f1
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 52
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc6c7e
+      - module: libdispatch.dylib
+        instruction_addr: 0x7fff61a40b19
+      - module: libdispatch.dylib
+        instruction_addr: 0x7fff61a4db5a
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 53
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bc6c2a
+      - module: CoreAudio
+        instruction_addr: 0x7fff3444589a
+      - module: CoreAudio
+        instruction_addr: 0x7fff3444580d
+      - module: CoreAudio
+        instruction_addr: 0x7fff34441b84
+      - module: CoreAudio
+        instruction_addr: 0x7fff344415ee
+      - module: CoreAudio
+        instruction_addr: 0x7fff344410d6
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+  - id: 54
+    crashed: false
+    frames:
+      - module: libsystem_kernel.dylib
+        instruction_addr: 0x7fff61bca1b2
+      - module: YetAnotherMac
+        instruction_addr: 0x109482f6f
+      - module: YetAnotherMac
+        instruction_addr: 0x1094358c3
+      - module: YetAnotherMac
+        instruction_addr: 0x109434103
+      - module: YetAnotherMac
+        instruction_addr: 0x109430351
+      - module: YetAnotherMac
+        instruction_addr: 0x10be5f7ce
+      - module: YetAnotherMac
+        instruction_addr: 0x1094dd7be
+      - module: YetAnotherMac
+        instruction_addr: 0x1094ba0b7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c8033d
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c832a7
+      - module: libsystem_pthread.dylib
+        instruction_addr: 0x7fff61c7f425
+    registers: ~
+binary_images:
+  - addr: 0x10864e000
+    size: 108797951
+    uuid: 2d903291-397d-3d14-bfca-52c7fb8c5e00
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: YetAnotherMac
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
+  - addr: 0x112bb2000
+    size: 2170879
+    uuid: 6deccee4-a052-3ea4-bb67-957b06f53ad1
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3PROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3PROFILE.dylib
+  - addr: 0x112fc0000
+    size: 221183
+    uuid: 5e012a64-6cc5-36f1-9b4d-a0564049169b
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3CookingPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib
+  - addr: 0x113013000
+    size: 1474559
+    uuid: 9c198544-7194-3de6-b67e-4cc27eed2eab
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPhysX3CommonPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib
+  - addr: 0x1131fa000
+    size: 28671
+    uuid: 890f0997-f904-3544-9af7-cf011f09a06e
+    arch: x86_64
+    version: 400.9.0 - 1.0.0
+    name: libPxFoundationPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib
+  - addr: 0x113213000
+    size: 176127
+    uuid: 25f76547-27a1-32b3-ae90-53cc45709967
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libPxPvdSDKPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxPvdSDKPROFILE.dylib
+  - addr: 0x113275000
+    size: 921599
+    uuid: 025fd42f-3323-3cd3-a091-56b8adc3565e
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libAPEX_ClothingPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libAPEX_ClothingPROFILE.dylib
+  - addr: 0x11342d000
+    size: 5156863
+    uuid: 45484259-1ec2-3bf2-84d7-c220647e40a6
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libAPEX_LegacyPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libAPEX_LegacyPROFILE.dylib
+  - addr: 0x1148b2000
+    size: 917503
+    uuid: 389e4b37-9a61-36fd-b5d1-a0773d89dbc6
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libApexFrameworkPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libApexFrameworkPROFILE.dylib
+  - addr: 0x114a76000
+    size: 208895
+    uuid: 6cd65252-3e10-3d81-a120-55d40925699b
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libNvClothPROFILE.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libNvClothPROFILE.dylib
+  - addr: 0x114ad0000
+    size: 86015
+    uuid: 01d5fa06-e2cf-3e64-a056-247ea5f4384d
+    arch: x86_64
+    version: 1256.1.0 - 300.0.0
+    name: libopenvr_api.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/OpenVR/OpenVRv1_0_16/osx32/libopenvr_api.dylib
+  - addr: 0x114afb000
+    size: 16383
+    uuid: 44042edb-511f-34bd-a063-5d29f38d86dd
+    arch: x86_64
+    version: 1225.0.0 - 1.0.0
+    name: libogg.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/Ogg/Mac/libogg.dylib
+  - addr: 0x114b04000
+    size: 2936831
+    uuid: 0eca30b3-e726-3b8b-b18f-7346f79369cf
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libvorbis.dylib
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/Vorbis/Mac/libvorbis.dylib
+  - addr: 0x115315000
+    size: 20479
+    uuid: 94ddf962-09e0-3b3e-b887-9a0301022190
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: AppleHDAHALPlugIn
+    path: /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHALPlugIn.bundle/Contents/MacOS/AppleHDAHALPlugIn
+  - addr: 0x115335000
+    size: 20479
+    uuid: d6199433-52cf-3d42-b152-90f8d6aa9396
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: AppleGFXHDAHALPlugIn
+    path: /System/Library/Extensions/AppleGFXHDA.kext/Contents/PlugIns/AppleGFXHDAHALPlugIn.bundle/Contents/MacOS/AppleGFXHDAHALPlugIn
+  - addr: 0x1156d9000
+    size: 16383
+    uuid: b81473fa-927b-3852-bc34-66e66aae24f4
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libobjc-trampolines.dylib
+    path: /usr/lib/libobjc-trampolines.dylib
+  - addr: 0x12a3d1000
+    size: 1728511
+    uuid: 1ebb28b5-fb09-3967-aea0-9883cfef9893
+    arch: x86_64
+    version: 963.200.27 - 1.0.0
+    name: CoreAudio
+    path: /System/Library/Components/CoreAudio.component/Contents/MacOS/CoreAudio
+  - addr: 0x12a752000
+    size: 73727
+    uuid: 65d0b9b4-6758-398d-a22a-3746d5ab5739
+    arch: x86_64
+    version: 59.0.0 - 1.0.0
+    name: RadioEffectUnit
+    path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/Resources/RadioEffectUnit.component/Contents/MacOS/RadioEffectUnit
+  - addr: 0x7fff29814000
+    size: 3530751
+    uuid: f311b880-6219-395b-8f79-02504dda0010
+    arch: x86_64
+    version: 50.1.0 - 1.0.0
+    name: RawCamera
+    path: /System/Library/CoreServices/RawCamera.bundle/Contents/MacOS/RawCamera
+  - addr: 0x7fff29b74000
+    size: 1359871
+    uuid: 39929a89-44c7-3534-b6a4-aa31b027414a
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: AMDMTLBronzeDriver
+    path: /System/Library/Extensions/AMDMTLBronzeDriver.bundle/Contents/MacOS/AMDMTLBronzeDriver
+  - addr: 0x7fff2cf37000
+    size: 2658303
+    uuid: aa09048e-caa0-37b9-808e-f75c53c95200
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: AppleIntelKBLGraphicsMTLDriver
+    path: /System/Library/Extensions/AppleIntelKBLGraphicsMTLDriver.bundle/Contents/MacOS/AppleIntelKBLGraphicsMTLDriver
+  - addr: 0x7fff30920000
+    size: 2027519
+    uuid: 1ee74e35-f16b-3034-aea5-723198e519f8
+    arch: x86_64
+    version: 10.15.6 - 1.0.0
+    name: AVFoundation
+    path: /System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
+  - addr: 0x7fff30b0f000
+    size: 847871
+    uuid: 727a6d92-d1f2-3179-80d3-51f1481f5a87
+    arch: x86_64
+    version: 1336.201.2 - 1.0.0
+    name: AVFAudio
+    path: /System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
+  - addr: 0x7fff30ceb000
+    size: 4095
+    uuid: 2c602ced-72ca-37c2-bdf5-31697fc9100b
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: Accelerate
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+  - addr: 0x7fff30cec000
+    size: 94207
+    uuid: 6455899e-bac7-34d1-802b-ffe19a2337e2
+    arch: x86_64
+    version: 50.1.0 - 1.0.0
+    name: libCGInterfaces.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib
+  - addr: 0x7fff30d03000
+    size: 6950911
+    uuid: 65912afb-d4c1-3494-ae97-ddfdaf3be1eb
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: vImage
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+  - addr: 0x7fff313a4000
+    size: 2588671
+    uuid: 76710990-ae2b-300e-88bb-797abad74956
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libBLAS.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+  - addr: 0x7fff3161c000
+    size: 471039
+    uuid: 5f3a4021-8ff8-30e8-b84a-aa2bd70f4151
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libBNNS.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+  - addr: 0x7fff3168f000
+    size: 3829759
+    uuid: 45722a8a-5788-3c4c-add9-1812763fa635
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libLAPACK.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+  - addr: 0x7fff31a36000
+    size: 90111
+    uuid: e923da33-b142-3a73-a80a-642878d19099
+    arch: x86_64
+    version: 228.0.0 - 1.0.0
+    name: libLinearAlgebra.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
+  - addr: 0x7fff31a4c000
+    size: 24575
+    uuid: 6ffac142-415d-3af0-bc09-336302f11934
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libQuadrature.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
+  - addr: 0x7fff31a52000
+    size: 516095
+    uuid: 0d7e71a4-10d2-3979-b386-d2426adaf6d7
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libSparse.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib
+  - addr: 0x7fff31ad0000
+    size: 81919
+    uuid: 00d6fc17-b739-3259-90a4-92ac8bbe03d6
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libSparseBLAS.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
+  - addr: 0x7fff31ae4000
+    size: 1986559
+    uuid: 716585bd-04d7-30a9-b315-689184275e38
+    arch: x86_64
+    version: 506.19.0 - 1.0.0
+    name: libvDSP.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+  - addr: 0x7fff31cc9000
+    size: 745471
+    uuid: eda66c06-a11f-3ee5-96d5-b20893448899
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libvMisc.dylib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+  - addr: 0x7fff31d7f000
+    size: 4095
+    uuid: dadd83a2-550f-3570-8d71-16614c6a4ce0
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: vecLib
+    path: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+  - addr: 0x7fff31f30000
+    size: 14811135
+    uuid: e1b2caf1-9231-3b3d-bd9e-b770fe87f407
+    arch: x86_64
+    version: 379.0.0 - 1.0.0
+    name: AppKit
+    path: /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+  - addr: 0x7fff32da1000
+    size: 4095
+    uuid: 1b71604b-9ac5-3a2f-8cb7-0efa34a20f12
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: ApplicationServices
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+  - addr: 0x7fff32da2000
+    size: 442367
+    uuid: 7599e619-ee21-3eb7-875b-ae3b8d3e13bb
+    arch: x86_64
+    version: 1245.8.4 - 64.0.0
+    name: ATS
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+  - addr: 0x7fff32ea6000
+    size: 1179647
+    uuid: e800074f-62cf-340a-a5a7-b8be5b560045
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libFontParser.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
+  - addr: 0x7fff32fc6000
+    size: 311295
+    uuid: 480d472d-c8fb-321d-86ec-2ea6927a97ad
+    arch: x86_64
+    version: 58286.200.222 - 1.0.0
+    name: libFontRegistry.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+  - addr: 0x7fff33070000
+    size: 212991
+    uuid: d23bfde4-8664-335a-b43b-a13a8ef29e40
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libTrueTypeScaler.dylib
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libTrueTypeScaler.dylib
+  - addr: 0x7fff3310d000
+    size: 20479
+    uuid: 90641b6b-d07b-3577-b594-965825544b60
+    arch: x86_64
+    version: 4.7.0 - 1.0.0
+    name: ColorSyncLegacy
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy
+  - addr: 0x7fff331ae000
+    size: 339967
+    uuid: 01f309d6-32e7-3c4f-a38b-8206ee3076cc
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: HIServices
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+  - addr: 0x7fff33201000
+    size: 61439
+    uuid: 67bc5855-b7a3-39e6-b5dd-52b287eb1532
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: LangAnalysis
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+  - addr: 0x7fff33210000
+    size: 315391
+    uuid: c13bc56a-65f4-35b1-9e33-51fe6f3b06fd
+    arch: x86_64
+    version: 1245.8.4 - 64.0.0
+    name: PrintCore
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+  - addr: 0x7fff3325d000
+    size: 245759
+    uuid: 94a30038-c545-327a-b1c0-e19c79d62bab
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: QD
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+  - addr: 0x7fff33299000
+    size: 53247
+    uuid: a96c744b-b1ad-32e3-ba72-7a221684be3f
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: SpeechSynthesis
+    path: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+  - addr: 0x7fff332a6000
+    size: 2740223
+    uuid: 89d2529d-cf36-3081-a700-70892f888718
+    arch: x86_64
+    version: 58286.200.222 - 1.0.0
+    name: AudioToolbox
+    path: /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+  - addr: 0x7fff33544000
+    size: 4095
+    uuid: 8b9a5adb-e62c-3838-bb5e-af20cae449cc
+    arch: x86_64
+    version: 492.0.0 - 1.0.0
+    name: AudioUnit
+    path: /System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+  - addr: 0x7fff338a8000
+    size: 3940351
+    uuid: acc604fa-5d40-34ce-9206-8091010306b7
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CFNetwork
+    path: /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+  - addr: 0x7fff33c7e000
+    size: 4095
+    uuid: daf95685-b793-34eb-96ea-3e292a9e3378
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: Carbon
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+  - addr: 0x7fff33c7f000
+    size: 16383
+    uuid: f1e1c47b-fd1a-30a4-b41b-87bd8b178b56
+    arch: x86_64
+    version: 50.1.0 - 1.0.0
+    name: CommonPanels
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+  - addr: 0x7fff33c83000
+    size: 3178495
+    uuid: b2ed8b1c-fc3e-3fa0-8f6d-e7a448e6faa7
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: HIToolbox
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+  - addr: 0x7fff33f8b000
+    size: 16383
+    uuid: 4392a63f-9b58-3248-bf73-b46ad3744e6e
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: Help
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+  - addr: 0x7fff33f8f000
+    size: 24575
+    uuid: 364edc6b-6374-31a7-a637-0044b73f8dbf
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: ImageCapture
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+  - addr: 0x7fff33f95000
+    size: 610303
+    uuid: d6503f37-7ebc-32c1-95cc-a35efc54e7ed
+    arch: x86_64
+    version: 600.0.0 - 64.0.0
+    name: Ink
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+  - addr: 0x7fff3402a000
+    size: 110591
+    uuid: d4a4d130-9c7b-3656-9d58-50f9d09c276e
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: OpenScripting
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+  - addr: 0x7fff34065000
+    size: 8191
+    uuid: 5cd250df-98ad-30b8-a5d5-47634ff9e74d
+    arch: x86_64
+    version: 2.13.0 - 2.0.0
+    name: Print
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+  - addr: 0x7fff34067000
+    size: 12287
+    uuid: c5308cbc-6736-31a7-905b-c635c6d43fde
+    arch: x86_64
+    version: 58286.200.222 - 1.0.0
+    name: SecurityHI
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+  - addr: 0x7fff3406a000
+    size: 28671
+    uuid: 1c38b9cb-dd45-3a7b-9d4c-631855a4ee32
+    arch: x86_64
+    version: 916.31.0 - 1.0.0
+    name: SpeechRecognition
+    path: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+  - addr: 0x7fff34197000
+    size: 4095
+    uuid: a520d2a3-032b-3c06-81e1-efdd97c47ace
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: Cocoa
+    path: /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+  - addr: 0x7fff341a5000
+    size: 839679
+    uuid: 0618da46-5a5e-339d-bb2f-ed66a2bfccf9
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: ColorSync
+    path: /System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
+  - addr: 0x7fff3440c000
+    size: 593919
+    uuid: 5845d43b-bbb5-343b-a164-6f9e2c53cfa3
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: CoreAudio
+    path: /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+  - addr: 0x7fff34502000
+    size: 180223
+    uuid: d2f48e3d-79fc-32d7-b281-658ead2cc50b
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: CoreBluetooth
+    path: /System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
+  - addr: 0x7fff3452e000
+    size: 3805183
+    uuid: 90a5058f-a5af-311a-81cc-b20c2ac9e85e
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreData
+    path: /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+  - addr: 0x7fff348cf000
+    size: 958463
+    uuid: 4ae5c221-b8e1-3a4f-91e0-96ed5926e82b
+    arch: x86_64
+    version: 0.0.0 - 1.0.0
+    name: CoreDisplay
+    path: /System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+  - addr: 0x7fff349b9000
+    size: 4521983
+    uuid: 4a4c87bc-4c8e-392a-abee-824d4074c485
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: CoreFoundation
+    path: /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+  - addr: 0x7fff34e0a000
+    size: 6873087
+    uuid: ffffeaf0-14dd-38a3-bd68-aa9ab2c672c1
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreGraphics
+    path: /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+  - addr: 0x7fff35499000
+    size: 3301375
+    uuid: e9e7b27c-c4fd-3ad6-923e-df7eae36d1ff
+    arch: x86_64
+    version: 933.0.0 - 1.0.0
+    name: CoreImage
+    path: /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
+  - addr: 0x7fff35b10000
+    size: 1056767
+    uuid: 5e733d6b-b683-3931-9d02-82300a43378d
+    arch: x86_64
+    version: 4.0.0 - 1.0.0
+    name: CoreMedia
+    path: /System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+  - addr: 0x7fff35c12000
+    size: 405503
+    uuid: bfb3978a-fdbb-352b-a96d-e8761fc51370
+    arch: x86_64
+    version: 275.0.0 - 1.0.0
+    name: CoreMediaIO
+    path: /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
+  - addr: 0x7fff35c75000
+    size: 4095
+    uuid: b79c910e-93b9-3686-8e72-e0b63083aae5
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: CoreServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+  - addr: 0x7fff35c76000
+    size: 520191
+    uuid: e795749d-ce50-3b8c-91a7-8c2618887288
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: AE
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+  - addr: 0x7fff35cf5000
+    size: 2985983
+    uuid: 9fbe7bfb-3a81-37ac-8e15-e6f7932bbdc0
+    arch: x86_64
+    version: 974.1.0 - 1.0.0
+    name: CarbonCore
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+  - addr: 0x7fff35fce000
+    size: 307199
+    uuid: d9388630-e7f2-321e-81ff-ebd5f3b47a52
+    arch: x86_64
+    version: 228.0.0 - 1.0.0
+    name: DictionaryServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+  - addr: 0x7fff36019000
+    size: 36863
+    uuid: e40a3c4a-79c7-37d8-999b-d1169a06870b
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: FSEvents
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+  - addr: 0x7fff36022000
+    size: 1884159
+    uuid: 4614a4b4-c358-3460-9fa7-df8d6c466806
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: LaunchServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+  - addr: 0x7fff361ee000
+    size: 667647
+    uuid: 6b9cca98-6f68-3908-a7a9-96d3e2ae5968
+    arch: x86_64
+    version: 1178.11.0 - 1.0.0
+    name: Metadata
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+  - addr: 0x7fff36291000
+    size: 311295
+    uuid: a92c846f-872d-3534-b60e-6cd445a9baee
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: OSServices
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+  - addr: 0x7fff362dd000
+    size: 454655
+    uuid: c6a34d09-9707-3f28-838f-63b59b8a12d5
+    arch: x86_64
+    version: 1178.11.0 - 1.0.0
+    name: SearchKit
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+  - addr: 0x7fff3634c000
+    size: 151551
+    uuid: b46a15e0-4c10-3616-be49-58e07ec463fe
+    arch: x86_64
+    version: 57.1.0 - 1.0.0
+    name: SharedFileList
+    path: /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
+  - addr: 0x7fff366b3000
+    size: 1466367
+    uuid: 5b55b533-f4de-32ce-8739-16fffa1a64f8
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreText
+    path: /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+  - addr: 0x7fff36819000
+    size: 253951
+    uuid: c7bb7d0f-3af2-3046-a387-a802bca52a3a
+    arch: x86_64
+    version: 275.0.0 - 1.0.0
+    name: CoreVideo
+    path: /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+  - addr: 0x7fff36857000
+    size: 618495
+    uuid: 19e41424-b956-34df-ae02-9822308fa3dc
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: CoreWLAN
+    path: /System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
+  - addr: 0x7fff36b6a000
+    size: 24575
+    uuid: c53c1905-9bcf-3ae8-8bb3-c8a2c7db7d25
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: DiskArbitration
+    path: /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+  - addr: 0x7fff36d38000
+    size: 3993599
+    uuid: 0ccaf9af-f7af-3174-98d4-6c188b1079cc
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: Foundation
+    path: /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+  - addr: 0x7fff37177000
+    size: 200703
+    uuid: 74acb1a1-a5a4-3180-ac00-688c94aa4434
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: GSS
+    path: /System/Library/Frameworks/GSS.framework/Versions/A/GSS
+  - addr: 0x7fff372c0000
+    size: 1089535
+    uuid: 6cb8a08e-1154-3333-83cc-2a939ac94562
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: IOBluetooth
+    path: /System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth
+  - addr: 0x7fff3742b000
+    size: 598015
+    uuid: da4ed91f-2cc9-3cfd-9200-9d5d31eee4f3
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: IOKit
+    path: /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+  - addr: 0x7fff374be000
+    size: 45055
+    uuid: 538f0257-a408-36af-ab1e-1d7037d6359e
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: IOSurface
+    path: /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+  - addr: 0x7fff3751f000
+    size: 1658879
+    uuid: 9d078f50-bb75-3d04-8636-3fddab9c95da
+    arch: x86_64
+    version: 1245.8.4 - 64.0.0
+    name: ImageIO
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+  - addr: 0x7fff376b4000
+    size: 20479
+    uuid: 93ad6fb9-03ba-350e-af98-d371a2bfd58f
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libGIF.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+  - addr: 0x7fff376b9000
+    size: 942079
+    uuid: 3780eb9b-5219-385d-9472-17b0397697a5
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libJP2.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+  - addr: 0x7fff3779f000
+    size: 155647
+    uuid: 83ca8beb-34bd-3b58-a704-c6a875984fad
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libJPEG.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+  - addr: 0x7fff37a97000
+    size: 159743
+    uuid: 9f30fa63-8ab2-3646-a6a8-fce9f8436c35
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: libPng.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+  - addr: 0x7fff37abe000
+    size: 12287
+    uuid: 2c07887c-0584-3538-a9ec-3988aa5b234b
+    arch: x86_64
+    version: 4.0.0 - 1.0.0
+    name: libRadiance.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+  - addr: 0x7fff37ac1000
+    size: 323583
+    uuid: f420b0dc-d0f7-3dd5-9e17-00462441635c
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libTIFF.dylib
+    path: /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+  - addr: 0x7fff38ba5000
+    size: 106495
+    uuid: 8be3d524-257d-3663-a937-f1ac76bdf4d9
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: Kerberos
+    path: /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+  - addr: 0x7fff38e7b000
+    size: 45055
+    uuid: 29d89f2b-6254-3d0d-bd0c-8472fca373f4
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: MediaAccessibility
+    path: /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
+  - addr: 0x7fff38f3f000
+    size: 6934527
+    uuid: fb1c3dd9-a91b-3952-a892-9f009b854f8f
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: MediaToolbox
+    path: /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
+  - addr: 0x7fff395dd000
+    size: 606207
+    uuid: 49cd402f-20cb-3930-b997-bbdc495abf64
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: Metal
+    path: /System/Library/Frameworks/Metal.framework/Versions/A/Metal
+  - addr: 0x7fff3968d000
+    size: 135167
+    uuid: 9a841a76-43bc-3220-a4da-99137c42a0bc
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: MPSCore
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore
+  - addr: 0x7fff396ae000
+    size: 516095
+    uuid: c469d1e5-f621-3e56-87ac-1bd889664fa3
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: MPSImage
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage
+  - addr: 0x7fff3972c000
+    size: 167935
+    uuid: 8c57a3a2-8ebb-3401-87fc-368d1be6daac
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: MPSMatrix
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
+  - addr: 0x7fff39755000
+    size: 1212415
+    uuid: ce3201a3-4ace-3e79-990b-8987c576b31b
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: MPSNeuralNetwork
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
+  - addr: 0x7fff3987d000
+    size: 114687
+    uuid: 8f02cfca-41e1-3194-915f-3106e8b48b32
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: MPSRayIntersector
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+  - addr: 0x7fff39899000
+    size: 4095
+    uuid: 8b715d78-8357-38f4-a03c-926ee967ce71
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: MetalPerformanceShaders
+    path: /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
+  - addr: 0x7fff3aa98000
+    size: 53247
+    uuid: 529e29a9-5e77-3a8c-a982-cf55f949fe5d
+    arch: x86_64
+    version: 963.200.27 - 1.0.0
+    name: NetFS
+    path: /System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+  - addr: 0x7fff3d564000
+    size: 368639
+    uuid: 3eae5bc8-e948-3926-9319-9dac2a8b5484
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: OpenCL
+    path: /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+  - addr: 0x7fff3d5be000
+    size: 118783
+    uuid: 7e4eff02-2596-31e6-88de-29c89e2837e4
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CFOpenDirectory
+    path: /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+  - addr: 0x7fff3d5db000
+    size: 53247
+    uuid: 52a3918e-0f7a-33fd-87ee-21a37b37d13b
+    arch: x86_64
+    version: 963.200.27 - 1.0.0
+    name: OpenDirectory
+    path: /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+  - addr: 0x7fff3df4a000
+    size: 12287
+    uuid: 38a18a32-bbf2-3a0f-ae37-51734b6ca91a
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libCVMSPluginSupport.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+  - addr: 0x7fff3df4d000
+    size: 24575
+    uuid: bf8f04dd-c1a1-3d2a-bf3f-639fe907e28d
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libCoreFSCache.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+  - addr: 0x7fff3df53000
+    size: 20479
+    uuid: 45a2c724-f3d1-316a-9a41-cab8e2a390ec
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libCoreVMClient.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+  - addr: 0x7fff3df58000
+    size: 36863
+    uuid: 267b40df-2939-3d76-89fa-e8dbdee96d92
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libGFXShared.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+  - addr: 0x7fff3df61000
+    size: 49151
+    uuid: 2e25a83b-b560-34a1-b474-3027c8b75ba4
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libGL.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+  - addr: 0x7fff3df6d000
+    size: 241663
+    uuid: 49c5f799-66e5-3a81-af88-948dd0e583fa
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libGLImage.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+  - addr: 0x7fff3e11b000
+    size: 253951
+    uuid: 79555e42-b816-3106-8fa0-fc14a54ae8b3
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: libGLU.dylib
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+  - addr: 0x7fff3eb08000
+    size: 65535
+    uuid: fa76eaa6-d035-3444-87f5-dd95446d651d
+    arch: x86_64
+    version: 50.1.0 - 1.0.0
+    name: OpenGL
+    path: /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+  - addr: 0x7fff3f973000
+    size: 2453503
+    uuid: 2c9e3279-3f97-3440-b937-e5fe888232e2
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: QuartzCore
+    path: /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+  - addr: 0x7fff40417000
+    size: 3305471
+    uuid: aeb638d9-bfe9-319e-a70b-557acf41117a
+    arch: x86_64
+    version: 96.200.3 - 1.0.0
+    name: Security
+    path: /System/Library/Frameworks/Security.framework/Versions/A/Security
+  - addr: 0x7fff4073e000
+    size: 589823
+    uuid: 770d67d1-3da6-3fd3-8531-376712ba4f60
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: SecurityFoundation
+    path: /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+  - addr: 0x7fff407ff000
+    size: 20479
+    uuid: 20db899d-3baf-36fd-86a6-f66a82074607
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: ServiceManagement
+    path: /System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
+  - addr: 0x7fff40bc0000
+    size: 462847
+    uuid: eed5bc9b-ce8d-343c-bcdc-04a79f704828
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: SystemConfiguration
+    path: /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+  - addr: 0x7fff40e91000
+    size: 3551231
+    uuid: 468a9f6d-33ab-31d3-a8a3-a6a432033c9e
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: VideoToolbox
+    path: /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+  - addr: 0x7fff43e95000
+    size: 679935
+    uuid: cbe5ee83-7a5f-3c10-93ff-f6da84dfb875
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: APFS
+    path: /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+  - addr: 0x7fff44976000
+    size: 8191
+    uuid: 1debbe36-8945-3ad8-bd48-2850ad845711
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: AggregateDictionary
+    path: /System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary
+  - addr: 0x7fff44f72000
+    size: 184319
+    uuid: 79ebf155-eab2-37ee-bf8c-57bc453217b1
+    arch: x86_64
+    version: 963.200.27 - 1.0.0
+    name: Apple80211
+    path: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211
+  - addr: 0x7fff4527a000
+    size: 65535
+    uuid: e093776e-c367-3ccf-bfd5-623476a89e9a
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: AppleFSCompression
+    path: /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+  - addr: 0x7fff45387000
+    size: 49151
+    uuid: 5362d9ad-a2ae-3436-97ce-c353124504e5
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: AppleIDAuthSupport
+    path: /System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/Versions/A/AppleIDAuthSupport
+  - addr: 0x7fff453d3000
+    size: 303103
+    uuid: 9a690e6e-f987-3660-bed6-b1a4d1906b6c
+    arch: x86_64
+    version: 4.0.0 - 1.0.0
+    name: AppleJPEG
+    path: /System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
+  - addr: 0x7fff4566c000
+    size: 167935
+    uuid: 60bb16d6-de7e-356a-b9de-f73ee179934a
+    arch: x86_64
+    version: 274.20.0 - 9.0.0
+    name: AppleSauce
+    path: /System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
+  - addr: 0x7fff4575f000
+    size: 331775
+    uuid: f7b8cd3a-8671-3b2c-b67c-ce39c1442207
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: AppleVA
+    path: /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+  - addr: 0x7fff457fa000
+    size: 94207
+    uuid: 8fb0d908-6c46-3399-92d6-4e7d4b5f4f19
+    arch: x86_64
+    version: 0.0.0 - 1.0.0
+    name: AssertionServices
+    path: /System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices
+  - addr: 0x7fff45b40000
+    size: 2768895
+    uuid: ed375339-69f6-34ae-825d-f16bf0618e3e
+    arch: x86_64
+    version: 73.200.2 - 1.0.0
+    name: AuthKit
+    path: /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
+  - addr: 0x7fff45fb4000
+    size: 40959
+    uuid: 972f41b3-7df7-3bf1-acca-a093a4328adf
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: BackgroundTaskManagement
+    path: /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
+  - addr: 0x7fff45fbe000
+    size: 667647
+    uuid: 46534b04-dd0e-357b-9cb5-f88aac6af4ed
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: Backup
+    path: /System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
+  - addr: 0x7fff46061000
+    size: 466943
+    uuid: 709ef03c-5bce-3f47-bd58-a48c1f9378a5
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: BaseBoard
+    path: /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
+  - addr: 0x7fff47c81000
+    size: 40959
+    uuid: 7105f266-35c3-3582-9383-a2a9d7184a7b
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CommonAuth
+    path: /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+  - addr: 0x7fff4813a000
+    size: 4030463
+    uuid: 288ec7ed-a86a-30d0-ade2-56c33cd93aa8
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreAUC
+    path: /System/Library/PrivateFrameworks/CoreAUC.framework/Versions/A/CoreAUC
+  - addr: 0x7fff48512000
+    size: 204799
+    uuid: 507ac58b-4527-353b-99cb-67ff183bd4d5
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreAVCHD
+    path: /System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
+  - addr: 0x7fff48987000
+    size: 81919
+    uuid: 011e7853-bdd6-3197-ba8d-d6b977ef56eb
+    arch: x86_64
+    version: 228.0.0 - 1.0.0
+    name: CoreEmoji
+    path: /System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
+  - addr: 0x7fff48f70000
+    size: 471039
+    uuid: 401f5284-a984-32a1-a547-cc8156381070
+    arch: x86_64
+    version: 779.15.23 - 1.0.0
+    name: CoreNLP
+    path: /System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
+  - addr: 0x7fff4929d000
+    size: 36863
+    uuid: f47ca56f-6760-3282-bfd8-c8c8d2c33ecf
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: CorePhoneNumbers
+    path: /System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers
+  - addr: 0x7fff49434000
+    size: 204799
+    uuid: 2d012eb3-83bf-3e51-a2be-41af26f2ddf0
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: CoreServicesInternal
+    path: /System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+  - addr: 0x7fff4982a000
+    size: 585727
+    uuid: 912c63c0-473b-3352-a255-60f7ca3fe3f2
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: CoreSymbolication
+    path: /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+  - addr: 0x7fff49948000
+    size: 1232895
+    uuid: 05f9736c-5a62-33b3-9607-551a332aef28
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: CoreUI
+    path: /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+  - addr: 0x7fff49a75000
+    size: 1572863
+    uuid: 2554ba12-16a2-399f-a13a-e5c8eb4fc1ec
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: CoreUtils
+    path: /System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils
+  - addr: 0x7fff49c4b000
+    size: 409599
+    uuid: 5c6acf32-14d3-35fd-8a4a-629521090f41
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: CoreWiFi
+    path: /System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi
+  - addr: 0x7fff49caf000
+    size: 73727
+    uuid: 36754bb2-680f-36ae-a5de-548b4f41f0ae
+    arch: x86_64
+    version: 275.0.0 - 1.0.0
+    name: CrashReporterSupport
+    path: /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+  - addr: 0x7fff49d43000
+    size: 65535
+    uuid: 61ef0583-e946-3201-932d-7d117bc62cb2
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: DFRFoundation
+    path: /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
+  - addr: 0x7fff49d53000
+    size: 20479
+    uuid: b6b26bb3-2dc9-34d0-817e-eb612432ec96
+    arch: x86_64
+    version: 275.0.0 - 1.0.0
+    name: DSExternalDisplay
+    path: /System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
+  - addr: 0x7fff49dda000
+    size: 491519
+    uuid: 2d4cff51-bcd4-3d08-ae73-ab2b8bec8659
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: DataDetectorsCore
+    path: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+  - addr: 0x7fff49e9f000
+    size: 270335
+    uuid: 01f561da-4724-32fd-b2c7-6436f4ceb980
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: DebugSymbols
+    path: /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+  - addr: 0x7fff49ee1000
+    size: 1417215
+    uuid: 053d3a96-9263-3242-8625-101ddb9350de
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: DesktopServicesPriv
+    path: /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+  - addr: 0x7fff4b07e000
+    size: 4362239
+    uuid: ccbc466a-1ad4-3b0b-80b2-d6cfcbb37fc0
+    arch: x86_64
+    version: 4.0.0 - 1.0.0
+    name: FaceCore
+    path: /System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
+  - addr: 0x7fff4edc8000
+    size: 8191
+    uuid: f0c95234-16ba-3f0b-a11e-087abdc8dd6c
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libmetal_timestamp.dylib
+    path: /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libmetal_timestamp.dylib
+  - addr: 0x7fff5046e000
+    size: 24575
+    uuid: a7ff28dc-3576-3e53-afaf-0e29cb45e9ae
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: GPUWrangler
+    path: /System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
+  - addr: 0x7fff512d2000
+    size: 65535
+    uuid: c7040cd7-6cab-3878-b29e-21f1665341d0
+    arch: x86_64
+    version: 1245.8.4 - 64.0.0
+    name: GraphVisualizer
+    path: /System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
+  - addr: 0x7fff513c8000
+    size: 479231
+    uuid: 793e1d31-6166-37f2-a989-f98fe1706e5d
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: Heimdal
+    path: /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+  - addr: 0x7fff5280e000
+    size: 40959
+    uuid: a2e867b2-615d-393c-a2c7-d2b83b56756d
+    arch: x86_64
+    version: 275.0.0 - 1.0.0
+    name: IOAccelMemoryInfo
+    path: /System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo
+  - addr: 0x7fff52818000
+    size: 32767
+    uuid: 01551ed8-6ae1-307d-a3f0-dca85faa5210
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: IOAccelerator
+    path: /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
+  - addr: 0x7fff52823000
+    size: 106495
+    uuid: 751130a1-8639-3bda-bf8f-a3be54427e43
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: IOPresentment
+    path: /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
+  - addr: 0x7fff52c4f000
+    size: 196607
+    uuid: be9e71b4-c00e-317d-9093-6e637c905a09
+    arch: x86_64
+    version: 933.0.0 - 1.0.0
+    name: IconServices
+    path: /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
+  - addr: 0x7fff52da9000
+    size: 20479
+    uuid: f0e300ad-1e67-3d57-b179-c2212f7cd00c
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: InternationalSupport
+    path: /System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
+  - addr: 0x7fff52f1d000
+    size: 81919
+    uuid: 10a17a9d-564e-3841-a433-d6d7401ed733
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: KeychainCircle
+    path: /System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
+  - addr: 0x7fff52f4b000
+    size: 1015807
+    uuid: e524cc46-42c7-3046-ad6c-5d5d768ea478
+    arch: x86_64
+    version: 69.15.9 - 1.0.0
+    name: LanguageModeling
+    path: /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
+  - addr: 0x7fff53043000
+    size: 270335
+    uuid: 90c1cfe1-9935-3f4f-8a9b-1dd697f2ff3d
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: Lexicon
+    path: /System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
+  - addr: 0x7fff5308b000
+    size: 28671
+    uuid: d27b30ba-3f5d-3af2-895c-3b64569eea1b
+    arch: x86_64
+    version: 228.0.0 - 1.0.0
+    name: LinguisticData
+    path: /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
+  - addr: 0x7fff538ee000
+    size: 16383
+    uuid: 8744dbf9-3375-392c-8ee6-24373e0d19e8
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: Mangrove
+    path: /System/Library/PrivateFrameworks/Mangrove.framework/Versions/A/Mangrove
+  - addr: 0x7fff53deb000
+    size: 167935
+    uuid: 7cd28a81-f0d6-3575-8f83-3d45d53f72bb
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: MetadataUtilities
+    path: /System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
+  - addr: 0x7fff53e14000
+    size: 602111
+    uuid: 60be7793-d8de-3df1-94d7-503301ec1e72
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: MetalTools
+    path: /System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
+  - addr: 0x7fff53ebb000
+    size: 106495
+    uuid: 0c9b7077-bfcf-3a2e-8f54-d7c2820893fd
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: MobileAsset
+    path: /System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset
+  - addr: 0x7fff54051000
+    size: 114687
+    uuid: e9f2ff73-22d0-35b5-bd2c-9dd8fdb12bcc
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: MobileKeyBag
+    path: /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
+  - addr: 0x7fff540fa000
+    size: 176127
+    uuid: a2bb198c-0b1a-3988-8611-9a9bcce650b5
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: MultitouchSupport
+    path: /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+  - addr: 0x7fff54396000
+    size: 45055
+    uuid: 55dc741a-a01a-380c-b2d3-244241da1f2c
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: NetAuth
+    path: /System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+  - addr: 0x7fff54c6b000
+    size: 356351
+    uuid: a0e0fc0b-b48f-3639-9c50-baecc72988d5
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: OTSVG
+    path: /System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
+  - addr: 0x7fff55e24000
+    size: 65535
+    uuid: 8560f263-31f4-3cca-84b1-30c296dc1a7d
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: PerformanceAnalysis
+    path: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+  - addr: 0x7fff57dec000
+    size: 126975
+    uuid: c5ac21fb-74ad-3fc2-b231-b1376751bbae
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: ProtocolBuffer
+    path: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
+  - addr: 0x7fff57fb9000
+    size: 364543
+    uuid: 5437f6f7-453f-3d75-9e87-d2a090d82d25
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: ROCKit
+    path: /System/Library/PrivateFrameworks/ROCKit.framework/Versions/A/ROCKit
+  - addr: 0x7fff580d6000
+    size: 53247
+    uuid: fb030135-1633-378f-a7a6-b1a81ad068a2
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: RemoteServiceDiscovery
+    path: /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/Versions/A/RemoteServiceDiscovery
+  - addr: 0x7fff580f5000
+    size: 147455
+    uuid: 68530b4d-b2c0-3271-941b-d9ea62095727
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: RemoteViewServices
+    path: /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+  - addr: 0x7fff58119000
+    size: 86015
+    uuid: 1e00a78b-1934-39a0-8f35-48cbeb93d04c
+    arch: x86_64
+    version: 1336.201.2 - 1.0.0
+    name: RemoteXPC
+    path: /System/Library/PrivateFrameworks/RemoteXPC.framework/Versions/A/RemoteXPC
+  - addr: 0x7fff59a86000
+    size: 1179647
+    uuid: 9881aead-5410-33f7-a852-770c7fe677c9
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: Sharing
+    path: /System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing
+  - addr: 0x7fff5a957000
+    size: 2822143
+    uuid: 5f7d2312-0003-354c-82bc-dc346b1a98e6
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: SkyLight
+    path: /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+  - addr: 0x7fff5b3d6000
+    size: 57343
+    uuid: 816ec315-3e76-37b7-a495-b4ae031da439
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: SpeechRecognitionCore
+    path: /System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore
+  - addr: 0x7fff5bac8000
+    size: 262143
+    uuid: 3f13dfee-a6c9-3815-9120-b5ca6987662e
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: StreamingZip
+    path: /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip
+  - addr: 0x7fff5c244000
+    size: 581631
+    uuid: 7d5fb79e-1121-3db0-9cbe-c023835ace60
+    arch: x86_64
+    version: 64235.3.1 - 1.0.0
+    name: Symbolication
+    path: /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+  - addr: 0x7fff5c7da000
+    size: 57343
+    uuid: 55c045f7-d8ab-3be6-970b-9457fa78e7e3
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: TCC
+    path: /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+  - addr: 0x7fff5ca56000
+    size: 819199
+    uuid: f9d5f55d-9a33-326e-8b2f-b533cc91dd64
+    arch: x86_64
+    version: 1.13.8 - 1.0.0
+    name: TextureIO
+    path: /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
+  - addr: 0x7fff5cbde000
+    size: 1814527
+    uuid: 1caaa3ac-1477-3e24-b55c-07a704d7ca03
+    arch: x86_64
+    version: 498.46.0 - 1.0.0
+    name: UIFoundation
+    path: /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
+  - addr: 0x7fff5da86000
+    size: 958463
+    uuid: 0bcca232-710b-3f84-8341-a30f77b3a4e9
+    arch: x86_64
+    version: 1.0.0 - 1.0.0
+    name: ViewBridge
+    path: /System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge
+  - addr: 0x7fff5e38a000
+    size: 16383
+    uuid: 63a533f6-988d-3fed-a1c7-20bc725a0d4b
+    arch: x86_64
+    version: 1555.10.0 - 300.0.0
+    name: XCTTargetBootstrap
+    path: /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
+  - addr: 0x7fff5e7be000
+    size: 12287
+    uuid: 5f1e000d-0674-3413-ab3e-83f7974666fb
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: loginsupport
+    path: /System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport
+  - addr: 0x7fff5ea7a000
+    size: 233471
+    uuid: 62edd39f-6d1b-334b-a9a2-5800714255bb
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libCRFSuite.dylib
+    path: /usr/lib/libCRFSuite.dylib
+  - addr: 0x7fff5eab5000
+    size: 49151
+    uuid: 8cd1c213-7f62-3f02-bfb1-d0a5eff92ab0
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: libChineseTokenizer.dylib
+    path: /usr/lib/libChineseTokenizer.dylib
+  - addr: 0x7fff5eb51000
+    size: 8191
+    uuid: c542cb3c-aa44-3d7f-b88c-79cc31b481ab
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libDiagnosticMessagesClient.dylib
+    path: /usr/lib/libDiagnosticMessagesClient.dylib
+  - addr: 0x7fff5eb89000
+    size: 1851391
+    uuid: 6ef1cb2a-2bda-3458-b631-f794d72660fd
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libFosl_dynamic.dylib
+    path: /usr/lib/libFosl_dynamic.dylib
+  - addr: 0x7fff5eda2000
+    size: 131071
+    uuid: a2c32318-0e35-3963-b9b7-e1e92ad33ba6
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libMobileGestalt.dylib
+    path: /usr/lib/libMobileGestalt.dylib
+  - addr: 0x7fff5edc2000
+    size: 4095
+    uuid: 2eebf84d-9e00-3570-ac0c-c49c8d25a8bf
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libOpenScriptingUtil.dylib
+    path: /usr/lib/libOpenScriptingUtil.dylib
+  - addr: 0x7fff5ef03000
+    size: 8191
+    uuid: d5133811-9d66-3deb-9521-0a67347c9a54
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libSystem.B.dylib
+    path: /usr/lib/libSystem.B.dylib
+  - addr: 0x7fff5ef8e000
+    size: 8191
+    uuid: a8235b04-f541-3856-be2e-b58ee0483ad9
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libThaiTokenizer.dylib
+    path: /usr/lib/libThaiTokenizer.dylib
+  - addr: 0x7fff5efa2000
+    size: 94207
+    uuid: b8d45114-3868-3154-bc35-22597e3e7d8a
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libapple_nghttp2.dylib
+    path: /usr/lib/libapple_nghttp2.dylib
+  - addr: 0x7fff5efb9000
+    size: 172031
+    uuid: b47c54a0-3a30-374a-bd99-2304b9b0ec82
+    arch: x86_64
+    version: 1.0.5 - 1.0.0
+    name: libarchive.2.dylib
+    path: /usr/lib/libarchive.2.dylib
+  - addr: 0x7fff5efe3000
+    size: 524287
+    uuid: c647a80f-6f80-3fda-a9b4-92800999f963
+    arch: x86_64
+    version: 228.0.0 - 1.0.0
+    name: libate.dylib
+    path: /usr/lib/libate.dylib
+  - addr: 0x7fff5f066000
+    size: 4095
+    uuid: 01824e49-f2ef-3fc1-abf3-782efdf6ca17
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libauto.dylib
+    path: /usr/lib/libauto.dylib
+  - addr: 0x7fff5f13e000
+    size: 69631
+    uuid: 5e5098d0-f7b2-32a1-8038-e709f6718d4e
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libbsm.0.dylib
+    path: /usr/lib/libbsm.0.dylib
+  - addr: 0x7fff5f14f000
+    size: 61439
+    uuid: 4ee3c5e8-bef3-3910-a231-b1ae2b437e01
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libbz2.1.0.dylib
+    path: /usr/lib/libbz2.1.0.dylib
+  - addr: 0x7fff5f15e000
+    size: 360447
+    uuid: d4ab366f-48a9-3c7d-91bd-41198f69dd57
+    arch: x86_64
+    version: 400.17.0 - 1.0.0
+    name: libc++.1.dylib
+    path: /usr/lib/libc++.1.dylib
+  - addr: 0x7fff5f1b6000
+    size: 90111
+    uuid: ba948a32-9024-3e55-98d4-18e31f6aed25
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libc++abi.dylib
+    path: /usr/lib/libc++abi.dylib
+  - addr: 0x7fff5f1cc000
+    size: 4095
+    uuid: d998a58b-e4a8-3685-9a6a-43afc28100eb
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libcharset.1.dylib
+    path: /usr/lib/libcharset.1.dylib
+  - addr: 0x7fff5f1cd000
+    size: 69631
+    uuid: 5d776ff6-df7f-3edd-b920-c07ed76c672b
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libcmph.dylib
+    path: /usr/lib/libcmph.dylib
+  - addr: 0x7fff5f1de000
+    size: 102399
+    uuid: ea767836-cbdc-318d-ac14-963c90d6cc67
+    arch: x86_64
+    version: 6.3.0 - 6.0.0
+    name: libcompression.dylib
+    path: /usr/lib/libcompression.dylib
+  - addr: 0x7fff5f4a1000
+    size: 94207
+    uuid: 6e68f922-752c-311f-b56d-ee391e6ae1f7
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libcoretls.dylib
+    path: /usr/lib/libcoretls.dylib
+  - addr: 0x7fff5f4b8000
+    size: 8191
+    uuid: 7300ba76-39d2-349e-9fb8-ebe5947a708a
+    arch: x86_64
+    version: 155.200.6 - 1.0.0
+    name: libcoretls_cfhelpers.dylib
+    path: /usr/lib/libcoretls_cfhelpers.dylib
+  - addr: 0x7fff5fb30000
+    size: 356351
+    uuid: 51e06e95-891f-3b88-a8c3-35b514c57239
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libcups.2.dylib
+    path: /usr/lib/libcups.2.dylib
+  - addr: 0x7fff5fcbe000
+    size: 4095
+    uuid: d62ed169-b91c-3ccb-adf5-e66ae4007b51
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libenergytrace.dylib
+    path: /usr/lib/libenergytrace.dylib
+  - addr: 0x7fff5fcf0000
+    size: 24575
+    uuid: 9cbf0658-e83b-32e6-b674-3ee72d22c041
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libgermantok.dylib
+    path: /usr/lib/libgermantok.dylib
+  - addr: 0x7fff5fcf6000
+    size: 24575
+    uuid: 58971629-3850-3905-a9a1-09fcf7a32815
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libheimdal-asn1.dylib
+    path: /usr/lib/libheimdal-asn1.dylib
+  - addr: 0x7fff5fd27000
+    size: 991231
+    uuid: 3240a278-f537-3ec8-be0c-983797520a50
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libiconv.2.dylib
+    path: /usr/lib/libiconv.2.dylib
+  - addr: 0x7fff5fe19000
+    size: 2506751
+    uuid: eae6fc43-3ad2-3a53-9f7a-4e5e5f66d006
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libicucore.A.dylib
+    path: /usr/lib/libicucore.A.dylib
+  - addr: 0x7fff600c9000
+    size: 8191
+    uuid: f79b6250-c0b1-3e8e-851f-6ca33b4311a3
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: liblangid.dylib
+    path: /usr/lib/liblangid.dylib
+  - addr: 0x7fff600cb000
+    size: 102399
+    uuid: 3addfa63-f37a-3c9c-91e4-58ee3113b9a1
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: liblzma.5.dylib
+    path: /usr/lib/liblzma.5.dylib
+  - addr: 0x7fff600fb000
+    size: 724991
+    uuid: 6a38fcda-17ce-30c3-ab66-a714cf645384
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: libmecab.1.0.0.dylib
+    path: /usr/lib/libmecab.1.0.0.dylib
+  - addr: 0x7fff601ac000
+    size: 2351103
+    uuid: 30e102aa-f3d3-3572-a1ae-1f2287def696
+    arch: x86_64
+    version: 107.0.0 - 1.0.0
+    name: libmecabra.dylib
+    path: /usr/lib/libmecabra.dylib
+  - addr: 0x7fff605c1000
+    size: 3510271
+    uuid: ad59d28c-ccb2-3b34-b904-8ccceb2cf320
+    arch: x86_64
+    version: 155.200.6 - 1.0.0
+    name: libnetwork.dylib
+    path: /usr/lib/libnetwork.dylib
+  - addr: 0x7fff609aa000
+    size: 7892991
+    uuid: 2e868147-8818-359e-8cd7-a8b80665928f
+    arch: x86_64
+    version: 400.17.0 - 1.0.0
+    name: libobjc.A.dylib
+    path: /usr/lib/libobjc.A.dylib
+  - addr: 0x7fff61143000
+    size: 20479
+    uuid: 8c419238-675a-3c41-b8d4-95e391ca630f
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libpam.2.dylib
+    path: /usr/lib/libpam.2.dylib
+  - addr: 0x7fff6114a000
+    size: 225279
+    uuid: 5939ab23-b2a9-3c03-b6c1-4f0e5a21d9fc
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libpcap.A.dylib
+    path: /usr/lib/libpcap.A.dylib
+  - addr: 0x7fff6129a000
+    size: 102399
+    uuid: 0feaeb01-b926-37fa-ab47-99bac481c10b
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libresolv.9.dylib
+    path: /usr/lib/libresolv.9.dylib
+  - addr: 0x7fff61304000
+    size: 8191
+    uuid: 0e60d709-0a48-3905-acd1-9dde6fd8b476
+    arch: x86_64
+    version: 1555.10.0 - 150.0.0
+    name: libspindump.dylib
+    path: /usr/lib/libspindump.dylib
+  - addr: 0x7fff61306000
+    size: 1933311
+    uuid: 4434b695-bc65-30d6-afed-1b6488db3d2e
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libsqlite3.dylib
+    path: /usr/lib/libsqlite3.dylib
+  - addr: 0x7fff6176a000
+    size: 16383
+    uuid: 91ee9bf4-fb06-3260-b502-7efdad5af59b
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libutil.dylib
+    path: /usr/lib/libutil.dylib
+  - addr: 0x7fff6176e000
+    size: 57343
+    uuid: 4b4d0206-0b62-3e89-ad07-e7bb9e4dfa68
+    arch: x86_64
+    version: 1.2.11 - 1.0.0
+    name: libxar.1.dylib
+    path: /usr/lib/libxar.1.dylib
+  - addr: 0x7fff61780000
+    size: 933887
+    uuid: bff70f01-6755-36b9-b7aa-724743e63503
+    arch: x86_64
+    version: 62.1.0 - 1.0.0
+    name: libxml2.2.dylib
+    path: /usr/lib/libxml2.2.dylib
+  - addr: 0x7fff61864000
+    size: 167935
+    uuid: f191e8b9-7530-30ca-873b-2fa2bf2d6374
+    arch: x86_64
+    version: 10.9.0 - 10.0.0
+    name: libxslt.1.dylib
+    path: /usr/lib/libxslt.1.dylib
+  - addr: 0x7fff6188d000
+    size: 77823
+    uuid: 99a3d725-8388-38b4-b66c-5e9006e6f072
+    arch: x86_64
+    version: 1252.200.5 - 1.0.0
+    name: libz.1.dylib
+    path: /usr/lib/libz.1.dylib
+  - addr: 0x7fff61910000
+    size: 20479
+    uuid: fe21a7e9-dbeb-33ac-836b-785ad036acf4
+    arch: x86_64
+    version: 330.201.1 - 1.0.0
+    name: libcache.dylib
+    path: /usr/lib/system/libcache.dylib
+  - addr: 0x7fff61915000
+    size: 45055
+    uuid: 78093d4f-91db-35c8-981a-13375778b2e7
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libcommonCrypto.dylib
+    path: /usr/lib/system/libcommonCrypto.dylib
+  - addr: 0x7fff61920000
+    size: 32767
+    uuid: a4d9cf37-d076-3ce9-95f1-da89da1601b6
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libcompiler_rt.dylib
+    path: /usr/lib/system/libcompiler_rt.dylib
+  - addr: 0x7fff61928000
+    size: 40959
+    uuid: 4bcdadbf-79f5-3829-b47d-64da0d44bcbf
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libcopyfile.dylib
+    path: /usr/lib/system/libcopyfile.dylib
+  - addr: 0x7fff61932000
+    size: 544767
+    uuid: 7aec5b72-0b92-37e8-808b-6732db714139
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libcorecrypto.dylib
+    path: /usr/lib/system/libcorecrypto.dylib
+  - addr: 0x7fff61a3c000
+    size: 241663
+    uuid: b8962879-ad55-3cf0-9b0a-5f1d57d1e14b
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libdispatch.dylib
+    path: /usr/lib/system/libdispatch.dylib
+  - addr: 0x7fff61a77000
+    size: 196607
+    uuid: 4b16c209-83d4-3817-9b62-c2f7ffb23755
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libdyld.dylib
+    path: /usr/lib/system/libdyld.dylib
+  - addr: 0x7fff61aa7000
+    size: 4095
+    uuid: a73aa788-c35c-3284-bfca-95b1bbdf0cf3
+    arch: x86_64
+    version: 4903.201.1 - 1.0.0
+    name: libkeymgr.dylib
+    path: /usr/lib/system/libkeymgr.dylib
+  - addr: 0x7fff61aa8000
+    size: 53247
+    uuid: eaf1cf8d-3843-33be-8126-30994685b8f0
+    arch: x86_64
+    version: 400.9.4 - 1.0.0
+    name: libkxld.dylib
+    path: /usr/lib/system/libkxld.dylib
+  - addr: 0x7fff61ab5000
+    size: 4095
+    uuid: 43e6698e-155e-3eae-baff-ca5fcb35325c
+    arch: x86_64
+    version: 1336.201.2 - 1.0.0
+    name: liblaunch.dylib
+    path: /usr/lib/system/liblaunch.dylib
+  - addr: 0x7fff61ab6000
+    size: 24575
+    uuid: 17bf7038-9c70-3ee1-9e96-3ae10d49669e
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libmacho.dylib
+    path: /usr/lib/system/libmacho.dylib
+  - addr: 0x7fff61abc000
+    size: 12287
+    uuid: c70da995-0d6e-302c-a15e-f7f03a3857b4
+    arch: x86_64
+    version: 4903.201.2 - 1.0.0
+    name: libquarantine.dylib
+    path: /usr/lib/system/libquarantine.dylib
+  - addr: 0x7fff61abf000
+    size: 8191
+    uuid: d74a307b-3dc7-3992-b16c-dacb8207be13
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libremovefile.dylib
+    path: /usr/lib/system/libremovefile.dylib
+  - addr: 0x7fff61ac1000
+    size: 98303
+    uuid: ec9d8ad4-e5cb-3765-804a-9e1e9dc045d2
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_asl.dylib
+    path: /usr/lib/system/libsystem_asl.dylib
+  - addr: 0x7fff61ad9000
+    size: 4095
+    uuid: 26419398-c30c-30f1-b656-a92afa9560f6
+    arch: x86_64
+    version: 177.200.16 - 1.0.0
+    name: libsystem_blocks.dylib
+    path: /usr/lib/system/libsystem_blocks.dylib
+  - addr: 0x7fff61ada000
+    size: 561151
+    uuid: 3deee96e-6df6-35ad-8654-d69ac26b907b
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_c.dylib
+    path: /usr/lib/system/libsystem_c.dylib
+  - addr: 0x7fff61b63000
+    size: 16383
+    uuid: 02cc3996-b34e-333c-8806-ae2699d34424
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_configuration.dylib
+    path: /usr/lib/system/libsystem_configuration.dylib
+  - addr: 0x7fff61b67000
+    size: 16383
+    uuid: 254b6849-2c8f-302c-8616-b8324a11ab30
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_coreservices.dylib
+    path: /usr/lib/system/libsystem_coreservices.dylib
+  - addr: 0x7fff61b6b000
+    size: 28671
+    uuid: 974e9ef7-de72-34b7-b056-0a81c10df8eb
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_darwin.dylib
+    path: /usr/lib/system/libsystem_darwin.dylib
+  - addr: 0x7fff61b72000
+    size: 28671
+    uuid: ffc665aa-b257-35ad-bd8b-32fd42c2eec1
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_dnssd.dylib
+    path: /usr/lib/system/libsystem_dnssd.dylib
+  - addr: 0x7fff61b79000
+    size: 315391
+    uuid: 0707c387-d7de-372e-8ff1-3de5c91932d6
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_info.dylib
+    path: /usr/lib/system/libsystem_info.dylib
+  - addr: 0x7fff61bc6000
+    size: 163839
+    uuid: 45faa4c0-d553-34fd-adf8-884886ae0d2a
+    arch: x86_64
+    version: 0.0.0 - 0.0.0
+    name: libsystem_kernel.dylib
+    path: /usr/lib/system/libsystem_kernel.dylib
+  - addr: 0x7fff61bee000
+    size: 311295
+    uuid: 43d1796b-954f-37d6-b1ac-9d80df0655a2
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_m.dylib
+    path: /usr/lib/system/libsystem_m.dylib
+  - addr: 0x7fff61c3a000
+    size: 151551
+    uuid: 846f6898-117c-3427-a8fb-3772ffc2410b
+    arch: x86_64
+    version: 63.4.0 - 1.0.0
+    name: libsystem_malloc.dylib
+    path: /usr/lib/system/libsystem_malloc.dylib
+  - addr: 0x7fff61c5f000
+    size: 49151
+    uuid: f84d5474-4dc1-3e1a-ae00-8ce9593278b4
+    arch: x86_64
+    version: 1336.201.2 - 1.0.0
+    name: libsystem_networkextension.dylib
+    path: /usr/lib/system/libsystem_networkextension.dylib
+  - addr: 0x7fff61c6b000
+    size: 32767
+    uuid: bccb222f-dc64-3954-a836-dcce6659ca5a
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_notify.dylib
+    path: /usr/lib/system/libsystem_notify.dylib
+  - addr: 0x7fff61c73000
+    size: 40959
+    uuid: b75b04ad-69fe-3ade-84d2-c17972fc8f49
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_platform.dylib
+    path: /usr/lib/system/libsystem_platform.dylib
+  - addr: 0x7fff61c7d000
+    size: 45055
+    uuid: 87a6b136-e423-3b6d-a58a-137f392d7d9d
+    arch: x86_64
+    version: 4903.201.1 - 1.0.0
+    name: libsystem_pthread.dylib
+    path: /usr/lib/system/libsystem_pthread.dylib
+  - addr: 0x7fff61c88000
+    size: 16383
+    uuid: fba7e09b-f10f-3424-90ea-b4999b7fb461
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_sandbox.dylib
+    path: /usr/lib/system/libsystem_sandbox.dylib
+  - addr: 0x7fff61c8c000
+    size: 12287
+    uuid: cbeab62b-f0a0-342f-9878-cadc14a3cb0d
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libsystem_secinit.dylib
+    path: /usr/lib/system/libsystem_secinit.dylib
+  - addr: 0x7fff61c8f000
+    size: 32767
+    uuid: b6e22fa8-0f7b-36fd-9d99-284056d3cb47
+    arch: x86_64
+    version: 917.0.0 - 1.0.0
+    name: libsystem_symptoms.dylib
+    path: /usr/lib/system/libsystem_symptoms.dylib
+  - addr: 0x7fff61c97000
+    size: 90111
+    uuid: 7983ed77-18b5-39a5-be19-ae4f2832adea
+    arch: x86_64
+    version: 4903.201.1 - 1.0.0
+    name: libsystem_trace.dylib
+    path: /usr/lib/system/libsystem_trace.dylib
+  - addr: 0x7fff61cae000
+    size: 24575
+    uuid: 41222ef6-2233-3cf4-947a-15d48cb8c030
+    arch: x86_64
+    version: 166.200.60 - 1.0.0
+    name: libunwind.dylib
+    path: /usr/lib/system/libunwind.dylib
+  - addr: 0x7fff61cb4000
+    size: 200703
+    uuid: 0a8747d1-33aa-37e1-b97a-ba9b95fe4e8c
+    arch: x86_64
+    version: 625.13.0 - 1.0.0
+    name: libxpc.dylib
+    path: /usr/lib/system/libxpc.dylib
