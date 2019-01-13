@@ -282,10 +282,13 @@ impl AppleCrashReport {
                 state = ParsingState::Thread;
                 continue;
             } else if let Some(caps) = THREAD_NAME_RE.captures(&line) {
-                thread_names.insert(caps[1].parse::<u64>().unwrap(), (
-                    caps[2].to_string(),
-                    caps.get(3).map(|x| x.as_str().to_string())
-                ));
+                thread_names.insert(
+                    caps[1].parse::<u64>().unwrap(),
+                    (
+                        caps[2].to_string(),
+                        caps.get(3).map(|x| x.as_str().to_string()),
+                    ),
+                );
                 state = ParsingState::Root;
                 continue;
             }
@@ -424,7 +427,8 @@ impl AppleCrashReport {
 
         if !application_specific_information.is_empty() {
             if application_specific_information.ends_with('\n') {
-                application_specific_information.truncate(application_specific_information.len() - 1);
+                application_specific_information
+                    .truncate(application_specific_information.len() - 1);
             }
             rv.application_specific_information = Some(application_specific_information);
         }

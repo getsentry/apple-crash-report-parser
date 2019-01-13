@@ -14,7 +14,6 @@ doc:
 .PHONY: doc
 
 test:
-	@cargo test
 	@cargo test --all-features
 .PHONY: test
 

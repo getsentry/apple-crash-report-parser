@@ -3,7 +3,6 @@ use std::fs;
 use apple_crash_report_parser::AppleCrashReport;
 use insta::assert_serialized_snapshot_matches;
 
-
 fn load_fixture(name: &str) -> String {
     fs::read_to_string(format!("tests/fixtures/{}.txt", name)).unwrap()
 }
