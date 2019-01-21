@@ -1,7 +1,9 @@
-Created: 2019-01-13T23:08:50.417587+00:00
-Creator: insta@0.1.1
-Source: tests/test_snapshots.rs
-
+---
+created: "2019-01-21T22:19:27.729063+00:00"
+creator: insta@0.4.0
+expression: "&report"
+source: tests/test_snapshots.rs
+---
 ---
 incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
 timestamp: "2019-01-09T17:42:22Z"
