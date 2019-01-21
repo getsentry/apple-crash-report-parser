@@ -9,6 +9,7 @@ edition = "2018"
 repository = "https://github.com/getsentry/apple-crash-report-parser"
 homepage = "https://github.com/getsentry/apple-crash-report-parser"
 documentation = "https://docs.rs/apple-crash-report-parser"
+categories = ["parser-implementations"]
 description = """
 Parses apple crash report text files.
 """
