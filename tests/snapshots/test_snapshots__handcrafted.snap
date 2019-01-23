@@ -1,9 +1,8 @@
 ---
-created: "2019-01-21T22:19:27.729063+00:00"
-creator: insta@0.4.0
+created: "2019-01-23T13:22:50.857316+00:00"
+creator: insta@0.5.2
 expression: "&report"
 source: tests/test_snapshots.rs
----
 ---
 incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
 timestamp: "2019-01-09T17:42:22Z"
