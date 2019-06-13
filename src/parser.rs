@@ -78,7 +78,7 @@ lazy_static! {
 
 /// A newtype for addresses.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
-pub struct Addr(u64);
+pub struct Addr(pub u64);
 
 #[cfg(feature = "with_serde")]
 impl Serialize for Addr {
