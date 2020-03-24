@@ -1,3 +1,6 @@
+// These tests require serde for insta
+#![cfg(feature = "with_serde")]
+
 use std::fs;
 
 use apple_crash_report_parser::AppleCrashReport;
