@@ -238,10 +238,11 @@ impl AppleCrashReport {
         AppleCrashReport::from_line_iter(reader.lines().map(|x| x.map(Cow::Owned)))
     }
 
-    #[allow(clippy::cyclomatic_complexity)]
-    fn from_line_iter<'a, I: Iterator<Item = Result<Cow<'a, str>, io::Error>>>(
-        iter: I,
-    ) -> Result<AppleCrashReport, ParseError> {
+    #[allow(clippy::cognitive_complexity)]
+    fn from_line_iter<'a, I>(iter: I) -> Result<AppleCrashReport, ParseError>
+    where
+        I: Iterator<Item = Result<Cow<'a, str>, io::Error>>,
+    {
         let mut state = ParsingState::Root;
         let mut thread = None;
         let mut thread_names = BTreeMap::new();
