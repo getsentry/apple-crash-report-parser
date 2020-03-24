@@ -1,28 +1,36 @@
-all: test
+all: style lint test-all
 .PHONY: all
 
-clean:
-	@cargo clean
-.PHONY: clean
+check: style lint
+.PHONY: check
 
 build:
-	@cargo build
+	@cargo build --all-features
 .PHONY: build
 
 doc:
-	@cargo doc --all-features
+	@cargo doc
 .PHONY: doc
 
 test:
-	@cargo test --all-features
+	@cargo test
 .PHONY: test
 
-format-check:
-	@rustup component add rustfmt 2> /dev/null
-	@cargo fmt -- --check
-.PHONY: format-check
+test-all:
+	@cargo test --all-features
+.PHONY: test-all
+
+style:
+	@rustup component add rustfmt --toolchain stable 2> /dev/null
+	cargo +stable fmt -- --check
+.PHONY: style
+
+format:
+	@rustup component add rustfmt --toolchain stable 2> /dev/null
+	@cargo +stable fmt
+.PHONY: format
 
 lint:
-	@rustup component add clippy 2> /dev/null
-	@cargo clippy
+	@rustup component add clippy --toolchain stable 2> /dev/null
+	@cargo +stable clippy  --all-features --tests -- -D clippy::all
 .PHONY: lint
