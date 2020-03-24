@@ -196,7 +196,7 @@ enum ParsingState {
 #[derive(Debug)]
 pub enum ParseError {
     Io(io::Error),
-    InvalidIncidentIdentifier(uuid::parser::ParseError),
+    InvalidIncidentIdentifier(uuid::Error),
     InvalidReportVersion(std::num::ParseIntError),
     InvalidTimestamp(chrono::ParseError),
 }
