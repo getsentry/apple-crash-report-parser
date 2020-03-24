@@ -29,4 +29,4 @@ serde = { version = "1.0.84", features = ["derive"], package = "serde", optional
 
 [dev-dependencies]
 serde_json = "1.0.34"
-insta = "0.5.2"
+insta = "0.15.0"
