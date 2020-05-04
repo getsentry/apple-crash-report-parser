@@ -9,23 +9,23 @@ fn load_fixture(name: &str) -> String {
     fs::read_to_string(format!("tests/fixtures/{}.txt", name)).unwrap()
 }
 
-#[test]
-fn test_bruno() {
-    let fixture = load_fixture("bruno");
-    let report: AppleCrashReport = fixture.parse().unwrap();
-    insta::assert_yaml_snapshot!("bruno", &report);
+macro_rules! test_snapshots {
+    ( $( $test:ident => $fixture:literal ),+ $(,)? ) => {
+        $(
+            #[test]
+            fn $test() {
+                let fixture = load_fixture($fixture);
+                let report: AppleCrashReport = fixture.parse().unwrap();
+                insta::assert_yaml_snapshot!($fixture, &report);
+            }
+        )*
+    };
 }
 
-#[test]
-fn test_handcrafted() {
-    let fixture = load_fixture("handcrafted");
-    let report: AppleCrashReport = fixture.parse().unwrap();
-    insta::assert_yaml_snapshot!("handcrafted", &report);
-}
-
-#[test]
-fn test_xcdyoutubekit_54() {
-    let fixture = load_fixture("XCDYouTubeKit-54");
-    let report: AppleCrashReport = fixture.parse().unwrap();
-    insta::assert_yaml_snapshot!("XCDYouTubeKit-54", &report);
-}
+test_snapshots!(
+    test_bruno => "bruno",
+    test_handcrafted => "handcrafted",
+    test_xcdyoutubekit_54 => "XCDYouTubeKit-54",
+    // Regression test for #5: Spaces in image names
+    test_spaces => "spaces",
+);
