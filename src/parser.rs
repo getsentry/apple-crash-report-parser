@@ -197,6 +197,7 @@ enum ParsingState {
 pub enum ParseError {
     Io(io::Error),
     InvalidIncidentIdentifier(uuid::Error),
+    InvalidImageIdentifier(uuid::Error),
     InvalidReportVersion(std::num::ParseIntError),
     InvalidTimestamp(chrono::ParseError),
 }
@@ -206,6 +207,7 @@ impl std::error::Error for ParseError {
         match *self {
             ParseError::Io(ref err) => Some(err),
             ParseError::InvalidIncidentIdentifier(ref err) => Some(err),
+            ParseError::InvalidImageIdentifier(ref err) => Some(err),
             ParseError::InvalidReportVersion(ref err) => Some(err),
             ParseError::InvalidTimestamp(ref err) => Some(err),
         }
@@ -217,6 +219,7 @@ impl fmt::Display for ParseError {
         match *self {
             ParseError::Io(..) => write!(f, "io error during parsing"),
             ParseError::InvalidIncidentIdentifier(..) => write!(f, "invalid incident identifier"),
+            ParseError::InvalidImageIdentifier(..) => write!(f, "invalid binary image identifier"),
             ParseError::InvalidReportVersion(..) => write!(f, "invalid report version"),
             ParseError::InvalidTimestamp(..) => write!(f, "invalid timestamp"),
         }
@@ -378,7 +381,7 @@ impl AppleCrashReport {
                             size: u64::from_str_radix(&caps[2][2..], 16).unwrap() - addr,
                             uuid: caps[6]
                                 .parse()
-                                .map_err(ParseError::InvalidIncidentIdentifier)?,
+                                .map_err(ParseError::InvalidImageIdentifier)?,
                             arch: caps[4].to_string(),
                             version: caps.get(5).map(|x| x.as_str().to_string()),
                             name: caps[3].to_string(),
