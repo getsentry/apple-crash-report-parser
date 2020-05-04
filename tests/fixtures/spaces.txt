@@ -1,0 +1,37 @@
+Thread 0:
+0   App Namespace                       0x0000000102268e70 0x10211c000 + 1363568
+1   App Namespace                       0x0000000102268550 0x10211c000 + 1361232
+2   App Namespace                       0x000000010226860c 0x10211c000 + 1361420
+3   UIKitCore                           0x00000001b81d6948 0x1b7609000 + 12376392
+4   UIKitCore                           0x00000001b81d6464 0x1b7609000 + 12375140
+5   UIKitCore                           0x00000001b81d6b64 0x1b7609000 + 12376932
+6   UIKitCore                           0x00000001b8015c84 0x1b7609000 + 10538116
+7   UIKitCore                           0x00000001b80057d4 0x1b7609000 + 10471380
+8   UIKitCore                           0x00000001b8035744 0x1b7609000 + 10667844
+9   CoreFoundation                      0x00000001b3f03e68 0x1b3e5b000 + 691816
+10  CoreFoundation                      0x00000001b3efed54 0x1b3e5b000 + 671060
+11  CoreFoundation                      0x00000001b3eff320 0x1b3e5b000 + 672544
+12  CoreFoundation                      0x00000001b3efeadc 0x1b3e5b000 + 670428
+13  GraphicsServices                    0x00000001bde9f328 0x1bde9c000 + 13096
+14  UIKitCore                           0x00000001b800c63c 0x1b7609000 + 10499644
+15  App Namespace                       0x000000010212d008 0x10211c000 + 69640
+16  libdyld.dylib                       0x00000001b3d88360 0x1b3d87000 + 4960
+
+Binary Images:
+       0x10211c000 -        0x1024b3fff App Namespace arm64  <debeff4e26534f38e59bc9de7b8daade> /private/var/containers/Bundle/Application/012CABCB-BD5B-1234-AE44-3215BF57D1CD/App Namespace Some.app/App Namespace
+       0x1b3dc2000 -        0x1b3e18fff libc++.1.dylib arm64  <6bc32e62110531eebcdeab97b76d5507> /usr/lib/libc++.1.dylib
+       0x102638000 -        0x10266bfff SomeNet arm64  <0e89aabbddd33bfd90e2f2da54d3da23> /private/var/containers/Bundle/Application/012CABCB-BD5B-4881-AE44-3215BF57D1CD/App Namespace Some.app/Frameworks/some.framework/SomeNet
+       0x1b4237000 -        0x1b44f0fff Foundation arm64  <7b1733b174c93a338a58853b0a029826> /System/Library/Frameworks/Foundation.framework/Foundation
+       0x102a20000 -        0x102ca3fff SharedIOSFramework arm64  <004d54f641393bae8f166277368ff79e> /private/var/containers/Bundle/Application/012CABCB-BD5B-4881-AE44-3215BF57D1CD/App Namespace Some.app/Frameworks/SharedIOSFramework.framework/SharedIOSFramework
+       0x1b71c7000 -        0x1b7527fff CFNetwork arm64  <59b74c73dcc33a999647189b124b265b> /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+       0x1c08b8000 -        0x1c0a7afff CoreMotion arm64  <86e7ee42c1f936fb9bf0af733547d042> /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+       0x1b3e5b000 -        0x1b41cffff CoreFoundation arm64  <7519e99910533367b9d58844f6d3bdc6> /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+       0x1b7609000 -        0x1b86cffff UIKitCore arm64  <d76300677a003cb799e1e7f6c55d85c5> /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+       0x1bde9c000 -        0x1bdea4fff GraphicsServices arm64  <cefbbc61fdb33db786bf337e511616db> /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
+       0x1c2c99000 -        0x1c39fbfff JavaScriptCore arm64  <c87fa51eb1033902a963faaedb228c86> /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
+       0x1b3bf7000 -        0x1b3c6bfff libdispatch.dylib arm64  <b9d95eab9269367db2f4c2b45821a32d> /usr/lib/system/libdispatch.dylib
+       0x1b3d87000 -        0x1b3db8fff libdyld.dylib arm64  <7b531a153e73318590e2b88d9476da5e> /usr/lib/system/libdyld.dylib
+       0x1b3d59000 -        0x1b3d86fff libsystem_kernel.dylib arm64  <1b7d718405d63a83bb1bf9af6aef61f3> /usr/lib/system/libsystem_kernel.dylib
+       0x1b3c97000 -        0x1b3ca7fff libsystem_pthread.dylib arm64  <1ff7a2fb9f2837b7af39344206a322bd> /usr/lib/system/libsystem_pthread.dylib
+       0x1bfe9a000 -        0x1bffe6fff WebKitLegacy arm64  <e259406b03a43977a227fcae8df2bc95> /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+       0x1bbaeb000 -        0x1bd6dffff WebCore arm64  <83a4a19111a0313897dcef1313f78bae> /System/Library/PrivateFrameworks/WebCore.framework/WebCore
