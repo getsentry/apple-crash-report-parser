@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1
+
+- Support binary image names with spaces (#5).
+- Add `ParseError::InvalidImageIdentifier`.
+
 ## 0.4.0
 
 - Update `uuid` to `0.8.1`.
