@@ -1,11 +1,9 @@
 ---
-created: "2019-01-23T13:22:50.862649+00:00"
-creator: insta@0.5.2
-expression: "&report"
 source: tests/test_snapshots.rs
+expression: "&report"
 ---
 incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
-timestamp: "2019-01-09T17:44:22Z"
+timestamp: "2019-01-09T12:44:22.075Z"
 code_type: X86-64
 path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
 report_version: 104
