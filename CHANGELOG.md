@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+- Fix parsing of datetimes with millisecond precision (#6).
+
 ## 0.4.1
 
 - Support binary image names with spaces (#5).
