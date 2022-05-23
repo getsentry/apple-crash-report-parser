@@ -1,6 +1,7 @@
 ---
 source: tests/test_snapshots.rs
 expression: "&report"
+
 ---
 incident_identifier: 00000000-0000-0000-0000-000000000000
 report_version: 0
@@ -10,139 +11,140 @@ threads:
     crashed: false
     frames:
       - module: App Namespace
-        instruction_addr: 0x102268e70
+        instruction_addr: "0x102268e70"
       - module: App Namespace
-        instruction_addr: 0x102268550
+        instruction_addr: "0x102268550"
       - module: App Namespace
-        instruction_addr: 0x10226860c
+        instruction_addr: "0x10226860c"
       - module: UIKitCore
-        instruction_addr: 0x1b81d6948
+        instruction_addr: "0x1b81d6948"
       - module: UIKitCore
-        instruction_addr: 0x1b81d6464
+        instruction_addr: "0x1b81d6464"
       - module: UIKitCore
-        instruction_addr: 0x1b81d6b64
+        instruction_addr: "0x1b81d6b64"
       - module: UIKitCore
-        instruction_addr: 0x1b8015c84
+        instruction_addr: "0x1b8015c84"
       - module: UIKitCore
-        instruction_addr: 0x1b80057d4
+        instruction_addr: "0x1b80057d4"
       - module: UIKitCore
-        instruction_addr: 0x1b8035744
+        instruction_addr: "0x1b8035744"
       - module: CoreFoundation
-        instruction_addr: 0x1b3f03e68
+        instruction_addr: "0x1b3f03e68"
       - module: CoreFoundation
-        instruction_addr: 0x1b3efed54
+        instruction_addr: "0x1b3efed54"
       - module: CoreFoundation
-        instruction_addr: 0x1b3eff320
+        instruction_addr: "0x1b3eff320"
       - module: CoreFoundation
-        instruction_addr: 0x1b3efeadc
+        instruction_addr: "0x1b3efeadc"
       - module: GraphicsServices
-        instruction_addr: 0x1bde9f328
+        instruction_addr: "0x1bde9f328"
       - module: UIKitCore
-        instruction_addr: 0x1b800c63c
+        instruction_addr: "0x1b800c63c"
       - module: App Namespace
-        instruction_addr: 0x10212d008
+        instruction_addr: "0x10212d008"
       - module: libdyld.dylib
-        instruction_addr: 0x1b3d88360
+        instruction_addr: "0x1b3d88360"
 binary_images:
-  - addr: 0x10211c000
+  - addr: "0x10211c000"
     size: 3768319
     uuid: debeff4e-2653-4f38-e59b-c9de7b8daade
     arch: arm64
     name: App Namespace
     path: /private/var/containers/Bundle/Application/012CABCB-BD5B-1234-AE44-3215BF57D1CD/App Namespace Some.app/App Namespace
-  - addr: 0x1b3dc2000
+  - addr: "0x1b3dc2000"
     size: 356351
     uuid: 6bc32e62-1105-31ee-bcde-ab97b76d5507
     arch: arm64
     name: libc++.1.dylib
     path: /usr/lib/libc++.1.dylib
-  - addr: 0x102638000
+  - addr: "0x102638000"
     size: 212991
     uuid: 0e89aabb-ddd3-3bfd-90e2-f2da54d3da23
     arch: arm64
     name: SomeNet
     path: /private/var/containers/Bundle/Application/012CABCB-BD5B-4881-AE44-3215BF57D1CD/App Namespace Some.app/Frameworks/some.framework/SomeNet
-  - addr: 0x1b4237000
+  - addr: "0x1b4237000"
     size: 2859007
     uuid: 7b1733b1-74c9-3a33-8a58-853b0a029826
     arch: arm64
     name: Foundation
     path: /System/Library/Frameworks/Foundation.framework/Foundation
-  - addr: 0x102a20000
+  - addr: "0x102a20000"
     size: 2637823
     uuid: 004d54f6-4139-3bae-8f16-6277368ff79e
     arch: arm64
     name: SharedIOSFramework
     path: /private/var/containers/Bundle/Application/012CABCB-BD5B-4881-AE44-3215BF57D1CD/App Namespace Some.app/Frameworks/SharedIOSFramework.framework/SharedIOSFramework
-  - addr: 0x1b71c7000
+  - addr: "0x1b71c7000"
     size: 3543039
     uuid: 59b74c73-dcc3-3a99-9647-189b124b265b
     arch: arm64
     name: CFNetwork
     path: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
-  - addr: 0x1c08b8000
+  - addr: "0x1c08b8000"
     size: 1847295
     uuid: 86e7ee42-c1f9-36fb-9bf0-af733547d042
     arch: arm64
     name: CoreMotion
     path: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
-  - addr: 0x1b3e5b000
+  - addr: "0x1b3e5b000"
     size: 3624959
     uuid: 7519e999-1053-3367-b9d5-8844f6d3bdc6
     arch: arm64
     name: CoreFoundation
     path: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-  - addr: 0x1b7609000
+  - addr: "0x1b7609000"
     size: 17592319
     uuid: d7630067-7a00-3cb7-99e1-e7f6c55d85c5
     arch: arm64
     name: UIKitCore
     path: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-  - addr: 0x1bde9c000
+  - addr: "0x1bde9c000"
     size: 36863
     uuid: cefbbc61-fdb3-3db7-86bf-337e511616db
     arch: arm64
     name: GraphicsServices
     path: /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
-  - addr: 0x1c2c99000
+  - addr: "0x1c2c99000"
     size: 14036991
     uuid: c87fa51e-b103-3902-a963-faaedb228c86
     arch: arm64
     name: JavaScriptCore
     path: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
-  - addr: 0x1b3bf7000
+  - addr: "0x1b3bf7000"
     size: 479231
     uuid: b9d95eab-9269-367d-b2f4-c2b45821a32d
     arch: arm64
     name: libdispatch.dylib
     path: /usr/lib/system/libdispatch.dylib
-  - addr: 0x1b3d87000
+  - addr: "0x1b3d87000"
     size: 204799
     uuid: 7b531a15-3e73-3185-90e2-b88d9476da5e
     arch: arm64
     name: libdyld.dylib
     path: /usr/lib/system/libdyld.dylib
-  - addr: 0x1b3d59000
+  - addr: "0x1b3d59000"
     size: 188415
     uuid: 1b7d7184-05d6-3a83-bb1b-f9af6aef61f3
     arch: arm64
     name: libsystem_kernel.dylib
     path: /usr/lib/system/libsystem_kernel.dylib
-  - addr: 0x1b3c97000
+  - addr: "0x1b3c97000"
     size: 69631
     uuid: 1ff7a2fb-9f28-37b7-af39-344206a322bd
     arch: arm64
     name: libsystem_pthread.dylib
     path: /usr/lib/system/libsystem_pthread.dylib
-  - addr: 0x1bfe9a000
+  - addr: "0x1bfe9a000"
     size: 1363967
     uuid: e259406b-03a4-3977-a227-fcae8df2bc95
     arch: arm64
     name: WebKitLegacy
     path: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-  - addr: 0x1bbaeb000
+  - addr: "0x1bbaeb000"
     size: 29315071
     uuid: 83a4a191-11a0-3138-97dc-ef1313f78bae
     arch: arm64
     name: WebCore
     path: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
+

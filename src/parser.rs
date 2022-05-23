@@ -86,7 +86,7 @@ impl Serialize for Addr {
     where
         S: Serializer,
     {
-        format!("0x{:x}", self.0).serialize(serializer)
+        format!("{:#x}", self.0).serialize(serializer)
     }
 }
 
