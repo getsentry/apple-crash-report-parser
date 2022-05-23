@@ -268,10 +268,10 @@ impl AppleCrashReport {
             } else if line.starts_with("Filtered syslog:") {
                 state = ParsingState::FilteredSyslog;
                 continue;
-            } else if THREAD_STATE_RE.is_match(&line) {
+            } else if THREAD_STATE_RE.is_match(line) {
                 state = ParsingState::ThreadState;
                 continue;
-            } else if let Some(caps) = THREAD_RE.captures(&line) {
+            } else if let Some(caps) = THREAD_RE.captures(line) {
                 if let Some(thread) = thread.take() {
                     rv.threads.push(thread);
                 }
@@ -285,7 +285,7 @@ impl AppleCrashReport {
                 });
                 state = ParsingState::Thread;
                 continue;
-            } else if let Some(caps) = THREAD_NAME_RE.captures(&line) {
+            } else if let Some(caps) = THREAD_NAME_RE.captures(line) {
                 thread_names.insert(
                     caps[1].parse::<u64>().unwrap(),
                     (
@@ -299,7 +299,7 @@ impl AppleCrashReport {
 
             state = match state {
                 ParsingState::Root => {
-                    if let Some(caps) = KEY_VALUE_RE.captures(&line) {
+                    if let Some(caps) = KEY_VALUE_RE.captures(line) {
                         match &caps[1] {
                             "Incident Identifier" => {
                                 rv.incident_identifier = caps[2]
@@ -336,7 +336,7 @@ impl AppleCrashReport {
                     if line.is_empty() {
                         ParsingState::Root
                     } else {
-                        for caps in REGISTER_RE.captures_iter(&line) {
+                        for caps in REGISTER_RE.captures_iter(line) {
                             registers.insert(
                                 caps[1].to_string(),
                                 Addr(u64::from_str_radix(&caps[2][2..], 16).unwrap()),
@@ -346,7 +346,7 @@ impl AppleCrashReport {
                     }
                 }
                 ParsingState::Thread => {
-                    if let Some(caps) = FRAME_RE.captures(&line) {
+                    if let Some(caps) = FRAME_RE.captures(line) {
                         thread.as_mut().unwrap().frames.push(Frame {
                             module: if &caps[1] == "???" {
                                 None
@@ -374,7 +374,7 @@ impl AppleCrashReport {
                 ParsingState::BinaryImages => {
                     if line.is_empty() {
                         ParsingState::BinaryImages
-                    } else if let Some(caps) = BINARY_IMAGE_RE.captures(&line) {
+                    } else if let Some(caps) = BINARY_IMAGE_RE.captures(line) {
                         let addr = u64::from_str_radix(&caps[1][2..], 16).unwrap();
                         rv.binary_images.push(BinaryImage {
                             addr: Addr(addr),
