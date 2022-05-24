@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Update `uuid` to 1.0.0. ([#10](https://github.com/getsentry/apple-crash-report-parser/pull/10))
+
 ## 0.4.2
 
 - Fix parsing of datetimes with millisecond precision (#6).
