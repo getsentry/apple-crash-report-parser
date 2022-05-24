@@ -1,8 +1,7 @@
 ---
-created: "2019-01-23T13:22:50.857316+00:00"
-creator: insta@0.5.2
-expression: "&report"
 source: tests/test_snapshots.rs
+expression: "&report"
+
 ---
 incident_identifier: 5c32df84-31a0-43e7-87d0-239f7f594940
 timestamp: "2019-01-09T17:42:22Z"
@@ -25,102 +24,103 @@ threads:
     crashed: false
     frames:
       - module: libsystem_kernel.dylib
-        instruction_addr: 0x7fff61bc6c2a
+        instruction_addr: "0x7fff61bc6c2a"
       - module: CoreFoundation
-        instruction_addr: 0x7fff349f505e
+        instruction_addr: "0x7fff349f505e"
       - module: CoreFoundation
-        instruction_addr: 0x7fff349f45ad
+        instruction_addr: "0x7fff349f45ad"
       - module: CoreFoundation
-        instruction_addr: 0x7fff349f3ce4
+        instruction_addr: "0x7fff349f3ce4"
       - module: HIToolbox
-        instruction_addr: 0x7fff33c8d895
+        instruction_addr: "0x7fff33c8d895"
       - module: HIToolbox
-        instruction_addr: 0x7fff33c8d5cb
+        instruction_addr: "0x7fff33c8d5cb"
       - module: HIToolbox
-        instruction_addr: 0x7fff33c8d348
+        instruction_addr: "0x7fff33c8d348"
       - module: AppKit
-        instruction_addr: 0x7fff31f4a95b
+        instruction_addr: "0x7fff31f4a95b"
       - module: AppKit
-        instruction_addr: 0x7fff31f496fa
+        instruction_addr: "0x7fff31f496fa"
       - module: AppKit
-        instruction_addr: 0x7fff31f4375d
+        instruction_addr: "0x7fff31f4375d"
       - module: YetAnotherMac
-        instruction_addr: 0x108b7092b
+        instruction_addr: "0x108b7092b"
       - module: YetAnotherMac
         symbol: a_function_here
-        instruction_addr: 0x108b702a6
+        instruction_addr: "0x108b702a6"
       - module: libdyld.dylib
         symbol: start
-        instruction_addr: 0x7fff61a8e085
+        instruction_addr: "0x7fff61a8e085"
       - module: YetanotherMac
         symbol: main
         filename: main.m
         lineno: 16
-        instruction_addr: 0xea004
+        instruction_addr: "0xea004"
   - id: 1
     name: Test Thread Name
     crashed: true
     frames:
       - module: libsystem_kernel.dylib
-        instruction_addr: 0x7fff61bc85be
+        instruction_addr: "0x7fff61bc85be"
       - module: libsystem_pthread.dylib
-        instruction_addr: 0x7fff61c7f415
-      - instruction_addr: 0x54485244
+        instruction_addr: "0x7fff61c7f415"
+      - instruction_addr: "0x54485244"
     registers:
-      cs: 0x2b
-      fs: 0x0
-      gs: 0x0
-      r10: 0x0
-      r11: 0xffffffff
-      r12: 0x8
-      r13: 0x11e800b00
-      r14: 0x1
-      r15: 0x0
-      r8: 0x3
-      r9: 0x10
-      rax: 0x20261bb4775b008f
-      rbp: 0x700015a616d0
-      rbx: 0x0
-      rcx: 0x1288266c0
-      rdi: 0x0
-      rdx: 0x1
-      rflags: 0x10206
-      rip: 0x1090a0132
-      rsi: 0x0
-      rsp: 0x700015a613f0
+      cs: "0x2b"
+      fs: "0x0"
+      gs: "0x0"
+      r10: "0x0"
+      r11: "0xffffffff"
+      r12: "0x8"
+      r13: "0x11e800b00"
+      r14: "0x1"
+      r15: "0x0"
+      r8: "0x3"
+      r9: "0x10"
+      rax: "0x20261bb4775b008f"
+      rbp: "0x700015a616d0"
+      rbx: "0x0"
+      rcx: "0x1288266c0"
+      rdi: "0x0"
+      rdx: "0x1"
+      rflags: "0x10206"
+      rip: "0x1090a0132"
+      rsi: "0x0"
+      rsp: "0x700015a613f0"
 binary_images:
-  - addr: 0x10864e000
+  - addr: "0x10864e000"
     size: 108797951
     uuid: 2d903291-397d-3d14-bfca-52c7fb8c5e00
     arch: x86_64
     version: 400.9.4 - 1.0.0
     name: YetAnotherMac
     path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/MacOS/YetAnotherMac
-  - addr: 0x112bb2000
+  - addr: "0x112bb2000"
     size: 2170879
     uuid: 6deccee4-a052-3ea4-bb67-957b06f53ad1
     arch: x86_64
     version: 0.0.0 - 0.0.0
     name: libPhysX3PROFILE.dylib
     path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3PROFILE.dylib
-  - addr: 0x112fc0000
+  - addr: "0x112fc0000"
     size: 221183
     uuid: 5e012a64-6cc5-36f1-9b4d-a0564049169b
     arch: x86_64
     version: 0.0.0 - 0.0.0
     name: libPhysX3CookingPROFILE.dylib
     path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CookingPROFILE.dylib
-  - addr: 0x113013000
+  - addr: "0x113013000"
     size: 1474559
     uuid: 9c198544-7194-3de6-b67e-4cc27eed2eab
     arch: x86_64
     version: 0.0.0 - 0.0.0
     name: libPhysX3CommonPROFILE.dylib
     path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPhysX3CommonPROFILE.dylib
-  - addr: 0x1131fa000
+  - addr: "0x1131fa000"
     size: 28671
     uuid: 890f0997-f904-3544-9af7-cf011f09a06e
     arch: x86_64
     version: 400.9.0 - 1.0.0
     name: libPxFoundationPROFILE.dylib
     path: /Users/bruno/Documents/Unreal Projects/YetAnotherMac/MacNoEditor/YetAnotherMac.app/Contents/UE4/Engine/Binaries/ThirdParty/PhysX3/Mac/libPxFoundationPROFILE.dylib
+
