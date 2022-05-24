@@ -22,15 +22,15 @@ test-all:
 
 style:
 	@rustup component add rustfmt --toolchain stable 2> /dev/null
-	cargo +stable fmt -- --check
+	cargo +stable fmt --all -- --check
 .PHONY: style
 
 format:
 	@rustup component add rustfmt --toolchain stable 2> /dev/null
-	@cargo +stable fmt
+	@cargo +stable fmt --all
 .PHONY: format
 
 lint:
 	@rustup component add clippy --toolchain stable 2> /dev/null
-	@cargo +stable clippy  --all-features --tests -- -D clippy::all
+	@cargo +stable clippy --all-targets --all-features -- -D warnings
 .PHONY: lint
