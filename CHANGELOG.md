@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.0
 
 - Update `uuid` to 1.0.0. ([#10](https://github.com/getsentry/apple-crash-report-parser/pull/10))
 
