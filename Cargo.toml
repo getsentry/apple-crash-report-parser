@@ -1,6 +1,6 @@
 [package]
 name = "apple-crash-report-parser"
-version = "0.4.2"
+version = "0.5.0"
 authors = ["Armin Ronacher <armin.ronacher@active-4.com>", "Sentry <hello@sentry.io>"]
 keywords = ["apple", "crashreport"]
 license = "Apache-2.0"
