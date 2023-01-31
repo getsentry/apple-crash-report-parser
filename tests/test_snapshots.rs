@@ -6,7 +6,7 @@ use std::fs;
 use apple_crash_report_parser::AppleCrashReport;
 
 fn load_fixture(name: &str) -> String {
-    fs::read_to_string(format!("tests/fixtures/{}.txt", name)).unwrap()
+    fs::read_to_string(format!("tests/fixtures/{name}.txt")).unwrap()
 }
 
 macro_rules! test_snapshots {
