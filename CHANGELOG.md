@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.1
 
 - Remove dependency on `time` 0.1.45. ([#17](https://github.com/getsentry/apple-crash-report-parser/pull/17))
 
