@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Remove dependency on `time` 0.1.45. ([#17](https://github.com/getsentry/apple-crash-report-parser/pull/17))
+
 ## 0.5.0
 
 - Update `uuid` to 1.0.0. ([#10](https://github.com/getsentry/apple-crash-report-parser/pull/10))
