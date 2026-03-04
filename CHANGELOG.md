@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.5.2
 
 - Parse timestamps with four decimals. [#20](https://github.com/getsentry/apple-crash-report-parser/pull/20)
 
