@@ -319,7 +319,7 @@ impl AppleCrashReport {
                             "Date/Time" => {
                                 let timestamp = DateTime::<FixedOffset>::parse_from_str(
                                     &caps[2],
-                                    "%Y-%m-%d %H:%M:%S%.3f %z",
+                                    "%Y-%m-%d %H:%M:%S%.f %z",
                                 )
                                 .map_err(ParseError::InvalidTimestamp)?;
                                 rv.timestamp = Some(timestamp.with_timezone(&Utc));

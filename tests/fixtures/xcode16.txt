@@ -1,31 +1,16 @@
-Incident Identifier: 5C32DF84-31A0-43E7-87D0-239F7F594940
-CrashReporter Key:   TODO
-Hardware Model:      MacBookPro14,3
-Process:         YetAnotherMac [49028]
-Identifier:      com.YourCompany.YetAnotherMac
-Version:         4.21.1
-Code Type:       X86-64
-Parent Process:  launchd [1]
+Incident Identifier: 6156848E-344E-4D9E-84E0-87AFD0D0AE7B
+CrashReporter Key:   76f2fb60060d6a7f814973377cbdc866fffd521f
+Hardware Model:      iPhone8,1
+Process:             TouchCanvas [1052]
+Path:                /private/var/containers/Bundle/Application/51346174-37EF-4F60-B72D-8DE5F01035F5/TouchCanvas.app/TouchCanvas
+Identifier:          com.example.apple-samplecode.TouchCanvas
+Version:             1 (3.0)
+Code Type:           ARM-64 (Native)
+Role:                Foreground
+Parent Process:      launchd [1]
+Coalition:           com.example.apple-samplecode.TouchCanvas [1806]
 
-Date/Time:       2019-01-09 17:44:22.1234 +0000
-OS Version:      Mac OS X 10.14.0 (18A391)
-Report Version:  104
 
-Exception Type:  SIGSEGV
-Exception Codes: SEGV_MAPERR at 0x88
-Crashed Thread:  5
-
-Thread 0:
-0   libsystem_kernel.dylib              0x00007fff61bc6c2a 0x7fff61bc6000 + 3114
-1   CoreFoundation                      0x00007fff349f505e 0x7fff349b9000 + 245854
-2   CoreFoundation                      0x00007fff349f45ad 0x7fff349b9000 + 243117
-3   CoreFoundation                      0x00007fff349f3ce4 0x7fff349b9000 + 240868
-4   HIToolbox                           0x00007fff33c8d895 0x7fff33c83000 + 43157
-5   HIToolbox                           0x00007fff33c8d5cb 0x7fff33c83000 + 42443
-6   HIToolbox                           0x00007fff33c8d348 0x7fff33c83000 + 41800
-7   AppKit                              0x00007fff31f4a95b 0x7fff31f30000 + 108891
-8   AppKit                              0x00007fff31f496fa 0x7fff31f30000 + 104186
-9   AppKit                              0x00007fff31f4375d 0x7fff31f30000 + 79709
-10  YetAnotherMac                       0x0000000108b7092b 0x10864e000 + 5384491
-11  YetAnotherMac                       0x0000000108b702a6 0x10864e000 + 5382822
-12  libdyld.dylib                       0x00007fff61a8e085 0x7fff61a77000 + 94341
+Date/Time:           2020-03-27 18:06:51.4969 -0700
+Launch Time:         2020-03-27 18:06:31.7593 -0700
+OS Version:          iPhone OS 13.3.1 (17D50)
