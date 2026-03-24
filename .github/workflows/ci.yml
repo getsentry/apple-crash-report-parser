@@ -15,31 +15,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@63eb9591781c46a70274cb3ebdf190fce92702e8 # v1
         with:
           toolchain: stable
           profile: minimal
           components: clippy, rustfmt, rust-docs
           override: true
 
-      - uses: swatinem/rust-cache@v1
+      - uses: swatinem/rust-cache@81d053bdb0871dcd3f10763c8cc60d0adc41762b # v1
 
       - name: Run Rustfmt
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@e7f754b8e09f70ad8eb2c5aebf61e58e8403b210 # v1
         with:
           command: fmt
           args: --all -- --check
 
       - name: Run Clippy
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@e7f754b8e09f70ad8eb2c5aebf61e58e8403b210 # v1
         with:
           command: clippy
           args: --all-targets --all-features -- -D warnings
 
       - name: Rust Doc Comments
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@e7f754b8e09f70ad8eb2c5aebf61e58e8403b210 # v1
         env:
           RUSTDOCFLAGS: -Dwarnings
         with:
@@ -51,18 +51,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@63eb9591781c46a70274cb3ebdf190fce92702e8 # v1
         with:
           toolchain: stable
           profile: minimal
           override: true
 
-      - uses: swatinem/rust-cache@v1
+      - uses: swatinem/rust-cache@81d053bdb0871dcd3f10763c8cc60d0adc41762b # v1
 
       - name: Run Cargo Tests
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/cargo@e7f754b8e09f70ad8eb2c5aebf61e58e8403b210 # v1
         with:
           command: test
           args: --all-features
