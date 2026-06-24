@@ -3,54 +3,71 @@ use std::collections::BTreeMap;
 use std::fmt;
 use std::io::{self, BufRead, BufReader, Read};
 use std::num::ParseIntError;
+use std::sync::LazyLock;
 
 use chrono::{DateTime, FixedOffset, Utc};
+use regex::Regex;
 #[cfg(feature = "with_serde")]
 use serde::{Serialize, Serializer};
 use uuid::Uuid;
 
-mod regexes {
-    #![allow(clippy::unwrap_used)]
-
-    use lazy_static::lazy_static;
-    use regex::Regex;
-
-    lazy_static! {
-        pub static ref KEY_VALUE_RE: Regex = Regex::new(
-            r#"(?x)
+#[allow(clippy::unwrap_used)]
+static KEY_VALUE_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^\s*(.*?)\s*:\s*(.*?)\s*$
-        "#
-        )
-        .unwrap();
-        pub static ref THREAD_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static THREAD_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^Thread\ ([0-9]+)(\ Crashed)?:\s*(.+?)?\s*$
-        "#
-        )
-        .unwrap();
-        pub static ref THREAD_NAME_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static THREAD_NAME_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^Thread\ ([0-9]+)\ name:\s*(.+?)
             (?:\s+Dispatch\ queue:\s*(.*?))?\s*$
-        "#
-        )
-        .unwrap();
-        pub static ref THREAD_STATE_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static THREAD_STATE_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^Thread\ ([0-9]+)\ crashed\ with\ .*?\ Thread\ State:\s*$
-        "#
-        )
-        .unwrap();
-        pub static ref REGISTER_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static REGISTER_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             \s*
             ([a-z0-9]+):\s+
             (0x[0-9a-fA-F]+)\s*
-        "#
-        )
-        .unwrap();
-        pub static ref FRAME_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static FRAME_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^
                 [0-9]+ \s+
                 (.+?) \s+
@@ -59,11 +76,15 @@ mod regexes {
                 (?:\ (?:\+\ [0-9]+|\((.*?):([0-9]+)\)))?
                 \s*
             $
-        "#
-        )
-        .unwrap();
-        pub static ref BINARY_IMAGE_RE: Regex = Regex::new(
-            r#"(?x)
+        "#,
+    )
+    .unwrap()
+});
+
+#[allow(clippy::unwrap_used)]
+static BINARY_IMAGE_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?x)
             ^
                 \s*
                 (0x[0-9a-fA-F]+) \s*
@@ -76,11 +97,10 @@ mod regexes {
                 <([^>]+?)>\s+
                 (.*?)
             $
-        "#
-        )
-        .unwrap();
-    }
-}
+        "#,
+    )
+    .unwrap()
+});
 
 /// A newtype for addresses.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -329,10 +349,10 @@ impl AppleCrashReport {
             } else if line.starts_with("Filtered syslog:") {
                 state = ParsingState::FilteredSyslog;
                 continue;
-            } else if regexes::THREAD_STATE_RE.is_match(line) {
+            } else if THREAD_STATE_RE.is_match(line) {
                 state = ParsingState::ThreadState;
                 continue;
-            } else if let Some(caps) = regexes::THREAD_RE.captures(line) {
+            } else if let Some(caps) = THREAD_RE.captures(line) {
                 if let Some(thread) = thread.take() {
                     rv.threads.push(thread);
                 }
@@ -346,7 +366,7 @@ impl AppleCrashReport {
                 });
                 state = ParsingState::Thread;
                 continue;
-            } else if let Some(caps) = regexes::THREAD_NAME_RE.captures(line) {
+            } else if let Some(caps) = THREAD_NAME_RE.captures(line) {
                 thread_names.insert(
                     caps[1]
                         .parse::<u64>()
@@ -362,7 +382,7 @@ impl AppleCrashReport {
 
             state = match state {
                 ParsingState::Root => {
-                    if let Some(caps) = regexes::KEY_VALUE_RE.captures(line) {
+                    if let Some(caps) = KEY_VALUE_RE.captures(line) {
                         match &caps[1] {
                             "Incident Identifier" => {
                                 rv.incident_identifier = caps[2]
@@ -400,7 +420,7 @@ impl AppleCrashReport {
                     if line.is_empty() {
                         ParsingState::Root
                     } else {
-                        for caps in regexes::REGISTER_RE.captures_iter(line) {
+                        for caps in REGISTER_RE.captures_iter(line) {
                             registers.insert(
                                 caps[1].to_string(),
                                 Addr(parse_prefixed_hex_u64(
@@ -413,7 +433,7 @@ impl AppleCrashReport {
                     }
                 }
                 ParsingState::Thread => {
-                    if let Some(caps) = regexes::FRAME_RE.captures(line) {
+                    if let Some(caps) = FRAME_RE.captures(line) {
                         let current_thread =
                             thread.as_mut().ok_or(ParseErrorRepr::InvalidThreadState)?;
                         current_thread.frames.push(Frame {
@@ -453,7 +473,7 @@ impl AppleCrashReport {
                 ParsingState::BinaryImages => {
                     if line.is_empty() {
                         ParsingState::BinaryImages
-                    } else if let Some(caps) = regexes::BINARY_IMAGE_RE.captures(line) {
+                    } else if let Some(caps) = BINARY_IMAGE_RE.captures(line) {
                         let addr = parse_prefixed_hex_u64(
                             &caps[1],
                             ParseErrorRepr::InvalidBinaryImageAddress,
