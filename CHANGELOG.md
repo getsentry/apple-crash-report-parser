@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Hide `ParseError` implementation. Handle more parsing failures gracefully instead of panicking. [#23](https://github.com/getsentry/apple-crash-report-parser/pull/23)
+
 ## 0.5.2
 
 - Parse timestamps with four decimals. [#20](https://github.com/getsentry/apple-crash-report-parser/pull/20)
