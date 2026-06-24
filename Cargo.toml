@@ -17,6 +17,10 @@ Parses apple crash report text files.
 [package.metadata.docs.rs]
 all-features = true
 
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+
 [features]
 with_serde = ["uuid/serde", "chrono/serde", "serde"]
 

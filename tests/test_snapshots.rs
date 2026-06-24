@@ -5,8 +5,8 @@ use std::fs;
 
 use apple_crash_report_parser::AppleCrashReport;
 
-fn load_fixture(name: &str) -> String {
-    fs::read_to_string(format!("tests/fixtures/{name}.txt")).unwrap()
+fn load_fixture(name: &str) -> std::io::Result<String> {
+    fs::read_to_string(format!("tests/fixtures/{name}.txt"))
 }
 
 // Regression test for https://github.com/getsentry/symbolicator/issues/1884
@@ -16,7 +16,7 @@ fn load_fixture(name: &str) -> String {
 // The example was taken from https://developer.apple.com/documentation/xcode/examining-the-fields-in-a-crash-report#Header.
 #[test]
 fn test_xcode16_timestamp_precision() {
-    let fixture = load_fixture("xcode16");
+    let fixture = load_fixture("xcode16").unwrap();
     let report: AppleCrashReport = fixture
         .parse()
         .expect("should parse crash reports with 4-digit fractional seconds in Date/Time");
@@ -28,7 +28,7 @@ macro_rules! test_snapshots {
         $(
             #[test]
             fn $test() {
-                let fixture = load_fixture($fixture);
+                let fixture = load_fixture($fixture).unwrap();
                 let report: AppleCrashReport = fixture.parse().unwrap();
                 insta::assert_yaml_snapshot!($fixture, &report);
             }

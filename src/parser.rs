@@ -2,78 +2,84 @@ use std::borrow::Cow;
 use std::collections::BTreeMap;
 use std::fmt;
 use std::io::{self, BufRead, BufReader, Read};
+use std::num::ParseIntError;
 
 use chrono::{DateTime, FixedOffset, Utc};
-use lazy_static::lazy_static;
-use regex::Regex;
 #[cfg(feature = "with_serde")]
 use serde::{Serialize, Serializer};
 use uuid::Uuid;
 
-lazy_static! {
-    static ref KEY_VALUE_RE: Regex = Regex::new(
-        r#"(?x)
-        ^\s*(.*?)\s*:\s*(.*?)\s*$
-    "#
-    )
-    .unwrap();
-    static ref THREAD_RE: Regex = Regex::new(
-        r#"(?x)
-        ^Thread\ ([0-9]+)(\ Crashed)?:\s*(.+?)?\s*$
-    "#
-    )
-    .unwrap();
-    static ref THREAD_NAME_RE: Regex = Regex::new(
-        r#"(?x)
-        ^Thread\ ([0-9]+)\ name:\s*(.+?)
-        (?:\s+Dispatch\ queue:\s*(.*?))?\s*$
-    "#
-    )
-    .unwrap();
-    static ref THREAD_STATE_RE: Regex = Regex::new(
-        r#"(?x)
-        ^Thread\ ([0-9]+)\ crashed\ with\ .*?\ Thread\ State:\s*$
-    "#
-    )
-    .unwrap();
-    static ref REGISTER_RE: Regex = Regex::new(
-        r#"(?x)
-        \s*
-        ([a-z0-9]+):\s+
-        (0x[0-9a-fA-F]+)\s*
-    "#
-    )
-    .unwrap();
-    static ref FRAME_RE: Regex = Regex::new(
-        r#"(?x)
-        ^
-            [0-9]+ \s+
-            (.+?) \s+
-            (0x[0-9a-fA-F]+)\s+
-            (.*?)
-            (?:\ (?:\+\ [0-9]+|\((.*?):([0-9]+)\)))?
+mod regexes {
+    #![allow(clippy::unwrap_used)]
+
+    use lazy_static::lazy_static;
+    use regex::Regex;
+
+    lazy_static! {
+        pub static ref KEY_VALUE_RE: Regex = Regex::new(
+            r#"(?x)
+            ^\s*(.*?)\s*:\s*(.*?)\s*$
+        "#
+        )
+        .unwrap();
+        pub static ref THREAD_RE: Regex = Regex::new(
+            r#"(?x)
+            ^Thread\ ([0-9]+)(\ Crashed)?:\s*(.+?)?\s*$
+        "#
+        )
+        .unwrap();
+        pub static ref THREAD_NAME_RE: Regex = Regex::new(
+            r#"(?x)
+            ^Thread\ ([0-9]+)\ name:\s*(.+?)
+            (?:\s+Dispatch\ queue:\s*(.*?))?\s*$
+        "#
+        )
+        .unwrap();
+        pub static ref THREAD_STATE_RE: Regex = Regex::new(
+            r#"(?x)
+            ^Thread\ ([0-9]+)\ crashed\ with\ .*?\ Thread\ State:\s*$
+        "#
+        )
+        .unwrap();
+        pub static ref REGISTER_RE: Regex = Regex::new(
+            r#"(?x)
             \s*
-        $
-    "#
-    )
-    .unwrap();
-    static ref BINARY_IMAGE_RE: Regex = Regex::new(
-        r#"(?x)
-        ^
-            \s*
-            (0x[0-9a-fA-F]+) \s*
-            -
-            \s*
-            (0x[0-9a-fA-F]+) \s+
-            \+?(.+)\s+
-            (\S+?)\s+
-            (?:\(([^)]+?)\))?\s+
-            <([^>]+?)>\s+
-            (.*?)
-        $
-    "#
-    )
-    .unwrap();
+            ([a-z0-9]+):\s+
+            (0x[0-9a-fA-F]+)\s*
+        "#
+        )
+        .unwrap();
+        pub static ref FRAME_RE: Regex = Regex::new(
+            r#"(?x)
+            ^
+                [0-9]+ \s+
+                (.+?) \s+
+                (0x[0-9a-fA-F]+)\s+
+                (.*?)
+                (?:\ (?:\+\ [0-9]+|\((.*?):([0-9]+)\)))?
+                \s*
+            $
+        "#
+        )
+        .unwrap();
+        pub static ref BINARY_IMAGE_RE: Regex = Regex::new(
+            r#"(?x)
+            ^
+                \s*
+                (0x[0-9a-fA-F]+) \s*
+                -
+                \s*
+                (0x[0-9a-fA-F]+) \s+
+                \+?(.+)\s+
+                (\S+?)\s+
+                (?:\(([^)]+?)\))?\s+
+                <([^>]+?)>\s+
+                (.*?)
+            $
+        "#
+        )
+        .unwrap();
+    }
 }
 
 /// A newtype for addresses.
@@ -192,38 +198,93 @@ enum ParsingState {
     ApplicationSpecificInformation,
 }
 
-/// Represents a parsing error.
 #[derive(Debug)]
-pub enum ParseError {
+enum ParseErrorRepr {
     Io(io::Error),
     InvalidIncidentIdentifier(uuid::Error),
     InvalidImageIdentifier(uuid::Error),
-    InvalidReportVersion(std::num::ParseIntError),
+    InvalidThreadId(ParseIntError),
+    InvalidRegisterAddress(ParseIntError),
+    InvalidFrameLineNumber(ParseIntError),
+    InvalidFrameInstructionAddress(ParseIntError),
+    InvalidBinaryImageAddress(ParseIntError),
+    InvalidBinaryImageEndAddress(ParseIntError),
+    InvalidBinaryImageAddressRange,
+    InvalidThreadState,
+    InvalidReportVersion(ParseIntError),
     InvalidTimestamp(chrono::ParseError),
+}
+
+/// Represents a parsing error.
+#[derive(Debug)]
+pub struct ParseError {
+    inner: ParseErrorRepr,
 }
 
 impl std::error::Error for ParseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        match *self {
-            ParseError::Io(ref err) => Some(err),
-            ParseError::InvalidIncidentIdentifier(ref err) => Some(err),
-            ParseError::InvalidImageIdentifier(ref err) => Some(err),
-            ParseError::InvalidReportVersion(ref err) => Some(err),
-            ParseError::InvalidTimestamp(ref err) => Some(err),
+        match self.inner {
+            ParseErrorRepr::Io(ref err) => Some(err),
+            ParseErrorRepr::InvalidIncidentIdentifier(ref err) => Some(err),
+            ParseErrorRepr::InvalidImageIdentifier(ref err) => Some(err),
+            ParseErrorRepr::InvalidThreadId(ref err) => Some(err),
+            ParseErrorRepr::InvalidRegisterAddress(ref err) => Some(err),
+            ParseErrorRepr::InvalidFrameLineNumber(ref err) => Some(err),
+            ParseErrorRepr::InvalidFrameInstructionAddress(ref err) => Some(err),
+            ParseErrorRepr::InvalidBinaryImageAddress(ref err) => Some(err),
+            ParseErrorRepr::InvalidBinaryImageEndAddress(ref err) => Some(err),
+            ParseErrorRepr::InvalidBinaryImageAddressRange => None,
+            ParseErrorRepr::InvalidThreadState => None,
+            ParseErrorRepr::InvalidReportVersion(ref err) => Some(err),
+            ParseErrorRepr::InvalidTimestamp(ref err) => Some(err),
         }
     }
 }
 
 impl fmt::Display for ParseError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match *self {
-            ParseError::Io(..) => write!(f, "io error during parsing"),
-            ParseError::InvalidIncidentIdentifier(..) => write!(f, "invalid incident identifier"),
-            ParseError::InvalidImageIdentifier(..) => write!(f, "invalid binary image identifier"),
-            ParseError::InvalidReportVersion(..) => write!(f, "invalid report version"),
-            ParseError::InvalidTimestamp(..) => write!(f, "invalid timestamp"),
+        match self.inner {
+            ParseErrorRepr::Io(..) => write!(f, "io error during parsing"),
+            ParseErrorRepr::InvalidIncidentIdentifier(..) => {
+                write!(f, "invalid incident identifier")
+            }
+            ParseErrorRepr::InvalidImageIdentifier(..) => {
+                write!(f, "invalid binary image identifier")
+            }
+            ParseErrorRepr::InvalidThreadId(..) => write!(f, "invalid thread identifier"),
+            ParseErrorRepr::InvalidRegisterAddress(..) => write!(f, "invalid register address"),
+            ParseErrorRepr::InvalidFrameLineNumber(..) => write!(f, "invalid frame line number"),
+            ParseErrorRepr::InvalidFrameInstructionAddress(..) => {
+                write!(f, "invalid frame instruction address")
+            }
+            ParseErrorRepr::InvalidBinaryImageAddress(..) => {
+                write!(f, "invalid binary image address")
+            }
+            ParseErrorRepr::InvalidBinaryImageEndAddress(..) => {
+                write!(f, "invalid binary image end address")
+            }
+            ParseErrorRepr::InvalidBinaryImageAddressRange => {
+                write!(f, "invalid binary image address range")
+            }
+            ParseErrorRepr::InvalidThreadState => write!(f, "invalid thread parser state"),
+            ParseErrorRepr::InvalidReportVersion(..) => write!(f, "invalid report version"),
+            ParseErrorRepr::InvalidTimestamp(..) => write!(f, "invalid timestamp"),
         }
     }
+}
+
+impl From<ParseErrorRepr> for ParseError {
+    fn from(value: ParseErrorRepr) -> Self {
+        Self { inner: value }
+    }
+}
+
+fn parse_prefixed_hex_u64(
+    value: &str,
+    err: fn(ParseIntError) -> ParseErrorRepr,
+) -> Result<u64, ParseErrorRepr> {
+    let value = value.strip_prefix("0x").unwrap_or(value);
+    u64::from_str_radix(value, 16).map_err(err)
 }
 
 impl std::str::FromStr for AppleCrashReport {
@@ -256,7 +317,7 @@ impl AppleCrashReport {
         let mut rv = AppleCrashReport::default();
 
         for line in iter {
-            let line = line.map_err(ParseError::Io)?;
+            let line = line.map_err(ParseErrorRepr::Io)?;
             let line = line.trim_end();
 
             if line.starts_with("Binary Images:") {
@@ -268,15 +329,15 @@ impl AppleCrashReport {
             } else if line.starts_with("Filtered syslog:") {
                 state = ParsingState::FilteredSyslog;
                 continue;
-            } else if THREAD_STATE_RE.is_match(line) {
+            } else if regexes::THREAD_STATE_RE.is_match(line) {
                 state = ParsingState::ThreadState;
                 continue;
-            } else if let Some(caps) = THREAD_RE.captures(line) {
+            } else if let Some(caps) = regexes::THREAD_RE.captures(line) {
                 if let Some(thread) = thread.take() {
                     rv.threads.push(thread);
                 }
                 thread = Some(Thread {
-                    id: caps[1].parse().unwrap(),
+                    id: caps[1].parse().map_err(ParseErrorRepr::InvalidThreadId)?,
                     name: caps.get(3).map(|m| m.as_str().to_string()),
                     dispatch_queue: None,
                     frames: vec![],
@@ -285,9 +346,11 @@ impl AppleCrashReport {
                 });
                 state = ParsingState::Thread;
                 continue;
-            } else if let Some(caps) = THREAD_NAME_RE.captures(line) {
+            } else if let Some(caps) = regexes::THREAD_NAME_RE.captures(line) {
                 thread_names.insert(
-                    caps[1].parse::<u64>().unwrap(),
+                    caps[1]
+                        .parse::<u64>()
+                        .map_err(ParseErrorRepr::InvalidThreadId)?,
                     (
                         caps[2].to_string(),
                         caps.get(3).map(|x| x.as_str().to_string()),
@@ -299,16 +362,17 @@ impl AppleCrashReport {
 
             state = match state {
                 ParsingState::Root => {
-                    if let Some(caps) = KEY_VALUE_RE.captures(line) {
+                    if let Some(caps) = regexes::KEY_VALUE_RE.captures(line) {
                         match &caps[1] {
                             "Incident Identifier" => {
                                 rv.incident_identifier = caps[2]
                                     .parse()
-                                    .map_err(ParseError::InvalidIncidentIdentifier)?;
+                                    .map_err(ParseErrorRepr::InvalidIncidentIdentifier)?;
                             }
                             "Report Version" => {
-                                rv.report_version =
-                                    caps[2].parse().map_err(ParseError::InvalidReportVersion)?;
+                                rv.report_version = caps[2]
+                                    .parse()
+                                    .map_err(ParseErrorRepr::InvalidReportVersion)?;
                             }
                             "Path" => {
                                 rv.path = Some(caps[2].to_string());
@@ -321,7 +385,7 @@ impl AppleCrashReport {
                                     &caps[2],
                                     "%Y-%m-%d %H:%M:%S%.f %z",
                                 )
-                                .map_err(ParseError::InvalidTimestamp)?;
+                                .map_err(ParseErrorRepr::InvalidTimestamp)?;
                                 rv.timestamp = Some(timestamp.with_timezone(&Utc));
                             }
                             "Crashed Thread" => {}
@@ -336,18 +400,23 @@ impl AppleCrashReport {
                     if line.is_empty() {
                         ParsingState::Root
                     } else {
-                        for caps in REGISTER_RE.captures_iter(line) {
+                        for caps in regexes::REGISTER_RE.captures_iter(line) {
                             registers.insert(
                                 caps[1].to_string(),
-                                Addr(u64::from_str_radix(&caps[2][2..], 16).unwrap()),
+                                Addr(parse_prefixed_hex_u64(
+                                    &caps[2],
+                                    ParseErrorRepr::InvalidRegisterAddress,
+                                )?),
                             );
                         }
                         ParsingState::ThreadState
                     }
                 }
                 ParsingState::Thread => {
-                    if let Some(caps) = FRAME_RE.captures(line) {
-                        thread.as_mut().unwrap().frames.push(Frame {
+                    if let Some(caps) = regexes::FRAME_RE.captures(line) {
+                        let current_thread =
+                            thread.as_mut().ok_or(ParseErrorRepr::InvalidThreadState)?;
+                        current_thread.frames.push(Frame {
                             module: if &caps[1] == "???" {
                                 None
                             } else {
@@ -363,8 +432,18 @@ impl AppleCrashReport {
                                 }
                             }),
                             filename: caps.get(4).map(|x| x.as_str().to_string()),
-                            lineno: caps.get(5).map(|x| x.as_str().parse().unwrap()),
-                            instruction_addr: Addr(u64::from_str_radix(&caps[2][2..], 16).unwrap()),
+                            lineno: caps
+                                .get(5)
+                                .map(|x| {
+                                    x.as_str()
+                                        .parse()
+                                        .map_err(ParseErrorRepr::InvalidFrameLineNumber)
+                                })
+                                .transpose()?,
+                            instruction_addr: Addr(parse_prefixed_hex_u64(
+                                &caps[2],
+                                ParseErrorRepr::InvalidFrameInstructionAddress,
+                            )?),
                         });
                         ParsingState::Thread
                     } else {
@@ -374,14 +453,23 @@ impl AppleCrashReport {
                 ParsingState::BinaryImages => {
                     if line.is_empty() {
                         ParsingState::BinaryImages
-                    } else if let Some(caps) = BINARY_IMAGE_RE.captures(line) {
-                        let addr = u64::from_str_radix(&caps[1][2..], 16).unwrap();
+                    } else if let Some(caps) = regexes::BINARY_IMAGE_RE.captures(line) {
+                        let addr = parse_prefixed_hex_u64(
+                            &caps[1],
+                            ParseErrorRepr::InvalidBinaryImageAddress,
+                        )?;
+                        let end_addr = parse_prefixed_hex_u64(
+                            &caps[2],
+                            ParseErrorRepr::InvalidBinaryImageEndAddress,
+                        )?;
                         rv.binary_images.push(BinaryImage {
                             addr: Addr(addr),
-                            size: u64::from_str_radix(&caps[2][2..], 16).unwrap() - addr,
+                            size: end_addr
+                                .checked_sub(addr)
+                                .ok_or(ParseErrorRepr::InvalidBinaryImageAddressRange)?,
                             uuid: caps[6]
                                 .parse()
-                                .map_err(ParseError::InvalidImageIdentifier)?,
+                                .map_err(ParseErrorRepr::InvalidImageIdentifier)?,
                             arch: caps[4].to_string(),
                             version: caps.get(5).map(|x| x.as_str().to_string()),
                             name: caps[3].to_string(),
@@ -444,5 +532,88 @@ impl AppleCrashReport {
         }
 
         Ok(rv)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const OVERFLOW_DECIMAL: &str = "18446744073709551616";
+    const OVERFLOW_HEX: &str = "0x10000000000000000";
+    const VALID_UUID: &str = "00000000000000000000000000000000";
+
+    #[test]
+    fn test_invalid_thread_ids() {
+        let result = format!("Thread {OVERFLOW_DECIMAL}:").parse::<AppleCrashReport>();
+        let err = result.unwrap_err();
+        assert!(matches!(err.inner, ParseErrorRepr::InvalidThreadId(_)));
+
+        let result = format!("Thread {OVERFLOW_DECIMAL} name: main").parse::<AppleCrashReport>();
+        let err = result.unwrap_err();
+        assert!(matches!(err.inner, ParseErrorRepr::InvalidThreadId(_)));
+    }
+
+    #[test]
+    fn test_invalid_register_addresses_return_parse_errors() {
+        let err = format!("Thread 0 crashed with X86-64 Thread State:\n    rip: {OVERFLOW_HEX}")
+            .parse::<AppleCrashReport>()
+            .unwrap_err();
+
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidRegisterAddress(_)
+        ));
+    }
+
+    #[test]
+    fn test_invalid_frame_numbers() {
+        let result =
+            format!("Thread 0:\n0   App  {OVERFLOW_HEX}  symbol + 1").parse::<AppleCrashReport>();
+        let err = result.unwrap_err();
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidFrameInstructionAddress(_)
+        ));
+
+        let result = "Thread 0:\n0   App  0x0000000000000001  symbol (file.rs:4294967296)"
+            .parse::<AppleCrashReport>();
+        let err = result.unwrap_err();
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidFrameLineNumber(_)
+        ));
+    }
+
+    #[test]
+    fn test_invalid_binary_image_addresses() {
+        let err = format!(
+            "Binary Images:\n       {OVERFLOW_HEX} -        0x2 App arm64  <{VALID_UUID}> /App",
+        )
+        .parse::<AppleCrashReport>()
+        .unwrap_err();
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidBinaryImageAddress(_)
+        ));
+
+        let err = format!(
+            "Binary Images:\n       0x1 -        {OVERFLOW_HEX} App arm64  <{VALID_UUID}> /App",
+        )
+        .parse::<AppleCrashReport>()
+        .unwrap_err();
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidBinaryImageEndAddress(_)
+        ));
+
+        let err =
+            format!("Binary Images:\n       0x2 -        0x1 App arm64  <{VALID_UUID}> /App",)
+                .parse::<AppleCrashReport>()
+                .unwrap_err();
+        assert!(matches!(
+            err.inner,
+            ParseErrorRepr::InvalidBinaryImageAddressRange
+        ));
     }
 }
