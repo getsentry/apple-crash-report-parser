@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.6.0
 
 - Hide `ParseError` implementation. Handle more parsing failures gracefully instead of panicking. [#23](https://github.com/getsentry/apple-crash-report-parser/pull/23)
 
