@@ -5,7 +5,7 @@ use std::io::{self, BufRead, BufReader, Read};
 use std::num::ParseIntError;
 use std::sync::LazyLock;
 
-use chrono::{DateTime, FixedOffset, Utc};
+use jiff::Timestamp;
 use regex::Regex;
 #[cfg(feature = "with_serde")]
 use serde::{Serialize, Serializer};
@@ -124,7 +124,7 @@ pub struct AppleCrashReport {
     pub incident_identifier: Uuid,
     /// The timestamp of the crash.
     #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
-    pub timestamp: Option<DateTime<Utc>>,
+    pub timestamp: Option<Timestamp>,
     /// The architecture of the crash (might require further parsing)
     #[cfg_attr(feature = "with_serde", serde(skip_serializing_if = "Option::is_none"))]
     pub code_type: Option<String>,
@@ -232,7 +232,7 @@ enum ParseErrorRepr {
     InvalidBinaryImageAddressRange,
     InvalidThreadState,
     InvalidReportVersion(ParseIntError),
-    InvalidTimestamp(chrono::ParseError),
+    InvalidTimestamp(jiff::Error),
 }
 
 /// Represents a parsing error.
@@ -401,12 +401,10 @@ impl AppleCrashReport {
                                 rv.code_type = Some(caps[2].to_string());
                             }
                             "Date/Time" => {
-                                let timestamp = DateTime::<FixedOffset>::parse_from_str(
-                                    &caps[2],
-                                    "%Y-%m-%d %H:%M:%S%.f %z",
-                                )
-                                .map_err(ParseErrorRepr::InvalidTimestamp)?;
-                                rv.timestamp = Some(timestamp.with_timezone(&Utc));
+                                let timestamp =
+                                    Timestamp::strptime("%Y-%m-%d %H:%M:%S%.f %z", &caps[2])
+                                        .map_err(ParseErrorRepr::InvalidTimestamp)?;
+                                rv.timestamp = Some(timestamp);
                             }
                             "Crashed Thread" => {}
                             _ => {
