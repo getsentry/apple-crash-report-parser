@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.7.0
 
 - Replaced `chrono` with `jiff` for timestamp handling. [#27](https://github.com/getsentry/apple-crash-report-parser/pull/27)
 
