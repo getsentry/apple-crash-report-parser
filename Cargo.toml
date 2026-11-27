@@ -24,7 +24,7 @@ expect_used = "deny"
 with_serde = ["uuid/serde", "jiff/serde", "serde"]
 
 [dependencies]
-jiff = "1.0.0"
+jiff = { version = "1.0.0", default-features = false, features = ["std"] }
 regex = "1.1.0"
 serde = { version = "1.0.84", features = ["derive"], package = "serde", optional = true }
 uuid = { version = "1.0.0" }
